@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef2f6" />
+    <title>疯狂水世界 · 挂机面板</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/fksj-dashboard.css?v=20261010-1" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/fksj-ocean-dashboard.css?v=20261009-2" />
+    <script>(function(){try{if(localStorage.getItem('fksj_login_theme')==='ocean'){document.documentElement.setAttribute('data-theme','ocean');}}catch(e){}})();</script>
+  </head>
+  <body class="api-loading">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-lockup"><span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3.2 7.1 8.4a7 7 0 1 0 9.8 0L12 3.2Z"/><path d="M8.8 15.2a4.2 4.2 0 0 0 3.2 2.1"/></svg></span><span>疯狂水世界<small>挂机控制台</small></span></div>
+         <div class="account-switcher" id="accountSwitcher"><button class="workspace-switch" id="workspaceSwitch" type="button" aria-expanded="false"><span class="account-avatar" id="workspaceAvatar">用</span><span><b id="workspaceName">我的账号组</b><small>账号组 · 0 个账号</small></span><span class="chevron">⌄</span></button><div class="account-switch-list" id="accountSwitchList" hidden></div></div>
+        <nav class="main-nav" aria-label="主导航">
+          <span class="nav-caption">控制台</span>
+           <a class="nav-item active" href="#overview" data-view="overview"><span class="nav-glyph">⌂</span>运行概览</a>
+          <a class="nav-item" href="#accounts"><span class="nav-glyph">◉</span>账号管理<span class="nav-count">0</span></a>
+           <a class="nav-item" href="#tasks" data-view="task"><span class="nav-glyph">✓</span>任务队列<span class="nav-count blue">0</span></a>
+           <a class="nav-item" href="#resources" data-view="resource"><span class="nav-glyph">◈</span>资源概览</a>
+           <a class="nav-item" href="/factory.html"><span class="nav-glyph">▦</span>工厂与建筑</a>
+          <a class="nav-item" href="#logs"><span class="nav-glyph">≡</span>运行日志</a>
+          <span class="nav-caption second">系统</span>
+           <a class="nav-item" href="/passwd"><span class="nav-glyph">⚙</span>面板设置</a>
+            <a class="nav-item" href="/admin" data-admin-only hidden><span class="nav-glyph">♙</span>用户管理</a>
+        </nav>
+        <div class="sidebar-foot"><div class="connection-dot"></div><span>服务运行正常</span><small id="sidebarFootNote">实时连接</small></div>
+      </aside>
+
+      <main class="main-content" id="overview">
+         <header class="topbar"><button class="mobile-menu" aria-label="打开导航">☰</button><div class="breadcrumb">控制台 <span>/</span> 运行概览</div><div class="top-actions"><button class="icon-button" aria-label="通知">♧<i></i></button><div class="top-user"><span class="avatar-small" id="topUserAvatar">用</span><span id="topUserName">当前用户</span><a class="logout-link" href="/logout">退出登录</a></div></div></header>
+
+        <div class="content-wrap"><div class="api-loading-state" aria-live="polite"><span class="loading-spinner"></span><span>正在读取实时数据...</span></div>
+          <section class="page-heading"><div><p class="eyebrow">ACCOUNT CONSOLE / LIVE</p><h1>运行概览</h1><p class="heading-sub">集中查看账号状态、挂机任务与生产队列。</p></div><div class="heading-actions"><button class="button ghost" id="addAccountButton" type="button">+ 添加账号</button><button class="button ghost" id="refreshButton"><span>↻</span>刷新数据</button><button class="button primary" id="runAllButton"><span>▶</span>启动全部</button></div></section>
+
+           <section class="stats-grid" aria-label="运行统计">
+            <article class="stat-card"><div class="stat-icon green">◉</div><div><span class="stat-label">在线账号</span><strong>0 <small>/ 0</small></strong><span class="stat-trend">等待数据</span></div><div class="mini-bars green-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+            <article class="stat-card"><div class="stat-icon blue">✓</div><div><span class="stat-label">已启用账号</span><strong>0 <small>个</small></strong><span class="stat-trend">等待数据</span></div><div class="mini-bars blue-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+            <article class="stat-card"><div class="stat-icon amber">▦</div><div><span class="stat-label">生产中工厂</span><strong>0 <small>个位置</small></strong><span class="stat-trend">等待数据</span></div><div class="mini-bars amber-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+            <article class="stat-card"><div class="stat-icon slate">◷</div><div><span class="stat-label">今日完成任务</span><strong>0 <small>项</small></strong><span class="stat-trend">等待数据</span></div><div class="mini-bars slate-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+           </section>
+           <section class="resource-workspace" id="resourceWorkspace"><section class="panel-card resource-overview" id="resourceOverview"><div class="panel-header"><div><p class="eyebrow">RESOURCE INVENTORY</p><h2>资源概览</h2><p id="resourceOverviewSub">当前账号 · 等待数据</p></div><span class="resource-refresh-hint">实时同步</span></div><div class="resource-overview-grid" id="resourceOverviewList"><div class="resource-empty">正在读取资源数据...</div></div></section></section>
+
+           <section class="dashboard-grid">
+            <div class="primary-column">
+              <article class="panel-card account-panel" id="accounts"><div class="panel-header"><div><h2>账号运行状态</h2><p>等待同步</p></div><button class="more-button" aria-label="更多账号操作">•••</button></div><div class="account-table"><div class="table-head"><span>账号</span><span>状态</span><span>主线任务</span><span>最近活动</span><span></span></div><div class="account-row account-row-placeholder"><div class="account-cell"><span class="account-avatar large">·</span><span><b>正在读取账号</b><small>等待后端数据</small></span></div><span class="status paused"><i></i>加载中</span><span class="task-progress muted"><small><em style="width:0%"></em>等待数据</small></span><span class="last-active">—</span><span class="row-arrow">›</span></div><button class="view-all" id="viewAllAccounts">查看全部账号 <span>→</span></button></article>
+
+              <article class="panel-card task-panel" id="tasks"><div class="panel-header"><div><h2>任务队列</h2><p>等待数据</p></div><div class="filter-tabs"><button class="active">全部 <b>0</b></button><button>进行中 <b>0</b></button><button>已完成 <b>0</b></button></div></div><div class="task-list"><div class="task-row"><span class="task-status working">●</span><span class="task-detail"><b>正在读取任务</b><small>等待后端数据</small></span><span class="task-time">—</span></div></div></article>
+            </div>
+            <aside class="secondary-column">
+              <article class="panel-card quick-panel"><div class="panel-header"><div><h2>快捷操作</h2><p>对当前账号执行操作</p></div></div><div class="quick-grid"><button class="quick-action" data-toast="正在同步账号状态"><span class="quick-icon blue">↻</span><b>同步状态</b><small>立即拉取最新数据</small></button><button class="quick-action" data-toast="已开始收取工厂成品"><span class="quick-icon green">▦</span><b>收工厂成品</b><small>一键领取全部</small></button><button class="quick-action" data-toast="任务队列已刷新"><span class="quick-icon amber">✓</span><b>刷新任务</b><small>重新检查任务条件</small></button><button class="quick-action" data-toast="正在尝试重连账号"><span class="quick-icon slate">⌁</span><b>重连账号</b><small>修复网络连接</small></button></div></article>
+              <article class="panel-card factory-panel" id="factory"><div class="panel-header"><div><h2>工厂概况</h2><p>等待数据</p></div><button class="text-button" id="factoryDetailsButton" type="button">详情 →</button></div><div class="factory-chart"><div class="donut"><span>0<small>生产中</small></span></div><div class="factory-legend"><span><i class="dot blue"></i>生产中 <b>0</b></span><span><i class="dot green"></i>可领取 <b>0</b></span><span><i class="dot gray"></i>空闲 <b>0</b></span></div></div><div class="resource-list"><div class="resource-empty">正在读取资源数据...</div></div></article>
+              <article class="panel-card log-panel" id="logs"><div class="panel-header"><div><h2>实时日志</h2><p><i class="live-dot"></i> 正在接收</p></div><button class="more-button">•••</button></div><div class="log-list"><div><time>--:--:--</time><span class="log-dot gray"></span><p>正在读取实时日志...</p></div><button class="view-all">查看完整日志 <span>→</span></button></article>
+            </aside>
+          </section>
+           <section class="factory-workspace" id="factoryWorkspace"><div class="panel-card"><div class="panel-header"><div><p class="eyebrow">FACTORY & BUILDINGS</p><h2>工厂与建筑</h2><p id="factoryWorkspaceSub">当前账号 · 正在读取工厂数据</p></div><button class="button ghost" id="factoryWorkspaceRefresh" type="button">刷新数据</button></div><div class="detail-view-tabs" role="tablist"><button class="active" data-detail-view="building" type="button">建筑</button><button data-detail-view="factory" type="button">工厂</button></div><div class="factory-summary-strip" id="factoryWorkspaceSummary"></div><div class="factory-grid" id="factoryWorkspaceList"></div></div></section>
+           <section class="task-workspace" id="taskWorkspace"></section>
+          <section class="account-details-workspace" id="accountDetails"><div class="detail-section-grid"><article class="panel-card detail-card"><div class="panel-header"><div><h2>主线与闯关</h2><p id="progressDetailsSub">当前账号</p></div></div><div id="progressDetails"></div></article><article class="panel-card detail-card"><div class="panel-header"><div><h2>居民需求</h2><p>每个居民当前所需物品</p></div></div><div id="residentDetails"></div></article><article class="panel-card detail-card detail-card-wide"><div class="panel-header"><div><h2>建筑与农田</h2><p>当前账号全部建筑状态</p></div></div><div id="buildingDetails"></div></article></div></section>
+          <footer class="page-footer"><span>疯狂水世界 · 挂机控制台</span><span>服务状态 <i></i> 正常运行</span><span id="footerSync">等待同步</span></footer>
+        </div>
+      </main>
+    </div>
+    <div class="account-modal" id="accountModal" hidden><div class="account-modal-card" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle"><div class="account-modal-header"><div><p class="eyebrow">ACCOUNT DIRECTORY</p><h2 id="accountModalTitle">全部账号</h2><p>选择账号后，快捷操作会作用于该账号。</p></div><button class="modal-close" id="closeAccountModal" aria-label="关闭">×</button></div><div class="all-account-list" id="allAccountList"></div></div></div>
+    <div class="account-modal" id="configModal" hidden><div class="account-modal-card config-card" role="dialog" aria-modal="true" aria-labelledby="configModalTitle"><div class="account-modal-header"><div><p class="eyebrow">ACCOUNT SETTINGS</p><h2 id="configModalTitle">账号配置</h2><p id="configModalSub">读取中...</p></div><button class="modal-close" id="closeConfigModal" aria-label="关闭">×</button></div><div id="configContent" class="config-content"></div></div></div>
+    <div class="account-modal" id="logModal" hidden><div class="account-modal-card log-modal-card" role="dialog" aria-modal="true" aria-labelledby="logModalTitle"><div class="account-modal-header"><div><p class="eyebrow">ACCOUNT ACTIVITY</p><h2 id="logModalTitle">完整日志</h2><p id="logModalSub">读取中...</p></div><button class="modal-close" id="closeLogModal" aria-label="关闭">×</button></div><div class="full-log-list" id="fullLogList"></div></div></div>
+    <div class="account-modal" id="factoryModal" hidden><div class="account-modal-card factory-modal-card" role="dialog" aria-modal="true" aria-labelledby="factoryModalTitle"><div class="account-modal-header"><div><p class="eyebrow">FACTORY DETAILS</p><h2 id="factoryModalTitle">工厂与建筑明细</h2><p id="factoryModalSub">读取中...</p></div><button class="modal-close" id="closeFactoryModal" aria-label="关闭">×</button></div><div class="factory-detail-list" id="factoryDetailList"></div></div></div>
+    <div class="toast" role="status" aria-live="polite"><span>✓</span><b>操作已提交</b></div>
+    <div class="account-modal" id="addAccountModal" hidden><div class="account-modal-card add-account-card" role="dialog" aria-modal="true" aria-labelledby="addAccountTitle"><div class="account-modal-header"><div><p class="eyebrow">ADD ACCOUNT</p><h2 id="addAccountTitle">添加账号</h2><p>选择官方账号登录，成功后账号会自动加入面板。</p></div><button class="modal-close" id="closeAddAccountModal" aria-label="关闭">×</button></div><div class="add-account-content"><div class="login-tabs" role="tablist"><button class="active" data-login-tab="official" type="button">官方账号登录</button></div><section class="login-pane active" data-login-pane="official" style="display:grid"><label class="login-field"><span>官方游戏账号</span><input id="officialAccountInput" autocomplete="off" placeholder="请输入游戏账号"></label><label class="login-field"><span>游戏密码</span><input id="officialPasswordInput" type="password" autocomplete="new-password" placeholder="请输入游戏密码"></label><button class="button primary login-submit" id="officialLoginButton" type="button">登录并添加账号</button></section><p class="login-status" id="accountLoginStatus" role="status"></p></div></div></div>
+    <script src="/assets/fksj-dashboard.js?v=20261010-2"></script>
+    <script>(function(){'use strict';var KEY='fksj_login_theme';var root=document.documentElement;var host=document.querySelector('.top-actions');var btn=document.createElement('button');btn.type='button';btn.className='theme-switch';btn.id='themeSwitch';btn.setAttribute('aria-label','切换主题');btn.setAttribute('title','切换主题');btn.setAttribute('aria-pressed','false');btn.innerHTML='<span class="wheel" aria-hidden="true"></span>';if(host){host.insertBefore(btn,host.firstChild);}else{document.body.appendChild(btn);btn.classList.add('floating');}function apply(t){if(t!=='ocean'){t='classic';root.removeAttribute('data-theme');}else{root.setAttribute('data-theme','ocean');}try{localStorage.setItem(KEY,t);}catch(e){}var on=(t==='ocean');btn.setAttribute('aria-pressed',on?'true':'false');btn.title=on?'切换为经典主题':'切换为海洋卡通主题';}var cur='classic';try{cur=localStorage.getItem(KEY)||'classic';}catch(e){}apply(cur);btn.addEventListener('click',function(){apply(root.getAttribute('data-theme')==='ocean'?'classic':'ocean');});})();</script>
+  </body>
+</html>

@@ -1,0 +1,8318 @@
+{
+ "AchievementInfoRequest": {
+  "1": "id",
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "AchievementInfoResponse": {
+  "1": "id",
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "DispAchievementTask": {
+  "1": "period",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "myFaction",
+  "5": "claimedTier"
+ },
+ "GotAchievementRewardRequest": {
+  "1": "period",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "myFaction",
+  "5": "claimedTier"
+ },
+ "SCAchievementUpdate": {
+  "1": "period",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "myFaction",
+  "5": "claimedTier"
+ },
+ "DispCleanSeaEntry": {
+  "1": "period",
+  "2": "startTime",
+  "3": "serverScore",
+  "4": "myScore",
+  "5": "tierScore",
+  "6": "todayScore",
+  "7": "dailyScoreLimit"
+ },
+ "CleanSeaInfoRequest": {
+  "3": "rank",
+  "4": "myScore",
+  "5": "tierScore",
+  "6": "todayScore",
+  "7": "dailyScoreLimit",
+  "1": "faction",
+  "2": "score"
+ },
+ "CleanSeaInfoResponse": {
+  "3": "rank",
+  "4": "myScore",
+  "5": "tierScore",
+  "6": "todayScore",
+  "7": "dailyScoreLimit",
+  "1": "faction",
+  "2": "score"
+ },
+ "DispCleanSeaRank": {
+  "1": "x",
+  "2": "y",
+  "3": "rank"
+ },
+ "SelectCleanSeaFactionRequest": {
+  "1": "x",
+  "2": "y"
+ },
+ "ClaimCleanSeaProgressRewardRequest": {
+  "1": "x",
+  "2": "y"
+ },
+ "ClaimCleanSeaProgressRewardResponse": {
+  "1": "x",
+  "2": "y",
+  "4": "equipIds"
+ },
+ "Position": {
+  "1": "x",
+  "2": "y",
+  "4": "equipIds",
+  "6": "tickets"
+ },
+ "OkResponse": {
+  "4": "equipIds",
+  "6": "tickets",
+  "1": "heroId",
+  "2": "frag"
+ },
+ "GotRewardResponse": {
+  "4": "equipIds",
+  "6": "tickets",
+  "1": "antiqueId",
+  "2": "frag"
+ },
+ "DisplayHeroAsset": {
+  "1": "type",
+  "2": "star",
+  "3": "uid"
+ },
+ "DisplayAntiqueAsset": {
+  "1": "type",
+  "2": "id",
+  "3": "num"
+ },
+ "DisplayBadgeAsset": {
+  "1": "type",
+  "2": "id",
+  "3": "num"
+ },
+ "TestCmdRequest": {
+  "1": "type",
+  "2": "id",
+  "3": "equips"
+ },
+ "DisplayAsset": {
+  "1": "type",
+  "2": "id",
+  "3": "equips"
+ },
+ "DispRewardPackage": {
+  "3": "equips"
+ },
+ "DisplayAssetPackage": {
+  "1": "image",
+  "2": "frame"
+ },
+ "SCUpdateDebt": {
+  "1": "background",
+  "2": "pattern"
+ },
+ "ItemNum": {
+  "1": "background",
+  "2": "pattern"
+ },
+ "Avatar": {
+  "1": "background",
+  "2": "pattern"
+ },
+ "GuildFlag": {
+  "1": "type",
+  "2": "num"
+ },
+ "RedPoint": {
+  "1": "id",
+  "2": "value"
+ },
+ "SCRedPoint": {
+  "1": "id",
+  "2": "value"
+ },
+ "GameEffectValue": {
+  "1": "level",
+  "2": "enhance",
+  "3": "criticalRate"
+ },
+ "GameEffectRequest": {
+  "1": "type",
+  "2": "useNum",
+  "3": "criticalRate"
+ },
+ "GameEffectResponse": {
+  "1": "type",
+  "2": "useNum",
+  "3": "criticalRate"
+ },
+ "SCGameEffectUpdate": {
+  "1": "type",
+  "2": "minutes",
+  "3": "criticalRate"
+ },
+ "MiniGameLevelInfo": {
+  "1": "type",
+  "2": "minutes",
+  "3": "criticalRate"
+ },
+ "SpeedUpCostParam": {
+  "1": "rank",
+  "2": "guildIdx",
+  "3": "score"
+ },
+ "SpeedUpData": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "5": "score",
+  "6": "guildIdx",
+  "7": "title"
+ },
+ "SCSpeedUp": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "5": "score",
+  "6": "guildIdx",
+  "7": "title"
+ },
+ "DispGuildRank": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "5": "score",
+  "6": "guildIdx",
+  "7": "title"
+ },
+ "DispPlayerRank": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "page",
+  "5": "score",
+  "6": "guildIdx",
+  "7": "title",
+  "4": "totalPage"
+ },
+ "DispForwardingAward": {
+  "3": "total",
+  "4": "week",
+  "1": "month",
+  "2": "daily",
+  "5": "maxDaily"
+ },
+ "ActivityRankResponse": {
+  "3": "total",
+  "4": "week",
+  "1": "packId",
+  "2": "times",
+  "5": "maxDaily"
+ },
+ "PaidMoney": {
+  "1": "level",
+  "2": "color",
+  "3": "total",
+  "4": "week",
+  "5": "maxDaily"
+ },
+ "LimitPaidPack": {
+  "1": "period",
+  "2": "startTime",
+  "3": "endTime"
+ },
+ "DispCommonTask": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "endTime"
+ },
+ "CommonTaskStat": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "endTime",
+  "4": "guildIdx",
+  "5": "title"
+ },
+ "DispPeriodTime": {
+  "1": "playerId",
+  "2": "worldId",
+  "3": "nickname",
+  "4": "totalPower",
+  "5": "title"
+ },
+ "CommonPlayerSimple": {
+  "1": "rank",
+  "2": "score",
+  "4": "totalPower",
+  "5": "title",
+  "3": "nickname"
+ },
+ "DispCrossRankPlayer": {
+  "1": "activityId",
+  "2": "festival",
+  "3": "nickname",
+  "4": "openTime",
+  "5": "closeTime",
+  "6": "start"
+ },
+ "DispCrossRankItem": {
+  "1": "activityId",
+  "2": "festival",
+  "4": "openTime",
+  "5": "closeTime",
+  "6": "startTime",
+  "7": "endTime",
+  "8": "type",
+  "10": "season"
+ },
+ "DispFestivalActivity": {
+  "1": "item",
+  "2": "openTime",
+  "4": "openTime",
+  "5": "closeTime",
+  "6": "startTime",
+  "7": "endTime",
+  "8": "type",
+  "10": "season",
+  "3": "closeTime"
+ },
+ "DispActivityLimitTimeItem": {
+  "1": "subActivityType",
+  "2": "param1",
+  "3": "param2",
+  "4": "openTime",
+  "5": "closeTime"
+ },
+ "DispSubActivity": {
+  "1": "subActivityType",
+  "2": "param1",
+  "3": "param2",
+  "4": "openTime",
+  "5": "closeTime"
+ },
+ "DragonBoatDetail": {
+  "3": "totalScore",
+  "2": "bestScore",
+  "4": "progressClaimed",
+  "5": "sessionMult",
+  "7": "playTimes"
+ },
+ "PeelZongziOverviewDetail": {
+  "2": "bestScore",
+  "3": "totalScore",
+  "4": "progressClaimed",
+  "5": "sessionMult",
+  "7": "playTimes"
+ },
+ "DanceDetail": {
+  "2": "bestScore",
+  "3": "totalScore",
+  "4": "progressClaimed",
+  "5": "sessionMult",
+  "7": "playTimes",
+  "1": "activityId"
+ },
+ "ExchangeShopDetailRequest": {
+  "1": "activityId",
+  "2": "productId",
+  "3": "num"
+ },
+ "ExchangeShopDetailResponse": {
+  "2": "productId",
+  "1": "activityId",
+  "3": "couponTier"
+ },
+ "ExchangeShopBuyRequest": {
+  "1": "lucyScore",
+  "2": "claimedId",
+  "3": "couponTier",
+  "4": "times",
+  "6": "minScore"
+ },
+ "ExchangeShopCheckoutRequest": {
+  "1": "lucyScore",
+  "3": "couponTier",
+  "2": "claimedId",
+  "4": "times",
+  "6": "minScore",
+  "7": "maxScore"
+ },
+ "LuckyWheelDetail": {
+  "1": "activityId",
+  "2": "claimedId",
+  "4": "times",
+  "6": "minScore",
+  "7": "maxScore"
+ },
+ "LuckyWheelInfoRequest": {
+  "1": "activityId"
+ },
+ "LuckyWheelInfoResponse": {
+  "1": "relicId",
+  "2": "repaired",
+  "3": "rewarded"
+ },
+ "GroupBuyingDetail": {
+  "1": "boughtGiftId",
+  "2": "repaired",
+  "3": "rewarded"
+ },
+ "RelicRepairDetail": {
+  "1": "activityId",
+  "2": "giftId",
+  "3": "rewarded"
+ },
+ "DispRepairedRelic": {
+  "1": "bought",
+  "2": "claimedPackId",
+  "3": "rewarded"
+ },
+ "DailyCombGiftDetail": {
+  "1": "activityId",
+  "2": "packId"
+ },
+ "ClaimDailyCombGiftRequest": {
+  "1": "activityId",
+  "2": "packId"
+ },
+ "DailyPackDetail": {
+  "1": "activityId",
+  "2": "packId"
+ },
+ "ClaimDailyPackRequest": {
+  "1": "activityId",
+  "2": "packId"
+ },
+ "DispSelectGiftChoice": {
+  "1": "activityId",
+  "2": "giftId"
+ },
+ "DailySelectGiftDetail": {
+  "1": "activityId",
+  "2": "giftId"
+ },
+ "SelectGiftRewardRequest": {
+  "1": "checkInId",
+  "2": "activeScore",
+  "3": "claimedRewardId",
+  "4": "checkRuby"
+ },
+ "ClaimFreeSelectGiftRequest": {
+  "1": "todayPaidMoney",
+  "2": "claimedDailyCumulativeId",
+  "3": "claimedRewardId",
+  "4": "checkRuby"
+ },
+ "DailyActiveDetail": {
+  "1": "paidMoney",
+  "2": "claimedCumulativeId",
+  "3": "claimedRewardId",
+  "4": "checkRuby"
+ },
+ "DailyAccumulateChargeDetail": {
+  "1": "claimedId",
+  "2": "claimedCumulativeId"
+ },
+ "AccumulateChargeDetail": {
+  "1": "activityId",
+  "2": "checkId"
+ },
+ "ClaimActivityDailyActiveRewardRequest": {
+  "1": "checkId",
+  "2": "checkId"
+ },
+ "ClaimActivityDailyActiveRewardResponse": {
+  "1": "activityId",
+  "2": "cumulativeId"
+ },
+ "ClaimActivityDailyCheckInRewardRequest": {
+  "1": "activityId",
+  "2": "cumulativeId"
+ },
+ "ClaimActivityDailyCheckInRewardResponse": {
+  "1": "activityId",
+  "2": "cumulativeId",
+  "3": "num"
+ },
+ "ClaimFestivalCumulativeRewardRequest": {
+  "1": "wheelId",
+  "2": "lucyScore",
+  "3": "num",
+  "4": "times"
+ },
+ "SpinLucyWheelRequest": {
+  "1": "activityId",
+  "3": "num",
+  "2": "lucyScore",
+  "4": "times"
+ },
+ "SpinLucyWheelResponse": {
+  "1": "activityId",
+  "2": "productId",
+  "4": "times",
+  "3": "discountId"
+ },
+ "ClaimLucyWheelRewardRequest": {
+  "1": "activityId",
+  "2": "productId",
+  "3": "discountId"
+ },
+ "ClaimLucyWheelRewardResponse": {
+  "1": "productId",
+  "2": "buyerNum",
+  "3": "boughtTimes"
+ },
+ "BuyGroupBuyingProductRequest": {
+  "1": "activityId",
+  "2": "buyerNum",
+  "3": "boughtTimes"
+ },
+ "BuyGroupBuyingProductResponse": {
+  "1": "activityId",
+  "2": "buyerNum",
+  "3": "boughtTimes"
+ },
+ "DispGroupBuyingProduct": {
+  "1": "activityId",
+  "2": "buyerNum",
+  "3": "boughtTimes"
+ },
+ "SCGroupBuyingProductUpdate": {
+  "1": "activityId",
+  "2": "dailyPaidMoney",
+  "3": "paidMoney"
+ },
+ "GroupBuyingInfoRequest": {
+  "1": "activityId",
+  "2": "activeScore",
+  "3": "paidMoney"
+ },
+ "GroupBuyingInfoResponse": {
+  "1": "activityId",
+  "2": "relicId",
+  "3": "paidMoney"
+ },
+ "SCActivityPaidMoneyUpdate": {
+  "1": "activityId",
+  "2": "relicId",
+  "3": "paidMoney"
+ },
+ "SCActivityActiveScoreUpdate": {
+  "1": "activityId",
+  "2": "relicId"
+ },
+ "RelicRepairRequest": {
+  "1": "activityId",
+  "2": "drawTimes"
+ },
+ "RelicRepairResponse": {
+  "1": "drawTimes",
+  "2": "drawTimes"
+ },
+ "ClaimRelicRepairedRequest": {
+  "1": "activityId",
+  "2": "drawTimes"
+ },
+ "DivingTreasureDrawRequest": {
+  "1": "activityId",
+  "2": "drawTimes"
+ },
+ "DivingTreasureDrawResponse": {
+  "2": "progress",
+  "1": "id",
+  "3": "targetProgress"
+ },
+ "DivingTreasureDetail": {
+  "1": "activityId",
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "ActivityTaskInfoRequest": {
+  "1": "activityId",
+  "2": "taskId",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "ActivityTaskInfoResponse": {
+  "1": "activityId",
+  "2": "taskId",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "DispActivityTask": {
+  "1": "activityId",
+  "2": "taskId",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "ClaimActivityTaskRewardRequest": {
+  "1": "activityId",
+  "2": "type",
+  "3": "page"
+ },
+ "ClaimActivityTaskRewardResponse": {
+  "1": "activityId",
+  "2": "type",
+  "3": "page"
+ },
+ "SCActivityTaskUpdate": {
+  "1": "id",
+  "2": "distance",
+  "3": "time"
+ },
+ "ActivityRankRequest": {
+  "1": "activityId",
+  "2": "distance",
+  "3": "distance"
+ },
+ "DragonBoatStartRequest": {
+  "1": "score",
+  "2": "distance",
+  "3": "distance"
+ },
+ "DragonBoatHitItem": {
+  "1": "score",
+  "2": "distance",
+  "3": "distance"
+ },
+ "DragonBoatEndRequest": {
+  "1": "groupId",
+  "3": "distance",
+  "2": "mult"
+ },
+ "DragonBoatEndResponse": {
+  "1": "noteId",
+  "3": "grade",
+  "2": "time"
+ },
+ "DanceStartRequest": {
+  "1": "activityId",
+  "2": "time",
+  "3": "totalScore"
+ },
+ "DanceStartResponse": {
+  "1": "score",
+  "2": "time",
+  "3": "bestScore",
+  "4": "totalScore",
+  "5": "mult"
+ },
+ "DanceHitItem": {
+  "1": "score",
+  "2": "time",
+  "3": "bestScore",
+  "4": "totalScore",
+  "5": "mult",
+  "6": "playTimes"
+ },
+ "DanceEndRequest": {
+  "1": "activityId",
+  "3": "bestScore",
+  "4": "totalScore",
+  "5": "mult",
+  "6": "playTimes"
+ },
+ "DanceEndResponse": {
+  "1": "index",
+  "3": "bestScore",
+  "4": "totalScore",
+  "5": "mult",
+  "6": "playTimes",
+  "2": "result"
+ },
+ "ClaimDanceProgressRewardRequest": {
+  "1": "bonusZongzi",
+  "2": "result"
+ },
+ "ClaimDanceProgressRewardResponse": {
+  "2": "result",
+  "1": "bonusZongzi"
+ },
+ "DispPeelZongziCell": {
+  "1": "activityId",
+  "2": "factor"
+ },
+ "PeelZongziStartRequest": {
+  "1": "activityId",
+  "2": "position"
+ },
+ "PeelZongziStartResponse": {
+  "1": "result",
+  "2": "position"
+ },
+ "SetZongziFactorRequest": {
+  "1": "activityId",
+  "2": "position"
+ },
+ "PeelZongziRevealRequest": {
+  "1": "bonusCompleted",
+  "2": "position"
+ },
+ "PeelZongziRevealResponse": {
+  "1": "activityId"
+ },
+ "PeelZongziSettleRequest": {
+  "1": "activityId",
+  "2": "bonusZongzi",
+  "3": "factor",
+  "5": "bonusClaimed"
+ },
+ "PeelZongziSettleResponse": {
+  "1": "activityId",
+  "2": "bonusZongzi",
+  "3": "factor",
+  "5": "bonusClaimed"
+ },
+ "PeelZongziDetailRequest": {
+  "1": "claimedId",
+  "2": "bonusZongzi",
+  "3": "factor",
+  "5": "bonusClaimed"
+ },
+ "PeelZongziDetailResponse": {
+  "2": "bonusZongzi",
+  "3": "factor",
+  "5": "bonusClaimed",
+  "1": "taskId"
+ },
+ "ClaimPeelZongziScoreRewardRequest": {
+  "1": "day",
+  "2": "claimedFull",
+  "3": "claimedPaid",
+  "4": "claimedLine"
+ },
+ "ClaimPeelZongziScoreRewardResponse": {
+  "1": "activityId",
+  "2": "day",
+  "3": "claimedPaid",
+  "4": "claimedLine"
+ },
+ "DispBingoTask": {
+  "1": "activityId",
+  "2": "day",
+  "3": "claimedPaid",
+  "4": "claimedLine"
+ },
+ "DispBingoDayRecord": {
+  "1": "activityId",
+  "2": "day",
+  "3": "lineId",
+  "4": "claimedLine"
+ },
+ "ClaimBingoTaskFinishRequest": {
+  "1": "activityId",
+  "2": "day",
+  "3": "lineId"
+ },
+ "ClaimBingoTaskPaidRequest": {
+  "1": "taskSeason",
+  "2": "day",
+  "3": "lineId"
+ },
+ "ClaimBingoTaskLineRequest": {
+  "1": "taskSeason",
+  "2": "day",
+  "3": "lineId"
+ },
+ "SCBingoTaskUpdate": {
+  "1": "cakeScore",
+  "2": "claimedId",
+  "3": "times",
+  "5": "minScore",
+  "6": "maxScore",
+  "7": "layer"
+ },
+ "DispBingoTaskDetail": {
+  "1": "cakeScore",
+  "2": "claimedId",
+  "3": "times",
+  "5": "minScore",
+  "6": "maxScore",
+  "7": "layer",
+  "9": "topTimes"
+ },
+ "DispCakeDetail": {
+  "1": "activityId",
+  "2": "claimedId",
+  "3": "num",
+  "5": "minScore",
+  "6": "maxScore",
+  "7": "layer",
+  "9": "topTimes"
+ },
+ "SpinCakeLotteryRequest": {
+  "1": "activityId",
+  "3": "score",
+  "2": "actualNum",
+  "5": "times",
+  "6": "layer",
+  "7": "topTimes"
+ },
+ "SpinCakeLotteryResponse": {
+  "1": "time",
+  "2": "actualNum",
+  "3": "score",
+  "5": "times",
+  "6": "layer",
+  "7": "topTimes"
+ },
+ "CakeLotteryRecordsRequest": {
+  "1": "activityId",
+  "2": "rewardId",
+  "3": "selectedRewardId"
+ },
+ "CakeLotteryRecordsResponse": {
+  "1": "source",
+  "2": "number",
+  "3": "prize"
+ },
+ "DispCakeLotteryRecord": {
+  "1": "source",
+  "2": "number",
+  "3": "prize",
+  "4": "winNum"
+ },
+ "ClaimCakeLotteryRewardRequest": {
+  "1": "source",
+  "2": "number",
+  "3": "prize",
+  "4": "winNum",
+  "6": "grandPrizeWinners"
+ },
+ "DispKoiTicket": {
+  "1": "source",
+  "2": "giftBought",
+  "3": "prize",
+  "4": "drawTime",
+  "6": "grandPrizeWinners"
+ },
+ "DispKoiDayRecord": {
+  "4": "drawTime",
+  "6": "grandPrizeWinners",
+  "2": "giftBought",
+  "1": "activityId"
+ },
+ "DispKoiDetail": {
+  "2": "giftBought",
+  "4": "drawTime",
+  "1": "activityId"
+ },
+ "DrawKoiTicketRequest": {
+  "1": "score",
+  "2": "claimedId"
+ },
+ "DrawKoiTicketResponse": {
+  "1": "score",
+  "2": "claimedId",
+  "3": "todayFood",
+  "4": "makeTimes",
+  "5": "baseScore",
+  "6": "recommendScore",
+  "7": "dailyAskLimit",
+  "8": "dailyAid"
+ },
+ "QueryKoiDetailRequest": {
+  "1": "score",
+  "2": "claimedId",
+  "3": "todayFood",
+  "4": "makeTimes",
+  "5": "baseScore",
+  "6": "recommendScore",
+  "7": "dailyAskLimit",
+  "8": "dailyAid",
+  "9": "aidScorePerItem"
+ },
+ "QueryKoiDetailResponse": {
+  "1": "activityId",
+  "2": "foodId",
+  "3": "todayFood",
+  "4": "makeTimes",
+  "5": "baseScore",
+  "6": "recommendScore",
+  "7": "dailyAskLimit",
+  "8": "dailyAid",
+  "9": "aidScorePerItem"
+ },
+ "DispFoodDetail": {
+  "1": "activityId",
+  "2": "score",
+  "3": "gained",
+  "4": "isRecommende",
+  "5": "baseScore",
+  "6": "recommendScore",
+  "7": "dailyAskLimit",
+  "8": "dailyAid",
+  "9": "aidScorePerItem"
+ },
+ "MakeFoodRequest": {
+  "1": "claimedId",
+  "2": "score",
+  "3": "gained",
+  "4": "isRecommended"
+ },
+ "MakeFoodResponse": {
+  "1": "id",
+  "2": "litTimes",
+  "3": "gained",
+  "4": "isRecommended"
+ },
+ "ClaimFoodRewardRequest": {
+  "1": "activityId",
+  "2": "litTimes"
+ },
+ "ClaimAccumulateRewardResponse": {
+  "1": "activityId",
+  "2": "litTimes"
+ },
+ "DispCollectLightLantern": {
+  "1": "boxIndex",
+  "2": "prizeType"
+ },
+ "CollectLightDetailRequest": {
+  "1": "prizeType",
+  "2": "prizeType"
+ },
+ "CollectLightDetailResponse": {
+  "1": "prizeType",
+  "2": "prizeType"
+ },
+ "CollectLightRequest": {
+  "1": "totalScore",
+  "2": "totalRound",
+  "3": "guaranteeRemain",
+  "4": "hiddenPrizeCount"
+ },
+ "DispBlindItem": {
+  "1": "activityId",
+  "2": "totalRound",
+  "3": "guaranteeRemain",
+  "4": "hiddenPrizeCount"
+ },
+ "DispBlindBoxRound": {
+  "1": "activityId",
+  "2": "claimedId",
+  "3": "guaranteeRemain",
+  "4": "hiddenPrizeCount"
+ },
+ "DispBlindBoxStat": {
+  "1": "activityId",
+  "2": "claimedId",
+  "3": "guaranteeRemain",
+  "4": "hiddenPrizeCount"
+ },
+ "BlindBoxDetailRequest": {
+  "1": "prizeType",
+  "2": "claimedId"
+ },
+ "BlindBoxDetailResponse": {
+  "2": "boxIndex",
+  "1": "activityId"
+ },
+ "BlindBoxStartRequest": {
+  "1": "prizeType",
+  "2": "finished"
+ },
+ "BlindBoxStartResponse": {
+  "1": "activityId",
+  "2": "finished"
+ },
+ "BlindBoxOpenRequest": {
+  "1": "activityId",
+  "2": "count"
+ },
+ "BlindBoxOpenResponse": {
+  "1": "activityId",
+  "2": "count"
+ },
+ "ClaimBlindBoxScoreRewardRequest": {
+  "1": "skinId",
+  "2": "curHeart",
+  "3": "claimedTier"
+ },
+ "BlindBoxAutoDrawRequest": {
+  "1": "activityId",
+  "2": "curHeart",
+  "3": "claimedTier"
+ },
+ "BlindBoxAutoDrawResponse": {
+  "1": "activityId",
+  "2": "curHeart",
+  "3": "claimedTier"
+ },
+ "DispCelebrationSkin": {
+  "1": "activityId",
+  "2": "skinId",
+  "3": "times"
+ },
+ "CelebrationDetailRequest": {
+  "1": "activityId",
+  "2": "heart",
+  "3": "times"
+ },
+ "CelebrationDetailResponse": {
+  "1": "activityId",
+  "2": "skinId",
+  "3": "times"
+ },
+ "CelebrationBoostRequest": {
+  "1": "type",
+  "2": "skinId",
+  "3": "times"
+ },
+ "CelebrationBoostResponse": {
+  "1": "type",
+  "2": "nextRefreshTime",
+  "3": "refreshTimes",
+  "4": "halfEndTime"
+ },
+ "ClaimCelebrationRewardRequest": {
+  "1": "type",
+  "2": "nextRefreshTime",
+  "3": "refreshTimes",
+  "4": "halfEndTime",
+  "5": "preRefund"
+ },
+ "ShopInfoRequest": {
+  "1": "id",
+  "2": "nextRefreshTime",
+  "3": "refreshTimes",
+  "4": "discount",
+  "5": "buyTimes",
+  "6": "limitBuyTimes",
+  "7": "vipLevel",
+  "8": "dan"
+ },
+ "ShopInfoResponse": {
+  "2": "nextRefreshTime",
+  "3": "refreshTimes",
+  "4": "discount",
+  "5": "buyTimes",
+  "1": "id",
+  "6": "limitBuyTimes",
+  "7": "vipLevel",
+  "8": "dan"
+ },
+ "DispShopProduct": {
+  "1": "type",
+  "4": "discount",
+  "5": "buyTimes",
+  "6": "limitBuyTimes",
+  "7": "vipLevel",
+  "8": "dan",
+  "2": "id",
+  "3": "num"
+ },
+ "RefreshShopRequest": {
+  "1": "preRefund",
+  "2": "myTitle",
+  "3": "impeachEndTime",
+  "4": "gotTitle"
+ },
+ "BuyShopProductRequest": {
+  "1": "preRefund",
+  "2": "myTitle",
+  "3": "impeachEndTime",
+  "4": "gotTitle",
+  "5": "gotTitleTime",
+  "6": "fortFund",
+  "7": "anonymous"
+ },
+ "SCShopPreRefund": {
+  "1": "preRefund",
+  "2": "myTitle",
+  "3": "impeachEndTime",
+  "4": "gotTitle",
+  "5": "gotTitleTime",
+  "6": "fortFund",
+  "7": "anonymous"
+ },
+ "GuildInfoRequest": {
+  "2": "total",
+  "3": "impeachEndTime",
+  "4": "gotTitle",
+  "5": "gotTitleTime",
+  "6": "fortFund",
+  "7": "anonymous"
+ },
+ "GuildInfoResponse": {
+  "2": "total",
+  "3": "impeachEndTime",
+  "4": "gotTitle",
+  "5": "gotTitleTime",
+  "6": "fortFund",
+  "7": "anonymous",
+  "1": "pageNo"
+ },
+ "GuildMemberRequest": {
+  "2": "total",
+  "1": "pageNo"
+ },
+ "GuildMemberResponse": {
+  "2": "total",
+  "1": "pageNo"
+ },
+ "GuildR2PageRequest": {
+  "1": "cityId",
+  "2": "recommend"
+ },
+ "GuildR2PageResponse": {
+  "2": "recommend",
+  "1": "cityId"
+ },
+ "GuildCityInfoRequest": {
+  "1": "cityId",
+  "2": "recommended",
+  "3": "defenceNum"
+ },
+ "GuildCityInfoResponse": {
+  "1": "cityId",
+  "2": "recommended",
+  "3": "defenceNum"
+ },
+ "SetGuildRecommendRequest": {
+  "1": "cityId",
+  "2": "recommended",
+  "3": "defenceNum"
+ },
+ "SCGuildRecommendChanged": {
+  "1": "id",
+  "2": "recommended",
+  "3": "createTime",
+  "4": "descId",
+  "5": "descParams",
+  "7": "anonymous"
+ },
+ "DispGuildCity": {
+  "1": "id",
+  "2": "recommended",
+  "3": "createTime",
+  "4": "descId",
+  "5": "descParams",
+  "7": "anonymous"
+ },
+ "DispGuildWelfarePack": {
+  "1": "guildId",
+  "3": "createTime",
+  "4": "announcement",
+  "5": "descParams",
+  "7": "anonymous",
+  "2": "name",
+  "6": "memberCount",
+  "9": "electionTime",
+  "11": "gotWelfareTime",
+  "12": "level"
+ },
+ "DispGuildDetail": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "power",
+  "6": "online",
+  "9": "electionTime",
+  "11": "gotWelfareTime",
+  "12": "level",
+  "13": "exp",
+  "5": "guildTitle"
+ },
+ "DispGuildMember": {
+  "1": "guildTitle",
+  "2": "feat",
+  "4": "power",
+  "5": "guildTitle",
+  "6": "online",
+  "7": "contribute",
+  "8": "weeklyContribute",
+  "10": "title",
+  "11": "grantBoxLv"
+ },
+ "SeasonRankFeatSettle": {
+  "1": "memberId",
+  "2": "feat"
+ },
+ "DispTitleMemberList": {
+  "1": "guildId",
+  "2": "guildName"
+ },
+ "LeaveGuildRequest": {
+  "1": "reason",
+  "2": "cd",
+  "3": "guildName"
+ },
+ "LeaveGuildResponse": {
+  "1": "reason",
+  "2": "cd",
+  "3": "guildName"
+ },
+ "DissolveGuildRequest": {
+  "1": "reason",
+  "2": "cd",
+  "3": "guildName"
+ },
+ "KickOutGuildRequest": {
+  "1": "name",
+  "2": "cd",
+  "3": "guildName"
+ },
+ "SCJoinGuild": {
+  "1": "announcement",
+  "2": "cd",
+  "3": "guildName"
+ },
+ "SCLeaveGuild": {
+  "1": "memberId",
+  "2": "title",
+  "3": "guildName"
+ },
+ "ModifyGuildFlagRequest": {
+  "1": "title",
+  "2": "title"
+ },
+ "ModifyGuildNameRequest": {
+  "1": "title",
+  "2": "title"
+ },
+ "ModifyGuildAnnouncementRequest": {
+  "1": "title",
+  "2": "title"
+ },
+ "ChangeGuildMemberTitleRequest": {
+  "1": "title",
+  "2": "title"
+ },
+ "SCGuildMemberTitleChange": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "power",
+  "4": "contribute",
+  "6": "rank",
+  "7": "title"
+ },
+ "GuildLeaderBoardRequest": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "power",
+  "4": "contribute",
+  "6": "rank",
+  "7": "title"
+ },
+ "GuildLeaderBoardResponse": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "power",
+  "4": "contribute",
+  "6": "rank",
+  "7": "title"
+ },
+ "DispGuildRankItem": {
+  "1": "progress",
+  "2": "lastGotTime",
+  "3": "power",
+  "4": "contribute",
+  "6": "rank",
+  "7": "title"
+ },
+ "GotGuildWelfarePackRequest": {
+  "2": "lastGotTime",
+  "1": "progress"
+ },
+ "GotGuildWelfarePackResponse": {
+  "2": "lastGotTime",
+  "1": "progress"
+ },
+ "SCGuildTechChestProgressUpdate": {
+  "1": "techId",
+  "2": "level"
+ },
+ "SCNewGuildWelfarePack": {
+  "1": "techId",
+  "2": "level"
+ },
+ "GuildTechInfoRequest": {
+  "1": "prof",
+  "2": "level"
+ },
+ "GuildTechInfoResponse": {
+  "1": "prof",
+  "2": "level"
+ },
+ "DispGuildTech": {
+  "1": "prof",
+  "2": "level"
+ },
+ "UpgradeGuildTechRequest": {
+  "1": "guildId"
+ },
+ "UpgradeGuildTechResponse": {
+  "1": "guildId"
+ },
+ "ResetGuildTechRequest": {
+  "1": "guildId"
+ },
+ "ResetGuildTechResponse": {
+  "1": "guildId",
+  "3": "nextRefreshTime"
+ },
+ "SCGuildChanged": {
+  "1": "cityId",
+  "3": "nextRefreshTime"
+ },
+ "GuildOrderRequest": {
+  "3": "nextRefreshTime",
+  "1": "cityId"
+ },
+ "GuildOrderResponse": {
+  "3": "nextRefreshTime",
+  "1": "cityId"
+ },
+ "DispGuildOrder": {
+  "3": "nextRefreshTime",
+  "1": "reqId"
+ },
+ "FinishGuildOrderRequest": {
+  "1": "reqItemId",
+  "2": "type"
+ },
+ "FinishGuildOrderResponse": {
+  "1": "type",
+  "2": "type"
+ },
+ "SCGuildOrder": {
+  "1": "type",
+  "2": "type"
+ },
+ "GuildAidHelpRequest": {
+  "1": "type",
+  "2": "lastReadAskTime"
+ },
+ "GuildAidAskRequest": {
+  "1": "type",
+  "2": "reqId",
+  "3": "reqItemId",
+  "4": "endTime",
+  "5": "askTime"
+ },
+ "GuildAidListRequest": {
+  "1": "type",
+  "2": "reqId",
+  "3": "reqItemId",
+  "4": "endTime",
+  "5": "askTime"
+ },
+ "GuildAidListResponse": {
+  "2": "playerId",
+  "3": "nickname",
+  "4": "endTime",
+  "5": "askTime"
+ },
+ "GuildAidAskItem": {
+  "2": "playerId",
+  "3": "nickname",
+  "4": "endTime",
+  "5": "askTime",
+  "1": "type"
+ },
+ "GuildAidPlayerInfo": {
+  "2": "reqItemId",
+  "3": "endTime",
+  "1": "reqId"
+ },
+ "MyGuildAidRequest": {
+  "1": "reqId",
+  "2": "reqItemId",
+  "3": "endTime"
+ },
+ "MyGuildAidResponse": {
+  "1": "reqId",
+  "2": "type",
+  "3": "endTime"
+ },
+ "GuildAidItem": {
+  "1": "reqId",
+  "2": "type",
+  "3": "endTime"
+ },
+ "GotMyGuildAidRequest": {
+  "1": "reqId",
+  "2": "type"
+ },
+ "CancelMyGuildAidRequest": {
+  "1": "reqId",
+  "2": "type"
+ },
+ "SCGuildAidRemove": {
+  "1": "playerId",
+  "2": "type"
+ },
+ "SCNewGuildAidAsk": {
+  "2": "type",
+  "1": "isWin",
+  "3": "impeachEndTime"
+ },
+ "SCGuildAidHelp": {
+  "2": "type",
+  "1": "isWin",
+  "3": "impeachEndTime"
+ },
+ "GuildImpeachFightRequest": {
+  "1": "isWin",
+  "3": "impeachEndTime",
+  "2": "grantRank"
+ },
+ "GuildImpeachFightResponse": {
+  "1": "boxLv",
+  "3": "impeachEndTime",
+  "2": "grantNum"
+ },
+ "GotGuildTitleRewardRequest": {
+  "2": "boxLv",
+  "1": "playerId"
+ },
+ "GuildFeatGrantStatRequest": {
+  "2": "boxLv",
+  "1": "playerId"
+ },
+ "GuildFeatGrantStatResponse": {
+  "2": "boxLv",
+  "1": "playerId"
+ },
+ "GuildFeatBox": {
+  "1": "playerId",
+  "2": "boxLv"
+ },
+ "GuildFeatGrantRequest": {
+  "1": "enable",
+  "2": "boxLv"
+ },
+ "SCGuildFeatBox": {
+  "1": "attackItemId",
+  "2": "attackEndTs",
+  "3": "attackDamage",
+  "4": "incAttackFrequency"
+ },
+ "GuildFeatGrantResultRequest": {
+  "1": "attackItemId",
+  "2": "attackEndTs",
+  "3": "attackDamage",
+  "4": "incAttackFrequency"
+ },
+ "GuildFeatGrantResultResponse": {
+  "1": "attackItemId",
+  "2": "attackEndTs",
+  "3": "attackDamage",
+  "4": "incAttackFrequency"
+ },
+ "AnonymousWelfareRequest": {
+  "1": "attackItemId",
+  "2": "attackEndTs",
+  "3": "attackDamage",
+  "4": "incAttackFrequency"
+ },
+ "PlayerSkillStatus": {
+  "1": "frame",
+  "2": "input",
+  "3": "attackDamage",
+  "4": "incAttackFrequency"
+ },
+ "WaveInput": {
+  "1": "frame",
+  "2": "randomSeed",
+  "5": "battleType",
+  "6": "limitSeconds",
+  "10": "mainlineStage"
+ },
+ "InputSegment": {
+  "1": "frame",
+  "2": "randomSeed",
+  "5": "battleType",
+  "6": "limitSeconds",
+  "10": "mainlineStage"
+ },
+ "BattleInitialData": {
+  "2": "randomSeed",
+  "5": "battleType",
+  "6": "limitSeconds",
+  "10": "mainlineStage"
+ },
+ "BattleModeArgs": {
+  "1": "power",
+  "2": "arg1",
+  "3": "buff",
+  "4": "presetId",
+  "5": "duraEffectId",
+  "7": "affix"
+ },
+ "BattlePlayerData": {
+  "1": "power",
+  "3": "buff",
+  "4": "presetId",
+  "5": "duraEffectId",
+  "7": "affix"
+ },
+ "BattleTeam": {
+  "1": "power",
+  "3": "boss",
+  "4": "presetId",
+  "5": "assistant",
+  "7": "affix",
+  "6": "hp",
+  "8": "buff"
+ },
+ "BattleTeamMember": {
+  "3": "boss",
+  "5": "assistant",
+  "6": "hp",
+  "8": "buff",
+  "1": "isLeftWin"
+ },
+ "BattleStats": {
+  "1": "petId",
+  "2": "level",
+  "3": "star"
+ },
+ "PetDamageStats": {
+  "1": "heroId",
+  "2": "level",
+  "3": "star",
+  "5": "leftHp",
+  "6": "skinId",
+  "7": "exStar"
+ },
+ "HeroDamageStats": {
+  "1": "physical",
+  "2": "magic",
+  "3": "true",
+  "5": "leftHp",
+  "6": "skinId",
+  "7": "exStar"
+ },
+ "StatBar": {
+  "3": "true",
+  "1": "reportId",
+  "2": "createTime"
+ },
+ "DamageStatBar": {
+  "1": "reportId",
+  "2": "createTime",
+  "3": "true"
+ },
+ "BattleReportRequest": {
+  "1": "reportId",
+  "2": "showSkillHeroes",
+  "3": "blockHeroes",
+  "4": "blockAll"
+ },
+ "BattleReportResponse": {
+  "2": "showSkillHeroes",
+  "3": "blockHeroes",
+  "4": "blockAll"
+ },
+ "AllHeroRequest": {
+  "2": "level",
+  "3": "power",
+  "4": "star",
+  "1": "heroId"
+ },
+ "AllHeroResponse": {
+  "2": "level",
+  "3": "power",
+  "4": "star",
+  "1": "heroId",
+  "8": "showName",
+  "11": "skillLevels"
+ },
+ "DisplayHero": {
+  "1": "heroId",
+  "2": "level",
+  "3": "power",
+  "4": "star",
+  "8": "showName",
+  "11": "skillLevels",
+  "14": "skinId",
+  "16": "skillUpgrades"
+ },
+ "DispEquip": {
+  "1": "pos",
+  "2": "uid",
+  "3": "badgeId",
+  "5": "star",
+  "7": "refineLv",
+  "4": "level"
+ },
+ "DispHeroBadge": {
+  "1": "level",
+  "2": "star",
+  "3": "badgeId",
+  "4": "level",
+  "5": "star"
+ },
+ "DispHeroChip": {
+  "1": "attr",
+  "2": "value",
+  "3": "rating"
+ },
+ "HeroFate": {
+  "1": "attr",
+  "2": "value",
+  "3": "rating"
+ },
+ "HeroExclusive": {
+  "1": "heroId",
+  "2": "value",
+  "3": "rating"
+ },
+ "BattleAttrValue": {
+  "1": "heroId",
+  "2": "value",
+  "3": "rating"
+ },
+ "EnhanceAttrValue": {
+  "1": "heroId",
+  "2": "universal",
+  "3": "rating"
+ },
+ "SCUpdateHero": {
+  "1": "heroId",
+  "2": "universal"
+ },
+ "HeroRecruitRequest": {
+  "1": "heroId",
+  "2": "universal"
+ },
+ "HeroLevelUpRequest": {
+  "1": "heroId",
+  "2": "universal"
+ },
+ "HeroStarUpRequest": {
+  "1": "heroId",
+  "2": "type"
+ },
+ "HeroStarUpResponse": {
+  "1": "heroId",
+  "2": "type"
+ },
+ "HeroStarUpItem": {
+  "1": "heroId",
+  "2": "type"
+ },
+ "BatchHeroStarUpRequest": {
+  "1": "heroId",
+  "2": "type"
+ },
+ "HeroPreviewRequest": {
+  "1": "heroId",
+  "2": "presetId",
+  "3": "petUid"
+ },
+ "HeroPreviewResponse": {
+  "1": "index",
+  "2": "presetId",
+  "3": "petUid"
+ },
+ "HeroPosition": {
+  "1": "index",
+  "2": "presetId",
+  "3": "presetId",
+  "4": "petUid"
+ },
+ "Formation": {
+  "2": "presetId",
+  "3": "presetId",
+  "1": "module",
+  "4": "petUid"
+ },
+ "MultiFormation": {
+  "1": "module",
+  "3": "presetId",
+  "4": "petUid"
+ },
+ "GetFormationRequest": {
+  "1": "module"
+ },
+ "GetFormationResponse": {
+  "1": "tagEffectId",
+  "2": "tagNum",
+  "3": "leve"
+ },
+ "SaveFormationRequest": {
+  "1": "heroId",
+  "2": "tagNum",
+  "3": "level"
+ },
+ "SaveFormationResponse": {
+  "1": "heroId",
+  "2": "tagNum",
+  "3": "level"
+ },
+ "SCFormationUpdate": {
+  "1": "heroId",
+  "2": "tagNum",
+  "3": "level"
+ },
+ "TagEffect": {
+  "1": "heroId",
+  "2": "tagNum",
+  "3": "level"
+ },
+ "LeaveFormationRebornRequest": {
+  "1": "heroIdDown",
+  "2": "heroIdUp"
+ },
+ "LeaveFormationRebornResponse": {
+  "1": "heroIdDown",
+  "2": "heroIdUp"
+ },
+ "LeaveFormationRebornPreviewRequest": {
+  "1": "ids",
+  "2": "heroIdUp"
+ },
+ "LeaveFormationRebornPreviewResponse": {
+  "1": "id",
+  "2": "heroIdUp"
+ },
+ "SwitchFormationHeroRequest": {
+  "1": "id",
+  "2": "heroIdUp"
+ },
+ "MyFormationPresetRequest": {
+  "1": "id"
+ },
+ "MyFormationPresetResponse": {
+  "1": "id"
+ },
+ "UnlockFormationPresetRequest": {
+  "1": "id"
+ },
+ "GotHeroShowSkillRequest": {
+  "1": "heroId",
+  "2": "fragItemId",
+  "3": "star",
+  "4": "level",
+  "5": "skinId",
+  "6": "exStar"
+ },
+ "HeroFragExchangeRequest": {
+  "1": "heroId",
+  "2": "star",
+  "3": "level",
+  "4": "skinId",
+  "5": "exStar",
+  "6": "exStar"
+ },
+ "DispFormationHero": {
+  "1": "heroId",
+  "3": "level",
+  "4": "skinId",
+  "5": "exStar",
+  "6": "exStar",
+  "2": "power"
+ },
+ "DispHero": {
+  "1": "petId",
+  "2": "level",
+  "3": "star",
+  "4": "skinId",
+  "5": "exStar"
+ },
+ "DispFormation": {
+  "2": "skillIdx",
+  "1": "heroId",
+  "3": "level"
+ },
+ "DispFormationPet": {
+  "1": "heroId",
+  "2": "skillIdx",
+  "3": "level"
+ },
+ "ActivateHeroFateRequest": {
+  "1": "heroId",
+  "2": "universal",
+  "3": "level"
+ },
+ "HeroSkillLevelUpRequest": {
+  "1": "heroId",
+  "2": "skinId"
+ },
+ "HeroExclusiveLevelUpRequest": {
+  "1": "heroId",
+  "2": "skinId"
+ },
+ "HeroExclusiveStarUpRequest": {
+  "1": "heroId",
+  "2": "skinId"
+ },
+ "HeroExclusiveNextUpResponse": {
+  "1": "heroId",
+  "2": "skinId"
+ },
+ "SwitchHeroSkinRequest": {
+  "1": "heroId",
+  "2": "skinId"
+ },
+ "HeroSkillUpgradeRequest": {
+  "1": "uid",
+  "2": "petId",
+  "3": "level",
+  "4": "star"
+ },
+ "AllPetRequest": {
+  "1": "uid",
+  "2": "petId",
+  "3": "level",
+  "4": "star",
+  "7": "grade",
+  "10": "ext"
+ },
+ "AllPetResponse": {
+  "1": "uid",
+  "2": "petId",
+  "3": "level",
+  "4": "star",
+  "7": "grade",
+  "10": "extAttrIdx"
+ },
+ "SCPetsUpdate": {
+  "1": "uid",
+  "2": "petId",
+  "3": "level",
+  "4": "star",
+  "7": "grade",
+  "10": "extAttrIdx"
+ },
+ "DispPet": {
+  "1": "idx",
+  "2": "petId",
+  "3": "level",
+  "4": "star",
+  "7": "grade",
+  "10": "extAttrIdx"
+ },
+ "PetExtAttrSet": {
+  "1": "heroProf",
+  "2": "heroProf",
+  "3": "heroCamp"
+ },
+ "PetUpgradeAttrFeed": {
+  "1": "heroProf",
+  "2": "heroProf",
+  "3": "heroCamp"
+ },
+ "PetUpgradeProfFeed": {
+  "1": "heroProf",
+  "2": "heroProf",
+  "3": "maxQLength"
+ },
+ "PetExtAttr": {
+  "2": "star",
+  "3": "maxQLength",
+  "1": "petId"
+ },
+ "PetBreedBuildingInfo": {
+  "3": "maxQLength",
+  "1": "petUid",
+  "2": "star"
+ },
+ "MaturePet": {
+  "1": "idx",
+  "2": "petId",
+  "3": "finishTime",
+  "5": "startTime",
+  "6": "star"
+ },
+ "PetServeBuildingInfo": {
+  "1": "petId",
+  "2": "universal",
+  "3": "finishTime",
+  "5": "startTime",
+  "6": "star"
+ },
+ "DispPetBreedJob": {
+  "1": "jobIdx",
+  "2": "universal",
+  "3": "finishTime",
+  "5": "startTime",
+  "6": "star"
+ },
+ "PetBreedRequest": {
+  "1": "buildingId",
+  "2": "petUid"
+ },
+ "PetFeedRequest": {
+  "1": "buildingId",
+  "2": "petUid"
+ },
+ "GetMaturePetRequest": {
+  "2": "petUid",
+  "1": "buildingId"
+ },
+ "FreePetRequest": {
+  "2": "petUid",
+  "1": "buildingId"
+ },
+ "ChangeServePetRequest": {
+  "1": "buildingId",
+  "2": "petUid"
+ },
+ "PetLevelUpRequest": {
+  "1": "fragItemId",
+  "2": "num"
+ },
+ "PetStarUpRequest": {
+  "1": "buildingId",
+  "2": "num"
+ },
+ "PetPreviewStarUpRequest": {
+  "1": "buildingId",
+  "2": "num"
+ },
+ "PetPreviewStarUpResponse": {
+  "1": "buildingId",
+  "2": "specAttrs",
+  "3": "lockedSlots"
+ },
+ "PetFragExchangeRequest": {
+  "1": "buildingId",
+  "2": "specAttrs",
+  "3": "lockedSlots"
+ },
+ "PetUpgradeRequest": {
+  "1": "buildingId",
+  "2": "saveOrNot",
+  "3": "lockedSlots"
+ },
+ "PetUpgradeFeedRequest": {
+  "1": "uids",
+  "2": "saveOrNot",
+  "3": "lockedSlots"
+ },
+ "PetRerollAttrRequest": {
+  "1": "buildingId",
+  "2": "extIdx",
+  "3": "lockedSlots"
+ },
+ "SavePetRerollRequest": {
+  "1": "buildingId",
+  "2": "extIdx"
+ },
+ "SCPetDelete": {
+  "1": "cityId",
+  "2": "type"
+ },
+ "PetSwitchExtAttrRequest": {
+  "1": "cityId",
+  "2": "fortFund"
+ },
+ "PetInitExtAttrRequest": {
+  "1": "cityId",
+  "2": "fortFund",
+  "3": "selectPackNum"
+ },
+ "BuildFortRequest": {
+  "1": "cityId",
+  "2": "fortFund",
+  "3": "selectPackNum"
+ },
+ "SCBuildFort": {
+  "2": "fortFund",
+  "1": "cityId",
+  "3": "selectPackNum"
+ },
+ "DonateFortRequest": {
+  "1": "cityId",
+  "3": "selectPackNum"
+ },
+ "DonateFortResponse": {
+  "1": "cityId"
+ },
+ "FinishFortRequest": {
+  "1": "cityId",
+  "2": "type",
+  "3": "guildIdx",
+  "4": "effectTime"
+ },
+ "DemolishFortRequest": {
+  "1": "cityId",
+  "2": "type",
+  "3": "guildIdx",
+  "4": "effectTime"
+ },
+ "SCFortProcess": {
+  "1": "cityId",
+  "2": "type",
+  "3": "guildIdx",
+  "4": "effectTime"
+ },
+ "SCFortBuilding": {
+  "1": "cityId",
+  "2": "type",
+  "3": "guildIdx",
+  "4": "effectTime"
+ },
+ "WorldFortBuilding": {
+  "1": "type",
+  "2": "cityId",
+  "3": "toCityId",
+  "4": "startTime",
+  "5": "endTime"
+ },
+ "SCFortRemoved": {
+  "1": "type",
+  "2": "cityId",
+  "3": "toCityId",
+  "4": "startTime",
+  "5": "endTime"
+ },
+ "SCFortAction": {
+  "1": "cityId",
+  "2": "cityId",
+  "3": "toCityId",
+  "4": "startTime",
+  "5": "endTime"
+ },
+ "WorldFortAction": {
+  "1": "cityId",
+  "2": "cityId",
+  "3": "toCityId",
+  "4": "startTime",
+  "5": "endTime"
+ },
+ "FortListRequest": {
+  "1": "cityId",
+  "3": "fortFund",
+  "4": "fundSpeed"
+ },
+ "FortListResponse": {
+  "1": "cityId",
+  "3": "fortFund",
+  "4": "durability",
+  "2": "type"
+ },
+ "CityFortInfoRequest": {
+  "1": "cityId",
+  "3": "fortFund",
+  "4": "durability",
+  "2": "type",
+  "5": "state",
+  "6": "effectTime"
+ },
+ "CityFortInfoResponse": {
+  "3": "count",
+  "4": "durability",
+  "1": "type",
+  "2": "startTime",
+  "5": "state",
+  "6": "effectTime"
+ },
+ "CityFortInfo": {
+  "1": "period",
+  "2": "startTime",
+  "4": "durability",
+  "5": "state",
+  "6": "effectTime",
+  "3": "endTime"
+ },
+ "FortBuildStat": {
+  "1": "ltTimes",
+  "2": "maxTimes",
+  "3": "ltRwdTimes"
+ },
+ "DispGoldFishTime": {
+  "1": "ltTimes",
+  "2": "maxTimes",
+  "3": "ltRwdTimes"
+ },
+ "GoldFishTimes": {
+  "1": "prizeIndex",
+  "2": "itemId",
+  "3": "num"
+ },
+ "GoldFishRequest": {
+  "1": "prizeIndex",
+  "2": "itemId",
+  "3": "ltTimes"
+ },
+ "GoldFishResponse": {
+  "1": "prizeIndex",
+  "2": "itemId",
+  "3": "ltTimes"
+ },
+ "GoldFishLotteryGoods": {
+  "1": "itemId",
+  "2": "name",
+  "3": "area",
+  "4": "address",
+  "5": "phone"
+ },
+ "GoldFishLotteryRequest": {
+  "1": "itemId",
+  "3": "area",
+  "2": "name",
+  "4": "address",
+  "5": "phone"
+ },
+ "GoldFishLotteryResponse": {
+  "1": "itemId",
+  "3": "area",
+  "2": "name",
+  "4": "address",
+  "5": "phone"
+ },
+ "GoldFishLuckyRequest": {
+  "1": "itemId",
+  "2": "name",
+  "3": "area",
+  "4": "address",
+  "5": "phone"
+ },
+ "GoldFishLuckyRecordRequest": {
+  "1": "nickname",
+  "2": "worldId",
+  "3": "itemId",
+  "4": "time"
+ },
+ "GoldFishLuckyRecordResponse": {
+  "1": "nickname",
+  "2": "worldId",
+  "3": "itemId",
+  "4": "time"
+ },
+ "SCGoldFishLuckyRecord": {
+  "1": "openTime",
+  "2": "closeTime",
+  "3": "itemId",
+  "4": "time"
+ },
+ "DispGoldFishLuckyRecord": {
+  "1": "taskId",
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "time"
+ },
+ "SCMagicOceanActivity": {
+  "1": "taskId",
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "DispMagicOceanActivity": {
+  "1": "taskId",
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "DispMagicOceanTask": {
+  "1": "taskId",
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "SCMagicOceanTaskUpdate": {
+  "1": "type",
+  "2": "redDot"
+ },
+ "MagicOceanReportCleanRequest": {
+  "1": "type",
+  "2": "startTime"
+ },
+ "MagicOceanClaimTaskRewardRequest": {
+  "1": "type",
+  "2": "startTime",
+  "3": "endTime"
+ },
+ "DispOpenRankActivity": {
+  "2": "startTime",
+  "1": "type",
+  "3": "endTime"
+ },
+ "SCOpenRankRedDot": {
+  "1": "endTime",
+  "2": "gotRewardId",
+  "3": "progress"
+ },
+ "DispOpenRankTime": {
+  "1": "type",
+  "2": "page",
+  "3": "progress"
+ },
+ "OpenRankInfoRequest": {
+  "1": "type",
+  "2": "page",
+  "3": "progress"
+ },
+ "OpenRankInfoResponse": {
+  "1": "type",
+  "2": "page",
+  "3": "progress"
+ },
+ "OpenRankLeaderBoardRequest": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "page",
+  "4": "totalPage"
+ },
+ "OpenRankLeaderBoardResponse": {
+  "3": "nickname",
+  "4": "totalPage",
+  "1": "rank",
+  "2": "playerId",
+  "5": "power",
+  "6": "value",
+  "7": "guildIdx",
+  "8": "playerLevel",
+  "9": "title"
+ },
+ "DispOpenRankLeaderBoard": {
+  "3": "nickname",
+  "4": "totalPage",
+  "1": "rank",
+  "2": "playerId",
+  "5": "power",
+  "6": "value",
+  "7": "guildIdx",
+  "8": "playerLevel",
+  "9": "title"
+ },
+ "DispOpenRankItem": {
+  "1": "type",
+  "2": "period",
+  "3": "startTime",
+  "5": "power",
+  "6": "value",
+  "7": "guildIdx",
+  "8": "playerLevel",
+  "9": "title",
+  "4": "endTime"
+ },
+ "GotOpenRankRewardRequest": {
+  "1": "type",
+  "2": "period",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "DispWeekTime": {
+  "1": "type",
+  "2": "period",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "WeekInfoRequest": {
+  "1": "giftId",
+  "2": "gotTimes",
+  "3": "charge"
+ },
+ "WeekInfoResponse": {
+  "1": "times",
+  "2": "gotTimes",
+  "3": "charge"
+ },
+ "WeekLotteryInfoRequest": {
+  "1": "prizeIndex",
+  "2": "gotTimes",
+  "3": "charge"
+ },
+ "WeekLotteryInfoResponse": {
+  "1": "prizeIndex",
+  "2": "gotTimes",
+  "3": "charge",
+  "4": "heroIds"
+ },
+ "WeekLotteryGift": {
+  "1": "times",
+  "2": "gotStage",
+  "3": "charge",
+  "4": "heroIds"
+ },
+ "WeekLotteryPrizeRequest": {
+  "1": "times",
+  "4": "heroIds",
+  "2": "gotStage"
+ },
+ "WeekLotteryPrizeResponse": {
+  "1": "times",
+  "4": "heroIds",
+  "2": "gotStage",
+  "3": "heroIds"
+ },
+ "WeekPrizeTimes": {
+  "1": "times",
+  "2": "gotStage",
+  "3": "heroIds"
+ },
+ "WeekLotteryTimesRewardRequest": {
+  "3": "heroIds",
+  "1": "gotStage"
+ },
+ "WeekLotteryTimesRewardResponse": {
+  "3": "heroIds",
+  "1": "gotStage"
+ },
+ "WeekLotteryFreePackRequest": {
+  "1": "gotStage"
+ },
+ "WeekHeroStarInfoRequest": {
+  "1": "rechargeAmount",
+  "5": "stage"
+ },
+ "WeekHeroStarInfoResponse": {
+  "1": "rechargeAmount",
+  "5": "stage"
+ },
+ "WeekHeroStarGotRewardRequest": {
+  "1": "stage",
+  "5": "stage"
+ },
+ "WeekHeroStarGotRewardResponse": {
+  "1": "stage",
+  "5": "stage"
+ },
+ "WeekChargeInfoRequest": {
+  "1": "stage",
+  "5": "stage",
+  "2": "activePay",
+  "3": "score"
+ },
+ "WeekChargeInfoResponse": {
+  "1": "stage",
+  "5": "stage",
+  "2": "activePay",
+  "3": "score"
+ },
+ "WeekChargeGotRewardRequest": {
+  "1": "stage",
+  "2": "freeGot",
+  "3": "payGot"
+ },
+ "WeekBattlePassInfoRequest": {
+  "2": "progress",
+  "3": "isGot",
+  "1": "taskId"
+ },
+ "WeekBattlePassInfoResponse": {
+  "2": "progress",
+  "3": "isGot",
+  "1": "taskId"
+ },
+ "WeekBattlePassItem": {
+  "1": "score",
+  "2": "progress",
+  "3": "isGot"
+ },
+ "WeekBattlePassTask": {
+  "1": "score",
+  "2": "progress",
+  "3": "isGot"
+ },
+ "WeekBattlePassFinishTaskRequest": {
+  "1": "score"
+ },
+ "WeekBattlePassFinishTaskResponse": {
+  "1": "gotRwdId",
+  "3": "isGotFinal"
+ },
+ "WeekBattlePassGotRewardRequest": {
+  "1": "gotRwdId",
+  "3": "isGotFinal"
+ },
+ "WeekBattlePassGotRewardResponse": {
+  "1": "randomRwdId",
+  "3": "isGotFinal"
+ },
+ "WeekOrderInfoRequest": {
+  "1": "randomRwdId",
+  "3": "isGotFinal"
+ },
+ "WeekOrderInfoResponse": {
+  "1": "randomRwdId",
+  "3": "isGotFinal"
+ },
+ "FinishWeekOrderRequest": {
+  "1": "round",
+  "2": "gotTaskId",
+  "3": "score"
+ },
+ "FinishWeekOrderResponse": {
+  "1": "round",
+  "2": "gotTaskId",
+  "3": "score"
+ },
+ "WeekOrderGotFinalRequest": {
+  "1": "round",
+  "2": "taskId",
+  "3": "score"
+ },
+ "WeekChipInfoRequest": {
+  "1": "round",
+  "2": "taskId",
+  "3": "score"
+ },
+ "WeekChipInfoResponse": {
+  "1": "round",
+  "2": "gotTaskId",
+  "3": "score"
+ },
+ "WeekChipGift": {
+  "1": "round",
+  "2": "gotTaskId"
+ },
+ "WeekChipGotTaskRequest": {
+  "1": "round",
+  "2": "floor"
+ },
+ "WeekChipGotTaskResponse": {
+  "1": "round",
+  "2": "floor",
+  "4": "selectId",
+  "5": "gotFree",
+  "6": "gotFloor",
+  "7": "buyTimes"
+ },
+ "WeekChipGotFreeRequest": {
+  "2": "floor",
+  "4": "selectId",
+  "5": "gotFree",
+  "6": "gotFloor",
+  "7": "buyTimes",
+  "1": "pos"
+ },
+ "WeekUniqueLotteryRequest": {
+  "2": "floor",
+  "4": "selectId",
+  "5": "gotFree",
+  "6": "gotFloor",
+  "7": "buyTimes",
+  "1": "pos"
+ },
+ "WeekUniqueLotteryResponse": {
+  "2": "floor",
+  "4": "selectId",
+  "5": "gotFree",
+  "6": "gotFloor",
+  "7": "buyTimes",
+  "1": "floor",
+  "3": "selectId"
+ },
+ "UniqueLotteryPrizeRequest": {
+  "1": "selectId",
+  "3": "selectId",
+  "2": "pos"
+ },
+ "UniqueLotteryPrizeResponse": {
+  "1": "selectId",
+  "3": "selectId",
+  "2": "pos"
+ },
+ "UniqueLotteryPos": {
+  "1": "gotFloor",
+  "2": "pos"
+ },
+ "SetUniqueLotterySelectRequest": {
+  "1": "buyTimes"
+ },
+ "GotUniqueLotteryFloorRequest": {
+  "1": "buyTimes"
+ },
+ "GotUniqueLotteryFloorResponse": {
+  "1": "buyTimes"
+ },
+ "GotUniqueLotteryFreeRequest": {
+  "1": "buyTimes",
+  "3": "firstCurrency",
+  "4": "finishQuest"
+ },
+ "BuyUniqueLotteryItemRequest": {
+  "1": "buyTimes",
+  "3": "firstCurrency",
+  "4": "finishQuest"
+ },
+ "BuyUniqueLotteryItemResponse": {
+  "1": "buyTimes",
+  "3": "firstCurrency",
+  "4": "finishQuest"
+ },
+ "SCAllActivity": {
+  "3": "firstCurrency",
+  "4": "finishQuest"
+ },
+ "DispLimitTimePack": {
+  "1": "day",
+  "2": "isGot",
+  "3": "finishTime",
+  "4": "buyMaxCount"
+ },
+ "DispChainPack": {
+  "1": "day",
+  "2": "isGot",
+  "3": "finishTime"
+ },
+ "ActivitySevenDayLogin": {
+  "1": "chargedId",
+  "2": "gotStage"
+ },
+ "FirstChargeRequest": {
+  "1": "id",
+  "2": "stage"
+ },
+ "FirstChargeResponse": {
+  "1": "id",
+  "2": "stage"
+ },
+ "ActivityFirstCharge": {
+  "1": "giftCode",
+  "2": "stage"
+ },
+ "FirstChargeGot": {
+  "1": "paperId",
+  "2": "stage",
+  "3": "costTime"
+ },
+ "GotFirstChargeRequest": {
+  "1": "questId",
+  "2": "answer",
+  "3": "type"
+ },
+ "GotSevenDayLoginRequest": {
+  "1": "questId",
+  "3": "type",
+  "2": "answer"
+ },
+ "GotGiftCodeRequest": {
+  "1": "questId",
+  "3": "type",
+  "2": "answer"
+ },
+ "FinishActiveQuestionRequest": {
+  "1": "questId",
+  "3": "type",
+  "2": "answer"
+ },
+ "ActiveQuestionItem": {
+  "1": "questId",
+  "2": "answer",
+  "3": "type"
+ },
+ "SCLimitTimePack": {
+  "1": "startTime",
+  "2": "loginDays"
+ },
+ "SCBackLimitTimePack": {
+  "1": "startTime",
+  "2": "loginDays",
+  "3": "loginRewardDay",
+  "4": "rechargeAmount",
+  "5": "rechargeRewardId",
+  "6": "finishTime"
+ },
+ "SCNewChainPack": {
+  "1": "startTime",
+  "2": "loginDays",
+  "3": "loginRewardDay",
+  "4": "rechargeAmount",
+  "5": "rechargeRewardId",
+  "6": "finishTime"
+ },
+ "SCNewbieActivityUpdate": {
+  "1": "day",
+  "2": "loginDays",
+  "3": "loginRewardDay",
+  "4": "rechargeAmount",
+  "5": "rechargeRewardId",
+  "6": "finishTime"
+ },
+ "DispNewbieActivity": {
+  "1": "day",
+  "2": "id",
+  "3": "loginRewardDay",
+  "4": "rechargeAmount",
+  "5": "rechargeRewardId",
+  "6": "finishTime"
+ },
+ "DrawNewbieLoginRewardRequest": {
+  "1": "chainId",
+  "2": "type"
+ },
+ "DrawNewbieRechargeRewardRequest": {
+  "1": "activeId",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "gotDay",
+  "5": "paid",
+  "6": "gotFree"
+ },
+ "BuyNewbieGiftPackRequest": {
+  "1": "activeId",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "gotDay",
+  "5": "paid",
+  "6": "gotFree"
+ },
+ "OpenAccessPopRequest": {
+  "1": "activeId",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "gotDay",
+  "5": "paid",
+  "6": "gotFree"
+ },
+ "GotChainPackRequest": {
+  "1": "gotDay",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "gotDay",
+  "5": "paid",
+  "6": "gotFree"
+ },
+ "DispSkinActive": {
+  "1": "activeId",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "gotDay",
+  "5": "paid",
+  "6": "gotFree"
+ },
+ "SkinActiveGotDailyRequest": {
+  "1": "startTime",
+  "2": "endTime",
+  "3": "rwdEndTime"
+ },
+ "SkinActiveGotDailyResponse": {
+  "1": "raidId",
+  "2": "passedStage",
+  "3": "finishTime"
+ },
+ "SkinActiveGotFreeRequest": {
+  "1": "raidId",
+  "2": "passedStage",
+  "3": "finishTime",
+  "7": "startTime"
+ },
+ "DispActivityTime": {
+  "1": "raidId",
+  "2": "passedStage",
+  "3": "finishTime",
+  "7": "startTime"
+ },
+ "DispHeroRaid": {
+  "1": "giftId",
+  "2": "gotTimes",
+  "3": "charge",
+  "7": "startTime"
+ },
+ "SCHeroRaidOpen": {
+  "1": "raidId",
+  "2": "stageId",
+  "3": "charge"
+ },
+ "DispHeroGift": {
+  "1": "raidId",
+  "2": "times",
+  "3": "charge"
+ },
+ "HeroRaidChallengeRequest": {
+  "1": "prizeIndex",
+  "2": "times"
+ },
+ "HeroRaidChallengeResponse": {
+  "1": "prizeIndex",
+  "2": "times",
+  "4": "heroIds"
+ },
+ "HeroRaidPrizeRequest": {
+  "1": "raidId",
+  "2": "gotIndex",
+  "4": "heroIds"
+ },
+ "HeroRaidPrizeResponse": {
+  "1": "raidId",
+  "4": "heroIds",
+  "2": "gotIndex",
+  "3": "heroIds"
+ },
+ "HeroRaidTimes": {
+  "1": "raidId",
+  "2": "gotIndex",
+  "3": "heroIds"
+ },
+ "HeroRaidGotRewardRequest": {
+  "1": "raidId",
+  "3": "heroIds"
+ },
+ "HeroRaidGotRewardResponse": {
+  "3": "heroIds",
+  "1": "raidId"
+ },
+ "HeroRaidFinishOrderRequest": {
+  "1": "orderId",
+  "2": "gotOrderId",
+  "3": "gotTimes"
+ },
+ "HeroRaidGotOrderRewardRequest": {
+  "1": "orderId",
+  "2": "gotOrderId",
+  "3": "gotTimes"
+ },
+ "HeroRaidOrderResponse": {
+  "1": "period",
+  "2": "gotOrderId",
+  "3": "gotTimes",
+  "4": "gotAchieveRwdId",
+  "5": "gotReportRwdId"
+ },
+ "HeroRaidOrder": {
+  "1": "period",
+  "2": "gotOrderId",
+  "3": "gotTimes",
+  "4": "gotAchieveRwdId",
+  "5": "gotReportRwdId",
+  "6": "guildReportNum"
+ },
+ "TradeInfoRequest": {
+  "1": "coins",
+  "4": "gotAchieveRwdId",
+  "5": "gotReportRwdId",
+  "6": "guildReportNum",
+  "2": "maxCoins",
+  "3": "profit"
+ },
+ "TradeInfoResponse": {
+  "1": "coins",
+  "4": "gotAchieveRwdId",
+  "5": "buySpeedTimes",
+  "6": "guildReportNum",
+  "2": "maxCoins",
+  "3": "profit"
+ },
+ "TradePlayerInfo": {
+  "1": "pid",
+  "2": "goodsId",
+  "3": "num",
+  "5": "cityId",
+  "4": "buyPrice"
+ },
+ "TradePlayerCargo": {
+  "1": "lv",
+  "2": "cityId",
+  "3": "mvStartTime",
+  "4": "mvEndTime",
+  "5": "mvToCityId"
+ },
+ "TradePlayerGoods": {
+  "1": "lv",
+  "2": "playerId",
+  "3": "nickname",
+  "4": "guildIdx",
+  "5": "title"
+ },
+ "DispTradeCargo": {
+  "1": "gotAchieveRwdId",
+  "2": "playerId",
+  "3": "nickname",
+  "4": "guildIdx",
+  "5": "title"
+ },
+ "DispWorldTradeCargo": {
+  "2": "playerId",
+  "3": "nickname",
+  "4": "guildIdx",
+  "5": "title",
+  "1": "page"
+ },
+ "GotTradeAchievementRequest": {
+  "1": "page",
+  "3": "page",
+  "4": "totalPage"
+ },
+ "GotTradeAchievementResponse": {
+  "1": "page",
+  "3": "page",
+  "4": "totalPage"
+ },
+ "TradeRankRequest": {
+  "1": "page",
+  "3": "page",
+  "4": "totalPage"
+ },
+ "TradeRankResponse": {
+  "3": "page",
+  "4": "totalPage"
+ },
+ "TradeGuildRankRequest": {
+  "1": "profit",
+  "2": "tradeTimes",
+  "3": "gotTaskId"
+ },
+ "TradeGuildRankResponse": {
+  "1": "taskId",
+  "2": "tradeTimes",
+  "3": "gotTaskId"
+ },
+ "TradeTaskRequest": {
+  "1": "taskId",
+  "2": "gotTaskId",
+  "3": "gotTaskId"
+ },
+ "TradeTaskResponse": {
+  "1": "taskId",
+  "2": "gotTaskId",
+  "3": "gotTaskId"
+ },
+ "TradeGuildTask": {
+  "1": "profit",
+  "2": "tradeTimes",
+  "3": "gotTaskId"
+ },
+ "TradeGotTaskRequest": {
+  "1": "cityId",
+  "2": "tradeTimes"
+ },
+ "TradeGotTaskResponse": {
+  "2": "specGoodsId",
+  "1": "cityId",
+  "3": "rareGoodsId",
+  "4": "isReport"
+ },
+ "SCTradeGuildTask": {
+  "1": "goodsId",
+  "2": "stock",
+  "3": "price",
+  "4": "isReport"
+ },
+ "TradeCityRequest": {
+  "1": "cityId",
+  "2": "stock",
+  "3": "price",
+  "4": "isReport"
+ },
+ "TradeCityResponse": {
+  "2": "reportNum",
+  "3": "specGoodsId",
+  "4": "rareGoodsId",
+  "1": "cityId"
+ },
+ "DispTradeGoods": {
+  "1": "cityId",
+  "2": "goodsId",
+  "3": "buyNum",
+  "4": "rareGoodsId",
+  "5": "reportName"
+ },
+ "TradeCityReportRequest": {
+  "1": "cityId",
+  "2": "goodsId",
+  "3": "buyNum",
+  "4": "rareGoodsId",
+  "5": "reportName"
+ },
+ "SCTradeCityReport": {
+  "1": "cityId",
+  "2": "goodsId",
+  "3": "buyNum",
+  "4": "rareGoodsId",
+  "5": "reportName"
+ },
+ "TradeBuyRequest": {
+  "1": "cityId",
+  "2": "pid",
+  "3": "sellNum"
+ },
+ "TradeBuyResponse": {
+  "1": "cityId",
+  "2": "pid",
+  "3": "sellNum"
+ },
+ "SCTradeCityGoods": {
+  "1": "cityId",
+  "2": "mvToCityId",
+  "3": "sellNum"
+ },
+ "TradeSellRequest": {
+  "1": "useNum",
+  "2": "mvToCityId",
+  "3": "sellNum"
+ },
+ "TradeSellResponse": {
+  "1": "moveEndTime",
+  "2": "mvToCityId"
+ },
+ "TradeMoveRequest": {
+  "1": "gotReportRwdId",
+  "2": "mvToCityId"
+ },
+ "TradeMoveResponse": {
+  "1": "gotReportRwdId"
+ },
+ "TradeSpeedRequest": {
+  "1": "gotReportRwdId"
+ },
+ "TradeSpeedResponse": {
+  "1": "cityId"
+ },
+ "GotTradeReportRequest": {
+  "1": "cityId",
+  "3": "specGoodsId",
+  "4": "rareGoodsId",
+  "5": "reportName"
+ },
+ "GotTTradeReportResponse": {
+  "1": "cityId",
+  "3": "specGoodsId",
+  "4": "rareGoodsId",
+  "5": "reportName"
+ },
+ "TradeGuildRadarRequest": {
+  "1": "cityId",
+  "3": "specGoodsId",
+  "4": "rareGoodsId",
+  "5": "reportName"
+ },
+ "TradeGuildRadarResponse": {
+  "1": "cityId",
+  "3": "specGoodsId",
+  "4": "rareGoodsId",
+  "5": "reportName"
+ },
+ "TradeGuildRadar": {
+  "1": "buyNum",
+  "3": "specGoodsId",
+  "4": "rareGoodsId",
+  "5": "reportName"
+ },
+ "TradeCargoUpgradeRequest": {
+  "1": "startTime",
+  "2": "endTime"
+ },
+ "TradeCargoUpgradeResponse": {
+  "1": "startTime",
+  "2": "endTime"
+ },
+ "SCTradeCargoMove": {
+  "1": "startTime",
+  "2": "endTime"
+ },
+ "TradeBuySpeedItemRequest": {
+  "1": "totalDamage",
+  "2": "gotDamageId",
+  "4": "dailyPaidMoney"
+ },
+ "TradeBuySpeedItemResponse": {
+  "1": "totalDamage",
+  "2": "gotDamageId",
+  "4": "dailyPaidMoney",
+  "5": "gotDailyCumulativeId",
+  "7": "liveScore",
+  "8": "gotLiveId",
+  "9": "checkId"
+ },
+ "DispSpringTime": {
+  "1": "totalDamage",
+  "2": "gotDamageId",
+  "4": "dailyPaidMoney",
+  "5": "gotDailyCumulativeId",
+  "7": "liveScore",
+  "8": "gotLiveId",
+  "9": "checkId",
+  "11": "collectId"
+ },
+ "SpringInfoRequest": {
+  "1": "totalDamage",
+  "2": "gotDamageId",
+  "4": "dailyPaidMoney",
+  "5": "gotDailyCumulativeId",
+  "7": "liveScore",
+  "8": "gotLiveId",
+  "9": "checkId",
+  "11": "collectId"
+ },
+ "SpringInfoResponse": {
+  "1": "packId",
+  "2": "times",
+  "4": "dailyPaidMoney",
+  "5": "gotDailyCumulativeId",
+  "7": "liveScore",
+  "8": "gotLiveId",
+  "9": "checkId",
+  "11": "collectId"
+ },
+ "SpringPaidPack": {
+  "1": "page",
+  "2": "times"
+ },
+ "SpringRubyPack": {
+  "1": "page",
+  "2": "times",
+  "3": "page",
+  "4": "totalPage"
+ },
+ "SpringCollectRequest": {
+  "1": "page",
+  "3": "page",
+  "4": "totalPage"
+ },
+ "SpringCollectResponse": {
+  "1": "page",
+  "3": "page",
+  "4": "totalPage"
+ },
+ "SpringRankRequest": {
+  "1": "page",
+  "3": "page",
+  "4": "totalPage",
+  "2": "id"
+ },
+ "SpringRankResponse": {
+  "3": "page",
+  "4": "totalPage",
+  "2": "id",
+  "1": "id"
+ },
+ "SpringShopRequest": {
+  "2": "id",
+  "1": "gotDamageId"
+ },
+ "SpringShopResponse": {
+  "2": "id",
+  "1": "gotDamageId"
+ },
+ "SpringShopBuyRequest": {
+  "2": "id",
+  "1": "id"
+ },
+ "SpringGotFreeRequest": {
+  "1": "id"
+ },
+ "SpringGotDamageRequest": {
+  "1": "id"
+ },
+ "SpringGotDamageResponse": {
+  "1": "id"
+ },
+ "GotSpringCumulativeRequest": {
+  "1": "gotLiveId"
+ },
+ "SpringBuyRubyPackRequest": {
+  "1": "num"
+ },
+ "SpringBuyRubyPackResponse": {
+  "1": "damage",
+  "3": "totalDamage"
+ },
+ "GotSpringLiveRequest": {
+  "1": "id",
+  "3": "totalDamage"
+ },
+ "GotSpringLiveResponse": {
+  "1": "checkId",
+  "3": "totalDamage"
+ },
+ "SpringBombRequest": {
+  "1": "checkId",
+  "3": "totalDamage"
+ },
+ "SpringBombResponse": {
+  "1": "dailyPaidMon",
+  "3": "totalDamage"
+ },
+ "SpringCheckRequest": {
+  "1": "type",
+  "2": "id"
+ },
+ "SpringCheckResponse": {
+  "1": "id",
+  "2": "gotTimes",
+  "3": "reward"
+ },
+ "SCSpringLiveScore": {
+  "1": "id",
+  "2": "gotTimes",
+  "3": "reward"
+ },
+ "SCSpringPaidMoney": {
+  "1": "id",
+  "2": "gotTimes",
+  "3": "reward"
+ },
+ "WatchAdvRequest": {
+  "1": "id",
+  "2": "gotTimes",
+  "3": "gotTimes",
+  "4": "max",
+  "5": "reward"
+ },
+ "DispAdvEffect": {
+  "1": "id",
+  "2": "gotTimes",
+  "3": "gotTimes",
+  "4": "max",
+  "5": "reward"
+ },
+ "AdvShopInfoRequest": {
+  "1": "id",
+  "3": "gotTimes",
+  "4": "max",
+  "5": "reward"
+ },
+ "AdvShopInfoResponse": {
+  "1": "id",
+  "3": "gotTimes",
+  "4": "max",
+  "5": "reward"
+ },
+ "DispAdvShop": {
+  "1": "id",
+  "3": "gotTimes",
+  "4": "max",
+  "5": "reward"
+ },
+ "GotAdvRewardRequest": {
+  "1": "level",
+  "2": "afkStartTime",
+  "3": "afkFinishTime",
+  "4": "rewardedLevel"
+ },
+ "AfkInfoRequest": {
+  "1": "level",
+  "2": "afkStartTime",
+  "3": "afkFinishTime",
+  "4": "rewardedLevel"
+ },
+ "AfkInfoResponse": {
+  "1": "level",
+  "2": "afkStartTime",
+  "3": "afkFinishTime",
+  "4": "rewardedLevel"
+ },
+ "DispAfkInfo": {
+  "1": "useAdvCard",
+  "2": "afkStartTime",
+  "3": "afkFinishTime",
+  "4": "rewardedLevel"
+ },
+ "UpgradeAfkLevelRequest": {
+  "1": "useAdvCard",
+  "2": "afkStartTime",
+  "3": "afkFinishTime"
+ },
+ "UpgradeAfkLevelResponse": {
+  "1": "level",
+  "2": "afkStartTime",
+  "3": "afkFinishTime"
+ },
+ "DrawAfkRewardRequest": {
+  "1": "rewardedLevel",
+  "2": "afkStartTime",
+  "3": "afkFinishTime"
+ },
+ "DrawAfkRewardResponse": {
+  "2": "afkStartTime",
+  "3": "afkFinishTime",
+  "1": "rewardedLevel"
+ },
+ "DrawAfkLevelRewardRequest": {
+  "1": "freeTimes",
+  "2": "paidTimes",
+  "3": "minGold",
+  "4": "resetTime",
+  "5": "maxPaidTimes"
+ },
+ "DrawAfkLevelRewardResponse": {
+  "1": "freeTimes",
+  "2": "paidTimes",
+  "3": "minGold",
+  "4": "resetTime",
+  "5": "maxPaidTimes"
+ },
+ "ClickGoldInfoRequest": {
+  "1": "times",
+  "2": "free",
+  "3": "minGold",
+  "4": "resetTime",
+  "5": "maxPaidTimes"
+ },
+ "ClickGoldInfoResponse": {
+  "1": "times",
+  "2": "free",
+  "3": "minGold",
+  "4": "resetTime",
+  "5": "maxPaidTimes"
+ },
+ "DispClickGoldInfo": {
+  "1": "gold",
+  "2": "ratio",
+  "3": "minGold",
+  "4": "resetTime",
+  "5": "maxPaidTimes"
+ },
+ "ClickGoldRequest": {
+  "1": "gold",
+  "2": "ratio",
+  "3": "masterLv"
+ },
+ "ClickGoldResponse": {
+  "1": "level",
+  "2": "ratio",
+  "3": "masterLv"
+ },
+ "ClickGoldResult": {
+  "1": "level",
+  "2": "exp",
+  "3": "masterLv"
+ },
+ "AllAntiqueRequest": {
+  "3": "masterLv",
+  "1": "id",
+  "2": "star"
+ },
+ "AllAntiqueResponse": {
+  "3": "effectiveNum",
+  "1": "id",
+  "2": "level",
+  "4": "advEffectValue"
+ },
+ "AntiqueMaster": {
+  "1": "id",
+  "2": "level",
+  "3": "effectiveNum",
+  "4": "advEffectValue"
+ },
+ "DisplayAntique": {
+  "1": "id",
+  "2": "level",
+  "3": "effectiveNum",
+  "4": "advEffectValue"
+ },
+ "DisplayAntiqueSuit": {
+  "1": "id",
+  "2": "universal",
+  "3": "effectiveNum",
+  "4": "advEffectValue"
+ },
+ "SCAntiqueUpdate": {
+  "1": "id",
+  "2": "universal"
+ },
+ "SCAntiqueSuitUpdate": {
+  "1": "antiqueId",
+  "2": "fragItemId",
+  "3": "num"
+ },
+ "ActivateAntiqueRequest": {
+  "1": "antiqueId",
+  "2": "fragItemId",
+  "3": "num"
+ },
+ "AntiqueStarUpRequest": {
+  "1": "antiqueId",
+  "2": "fragItemId",
+  "3": "num"
+ },
+ "AntiqueSuitLevelUpRequest": {
+  "1": "antiqueId",
+  "2": "fragItemId",
+  "3": "num"
+ },
+ "AntiqueFragExchangeRequest": {
+  "1": "heroProf",
+  "2": "heroCamp",
+  "3": "num"
+ },
+ "AntiqueAttrSummaryRequest": {
+  "1": "effectId",
+  "2": "value"
+ },
+ "AntiqueAttrSummaryResponse": {
+  "1": "effectId",
+  "2": "value"
+ },
+ "AntiqueAttrSummaryItem": {
+  "1": "heroId",
+  "2": "posId"
+ },
+ "AntiqueSuitEffectValue": {
+  "1": "heroId",
+  "2": "posId"
+ },
+ "AntiqueMasterLevelUpRequest": {
+  "1": "heroId",
+  "2": "priorPosIds"
+ },
+ "AntiqueMasterLevelUpResponse": {
+  "1": "heroId",
+  "2": "posId"
+ },
+ "AppointedHero": {
+  "1": "heroId",
+  "2": "posId"
+ },
+ "AppointInfoRequest": {
+  "2": "posId",
+  "1": "posId"
+ },
+ "AppointInfoResponse": {
+  "2": "posId",
+  "1": "posId"
+ },
+ "AppointHeroRequest": {
+  "1": "posId",
+  "2": "posId"
+ },
+ "UnAppointHeroRequest": {
+  "1": "posId"
+ },
+ "AutoAppointRequest": {
+  "1": "posId"
+ },
+ "AutoUnAppointRequest": {
+  "1": "posId"
+ },
+ "AppointPriorRequest": {
+  "1": "posId",
+  "4": "arenaPoint",
+  "5": "nextPointTime",
+  "8": "topBonusRank",
+  "9": "bonusEndTime"
+ },
+ "UnAppointPriorRequest": {
+  "1": "posId",
+  "4": "arenaPoint",
+  "5": "nextPointTime",
+  "8": "topBonusRank",
+  "9": "bonusEndTime",
+  "10": "gotBonusRank",
+  "12": "dailyChallengeTimes"
+ },
+ "ArenaInfoRequest": {
+  "4": "arenaPoint",
+  "5": "nextPointTime",
+  "8": "topBonusRank",
+  "9": "bonusEndTime",
+  "10": "gotBonusRank",
+  "12": "dailyChallengeTimes"
+ },
+ "ArenaInfoResponse": {
+  "4": "arenaPoint",
+  "5": "nextPointTime",
+  "8": "topBonusRank",
+  "9": "bonusEndTime",
+  "10": "gotBonusRank",
+  "12": "dailyChallengeTimes",
+  "1": "rankNo",
+  "2": "nickname"
+ },
+ "ArenaChallengeItem": {
+  "1": "rank",
+  "2": "challengeId",
+  "3": "guildIdx",
+  "4": "power",
+  "5": "id",
+  "7": "playerLevel",
+  "8": "title"
+ },
+ "ArenaRefreshChallengeRequest": {
+  "1": "oldRankNo",
+  "2": "rankNo",
+  "3": "isWin",
+  "4": "reportId"
+ },
+ "ArenaRefreshChallengeResponse": {
+  "1": "oldRankNo",
+  "2": "rankNo",
+  "3": "isWin",
+  "4": "reportId",
+  "6": "isChange"
+ },
+ "ArenaChallengeRequest": {
+  "1": "oldRankNo",
+  "2": "rankNo",
+  "3": "isWin",
+  "4": "reportId",
+  "6": "isChange"
+ },
+ "ArenaChallengeResponse": {
+  "1": "oldRankNo",
+  "2": "rankNo",
+  "3": "isWin",
+  "4": "reportId",
+  "6": "isChange"
+ },
+ "ArenaSweepRequest": {
+  "1": "oldRank",
+  "2": "rank",
+  "3": "nickname",
+  "6": "power",
+  "7": "reportId",
+  "8": "fightTime",
+  "9": "isWin",
+  "10": "isRead",
+  "11": "isAttack"
+ },
+ "ArenaReportRequest": {
+  "1": "oldRank",
+  "2": "rank",
+  "3": "nickname",
+  "6": "power",
+  "7": "reportId",
+  "8": "fightTime",
+  "9": "isWin",
+  "10": "isRead",
+  "11": "isAttack"
+ },
+ "ArenaReportResponse": {
+  "1": "id",
+  "2": "rank",
+  "3": "nickname",
+  "6": "power",
+  "7": "reportId",
+  "8": "fightTime",
+  "9": "isWin",
+  "10": "isRead",
+  "11": "isAttack"
+ },
+ "ArenaReport": {
+  "1": "id",
+  "2": "rank",
+  "3": "nickname",
+  "6": "power",
+  "7": "reportId",
+  "8": "fightTime",
+  "9": "isWin",
+  "10": "isRead",
+  "11": "isAttack"
+ },
+ "ArenaFormationInfoRequest": {
+  "1": "rank"
+ },
+ "ArenaFormationInfoResponse": {
+  "1": "rank"
+ },
+ "SCArenaChallengeItem": {
+  "1": "uid",
+  "2": "decomposeUid"
+ },
+ "GotTopBonusRequest": {
+  "1": "uid",
+  "2": "decomposeUid",
+  "3": "expItemNum"
+ },
+ "SCTopBonusRank": {
+  "1": "uid",
+  "2": "decomposeUid",
+  "3": "expItemNum"
+ },
+ "BadgesRequest": {
+  "1": "uid",
+  "2": "decomposeUid",
+  "3": "expItemNum"
+ },
+ "BadgesResponse": {
+  "1": "uid",
+  "2": "decomposeUid",
+  "3": "starItemNum"
+ },
+ "EnhanceBadgeRequest": {
+  "1": "uid",
+  "2": "decomposeUid",
+  "3": "starItemNum"
+ },
+ "EnhanceBadgeResponse": {
+  "1": "uid",
+  "2": "decomposeUid",
+  "3": "starItemNum"
+ },
+ "BadgeStarRequest": {
+  "1": "uid",
+  "2": "her",
+  "3": "starItemNum"
+ },
+ "BadgeStarResponse": {
+  "1": "uid",
+  "2": "heroId",
+  "3": "pos"
+ },
+ "BadgeStarPreviewRequest": {
+  "1": "uid",
+  "2": "heroId",
+  "3": "pos"
+ },
+ "BadgeStarPreviewResponse": {
+  "1": "uid",
+  "2": "heroId",
+  "3": "pos"
+ },
+ "PutOnBadgeRequest": {
+  "1": "uid",
+  "2": "heroId",
+  "3": "pos"
+ },
+ "TakeOffBadgeRequest": {
+  "1": "uid",
+  "2": "badgeId",
+  "3": "level",
+  "4": "exp",
+  "5": "star"
+ },
+ "BadgeResetRequest": {
+  "1": "uid",
+  "2": "badgeId",
+  "3": "level",
+  "4": "exp",
+  "5": "star"
+ },
+ "BadgeResetResponse": {
+  "1": "targetId",
+  "2": "selectPackId",
+  "3": "num",
+  "4": "exp",
+  "5": "star"
+ },
+ "SCUpdateBadge": {
+  "1": "targetId",
+  "2": "selectPackId",
+  "3": "num",
+  "4": "exp",
+  "5": "star"
+ },
+ "DispBadge": {
+  "1": "downUid",
+  "2": "upUid",
+  "3": "num",
+  "4": "exp",
+  "5": "star"
+ },
+ "BadgeExchangeRequest": {
+  "1": "uids",
+  "2": "upUid",
+  "3": "num"
+ },
+ "BadgeReplaceRequest": {
+  "1": "type",
+  "2": "activePay",
+  "3": "score"
+ },
+ "BadgeReplaceResponse": {
+  "1": "type",
+  "2": "activePay",
+  "3": "score",
+  "4": "endTime"
+ },
+ "SCBadgeDelete": {
+  "1": "id",
+  "2": "freeGot",
+  "3": "payGot",
+  "4": "endTime"
+ },
+ "BattlePassRequest": {
+  "1": "type",
+  "2": "freeGot",
+  "3": "payGot",
+  "4": "endTime"
+ },
+ "BattlePassResponse": {
+  "2": "freeGot",
+  "3": "payGot",
+  "4": "endTime",
+  "1": "type"
+ },
+ "BattlePassItem": {
+  "1": "pageNo",
+  "2": "freeGot",
+  "3": "payGot"
+ },
+ "BattlePassGotRewardRequest": {
+  "1": "pageNo"
+ },
+ "BattlePassGotRewardResponse": {
+  "1": "pageNo",
+  "2": "total"
+ },
+ "CampaignReportsRequest": {
+  "1": "campaignId",
+  "2": "total"
+ },
+ "CampaignReportsResponse": {
+  "2": "level",
+  "1": "type"
+ },
+ "CampaignReportDetailRequest": {
+  "1": "buildingId",
+  "2": "kill",
+  "3": "feats"
+ },
+ "CampaignReportDetailResponse": {
+  "1": "buildingId",
+  "2": "kill",
+  "3": "feats",
+  "4": "cityId",
+  "5": "isAttack"
+ },
+ "CampaignPirateParams": {
+  "1": "type",
+  "2": "level",
+  "3": "enemyGuildIdx",
+  "4": "cityId",
+  "5": "isAttack"
+ },
+ "CampaignCityWarParams": {
+  "1": "bossId",
+  "2": "damage",
+  "3": "enemyGuildIdx",
+  "4": "cityId",
+  "5": "isAttack"
+ },
+ "CampaignCityWarResultParams": {
+  "1": "bossId",
+  "2": "damage",
+  "3": "enemyGuildIdx"
+ },
+ "CampaignResFieldParams": {
+  "1": "buildingId",
+  "2": "color",
+  "3": "kill",
+  "4": "feats",
+  "5": "uid",
+  "6": "gold"
+ },
+ "CampaignWorldBossParams": {
+  "1": "cityId",
+  "2": "color",
+  "3": "kill",
+  "4": "feats",
+  "5": "uid",
+  "6": "gold"
+ },
+ "CampaignLimitedBossParams": {
+  "1": "eventId",
+  "2": "color",
+  "3": "kill",
+  "4": "feats",
+  "5": "uid",
+  "6": "gold"
+ },
+ "CampaignTreasureLootParams": {
+  "1": "uid",
+  "2": "color",
+  "3": "kill",
+  "4": "feats",
+  "5": "uid",
+  "6": "gold"
+ },
+ "CampaignRadarCitySpyParams": {
+  "1": "fleetId",
+  "2": "color"
+ },
+ "CampaignRadarFixedEventParams": {
+  "1": "fleetId",
+  "2": "color"
+ },
+ "CampaignTreasureLootResultParams": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "guildIdx",
+  "5": "progress"
+ },
+ "CampaignTreasureLootResultDetail": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "guildIdx",
+  "5": "progress",
+  "6": "rank",
+  "7": "power"
+ },
+ "CampaignChipWarParams": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "guildIdx",
+  "5": "kill",
+  "6": "rank",
+  "7": "power"
+ },
+ "CampaignTreasureLootRankItem": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "guildIdx",
+  "5": "kill",
+  "6": "rank",
+  "7": "power"
+ },
+ "CampaignCityWarRankItem": {
+  "1": "leftGuildIdx",
+  "2": "leftFleetNum",
+  "4": "rightFleetNum",
+  "5": "leftWin",
+  "6": "rank",
+  "7": "power",
+  "3": "rightGuildIdx"
+ },
+ "CampaignCityWarResultDetail": {
+  "1": "uid",
+  "2": "type",
+  "3": "win",
+  "4": "createTime",
+  "5": "leftWin",
+  "6": "received",
+  "9": "read"
+ },
+ "CampaignReport": {
+  "1": "uid",
+  "2": "type",
+  "3": "win",
+  "4": "createTime",
+  "6": "received",
+  "9": "read",
+  "19": "mySide",
+  "21": "scenarioId"
+ },
+ "CampaignBattle": {
+  "1": "heroId",
+  "4": "isDead",
+  "2": "level",
+  "3": "star",
+  "5": "skinId"
+ },
+ "CampaignCamp": {
+  "2": "level",
+  "3": "star",
+  "4": "isDead",
+  "1": "campaignId",
+  "5": "skinId"
+ },
+ "CampaignHero": {
+  "1": "campaignId",
+  "2": "all",
+  "3": "star",
+  "4": "isDead",
+  "5": "skinId"
+ },
+ "SCNewCampaignReport": {
+  "1": "campaignId",
+  "2": "all"
+ },
+ "DeleteCampaignReportRequest": {
+  "1": "campaignId",
+  "2": "all"
+ },
+ "DeleteAllCampaignReportRequest": {
+  "1": "index",
+  "2": "status",
+  "5": "arriveTime"
+ },
+ "QuickGotCampaignReportRequest": {
+  "1": "index",
+  "2": "status",
+  "5": "arriveTime"
+ },
+ "CargoShipsRequest": {
+  "1": "index",
+  "2": "filled",
+  "5": "arriveTime"
+ },
+ "CargoShipsResponse": {
+  "1": "index",
+  "2": "filled",
+  "5": "arriveTime"
+ },
+ "DispCargoShip": {
+  "1": "shipIndex",
+  "2": "cargoIndex",
+  "5": "arriveTime"
+ },
+ "DispCargoOrderItem": {
+  "2": "cargoIndex",
+  "1": "index"
+ },
+ "FillCargoShipRequest": {
+  "1": "index",
+  "2": "cargoIndex"
+ },
+ "FillCargoShipResponse": {
+  "1": "index"
+ },
+ "DrawShipRewardRequest": {
+  "1": "index"
+ },
+ "DrawShipRewardResponse": {
+  "1": "module",
+  "2": "raidId"
+ },
+ "SpeedUpShipRequest": {
+  "1": "module",
+  "2": "raidId"
+ },
+ "SCUpdateShip": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "power"
+ },
+ "RaidExtremePassRequest": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "power",
+  "6": "replayId",
+  "7": "worldId"
+ },
+ "RaidExtremePassResponse": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "power",
+  "6": "replayId",
+  "7": "worldId"
+ },
+ "DispRaidExtremePass": {
+  "1": "rewardId",
+  "2": "received",
+  "4": "power",
+  "6": "replayId",
+  "7": "worldId"
+ },
+ "ChannelRewardInfoRequest": {
+  "2": "received",
+  "1": "times"
+ },
+ "ChannelRewardInfoResponse": {
+  "2": "gameCategory",
+  "1": "platform"
+ },
+ "ChannelRewardInfo": {
+  "1": "token",
+  "2": "gameCategory"
+ },
+ "GotChannelRewardRequest": {
+  "1": "code",
+  "2": "gameCategory"
+ },
+ "SCWxForumCheckTimes": {
+  "1": "code",
+  "2": "gameCategory"
+ },
+ "ChannelAutoLoginRequest": {
+  "1": "buttonType",
+  "2": "buttonName",
+  "3": "buttonId"
+ },
+ "ChannelAutoLoginResponse": {
+  "1": "channel",
+  "2": "buttonName",
+  "3": "buttonId"
+ },
+ "DecryptChannelCodeRequest": {
+  "1": "channel",
+  "2": "buttonName",
+  "3": "buttonId"
+ },
+ "DecryptChannelCodeResponse": {
+  "1": "channel",
+  "2": "buttonName",
+  "3": "buttonId"
+ },
+ "ButtonClickEventRequest": {
+  "1": "channel",
+  "2": "buttonName",
+  "3": "buttonId"
+ },
+ "SendChatRequest": {
+  "1": "channel"
+ },
+ "SCChatReceive": {
+  "1": "channel"
+ },
+ "SCBatchChatReceive": {
+  "1": "channel",
+  "3": "timestamp"
+ },
+ "ChatRecordRequest": {
+  "1": "playerId",
+  "3": "timestamp",
+  "2": "nickname",
+  "4": "guildIdx",
+  "5": "mark",
+  "6": "g"
+ },
+ "ChatRecordResponse": {
+  "3": "timestamp",
+  "1": "playerId",
+  "2": "nickname",
+  "4": "guildIdx",
+  "5": "mark",
+  "6": "guildTitle",
+  "7": "chatFm",
+  "8": "title"
+ },
+ "ChatMessage": {
+  "3": "timestamp",
+  "1": "type",
+  "2": "text",
+  "4": "guildIdx",
+  "5": "mark",
+  "6": "guildTitle",
+  "7": "chatFm",
+  "8": "title"
+ },
+ "ChatSender": {
+  "1": "type",
+  "2": "text",
+  "4": "systemMsgId",
+  "5": "systemMsgParams",
+  "6": "guildTitle",
+  "7": "chatFm",
+  "8": "title"
+ },
+ "ChatContent": {
+  "1": "url",
+  "2": "icon",
+  "4": "emoji",
+  "5": "systemMsgParams",
+  "3": "contentSize"
+ },
+ "ChatContentAttachment": {
+  "1": "peerPlayerId",
+  "2": "icon",
+  "3": "contentSize",
+  "4": "emoji"
+ },
+ "PrivateChatListRequest": {
+  "1": "peerPlayerId",
+  "3": "readTimestamp"
+ },
+ "PrivateChatListResponse": {
+  "1": "peerPlayerId",
+  "3": "readTimestamp"
+ },
+ "PrivateChatReadRequest": {
+  "1": "peerPlayerId",
+  "3": "readTimestamp"
+ },
+ "PrivateChat": {
+  "3": "type",
+  "1": "side",
+  "2": "timestamp",
+  "4": "message"
+ },
+ "PrivateChatRecordRequest": {
+  "1": "side",
+  "2": "timestamp",
+  "3": "type",
+  "4": "message",
+  "5": "emoji"
+ },
+ "PrivateChatRecordResponse": {
+  "1": "type",
+  "2": "peerPlayerId",
+  "3": "message",
+  "4": "emoji",
+  "5": "emoji"
+ },
+ "PrivateChatRecord": {
+  "1": "peerPlayerId",
+  "2": "block",
+  "3": "message",
+  "4": "emoji",
+  "5": "emoji"
+ },
+ "SCPrivateChatMessage": {
+  "1": "nickname",
+  "2": "block",
+  "3": "message",
+  "4": "emoji"
+ },
+ "PrivateChatSendRequest": {
+  "1": "peerPlayerId",
+  "2": "block",
+  "3": "message",
+  "4": "emoji"
+ },
+ "PrivateChatBlockRequest": {
+  "1": "peerPlayerId",
+  "2": "block"
+ },
+ "PrivateChatBlockResponse": {
+  "1": "playerId",
+  "2": "nickname"
+ },
+ "PrivateChatDeleteRequest": {
+  "1": "content",
+  "2": "targetLanguage"
+ },
+ "BlackListRequest": {
+  "1": "translatedText",
+  "2": "targetLanguage"
+ },
+ "BlackListResponse": {
+  "1": "translatedText",
+  "2": "targetLanguage"
+ },
+ "BlackListRecord": {
+  "1": "playerId",
+  "2": "content"
+ },
+ "TranslateRequest": {
+  "1": "playerId",
+  "2": "content"
+ },
+ "TranslateResponse": {
+  "1": "gridId",
+  "2": "color",
+  "3": "occupiedNum",
+  "4": "positionNum"
+ },
+ "SpeechReportRequest": {
+  "1": "gridId",
+  "2": "color",
+  "3": "occupiedNum",
+  "4": "positionNum"
+ },
+ "ChipMineListRequest": {
+  "1": "gridId",
+  "2": "color",
+  "3": "occupiedNum",
+  "4": "positionNum"
+ },
+ "ChipMineListResponse": {
+  "1": "gridId",
+  "2": "color",
+  "3": "occupiedNum",
+  "4": "positionNum"
+ },
+ "DispChipMine": {
+  "1": "occupiedNum",
+  "2": "positionNum",
+  "3": "occupiedNum",
+  "4": "positionNum",
+  "5": "fightTimes",
+  "6": "maxFightTimes"
+ },
+ "SCChipMine": {
+  "1": "occupiedNum",
+  "2": "positionNum",
+  "5": "fightTimes",
+  "6": "maxFightTimes"
+ },
+ "ChipMineRequest": {
+  "1": "myRewardTimes",
+  "2": "rewardResetTime",
+  "5": "fightTimes",
+  "6": "maxFightTimes",
+  "3": "maxRewardTimes"
+ },
+ "ChipMineResponse": {
+  "1": "maxRewardTimes",
+  "2": "rewardResetTime",
+  "5": "fightTimes",
+  "6": "maxFightTimes",
+  "3": "maxRewardTimes"
+ },
+ "ChipMineRewardInfo": {
+  "1": "index",
+  "2": "rewardResetTime",
+  "3": "maxRewardTimes"
+ },
+ "SCChipMineRewardInfo": {
+  "1": "nickname",
+  "3": "power",
+  "4": "rewardTimes",
+  "5": "guildIdx",
+  "6": "title"
+ },
+ "ChipMineRewardRequest": {
+  "1": "nickname",
+  "3": "power",
+  "4": "rewardTimes",
+  "5": "guildIdx",
+  "6": "title",
+  "7": "fleetId",
+  "8": "skinId"
+ },
+ "ChipMineRewardResponse": {
+  "1": "nickname",
+  "3": "power",
+  "4": "rewardTimes",
+  "5": "guildIdx",
+  "6": "title",
+  "7": "fleetId",
+  "8": "skinId"
+ },
+ "DispChipMinePosition": {
+  "1": "gridId",
+  "3": "fleetId",
+  "4": "rewardTimes",
+  "5": "guildIdx",
+  "6": "title",
+  "7": "fleetId",
+  "8": "skinId",
+  "2": "index"
+ },
+ "DispChipMinePlayer": {
+  "1": "fleetId",
+  "3": "fleetId",
+  "4": "rewardTimes",
+  "5": "guildIdx",
+  "6": "title",
+  "7": "fleetId",
+  "8": "skinId",
+  "2": "index"
+ },
+ "ChipMineSendFleetRequest": {
+  "1": "uid",
+  "2": "optionIndex",
+  "3": "fleetId"
+ },
+ "ChipMineRetreatRequest": {
+  "1": "uid",
+  "2": "optionIndex"
+ },
+ "DispChoiceEvent": {
+  "1": "type",
+  "2": "optionIndex"
+ },
+ "SelectChoiceRequest": {
+  "1": "type",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "taskSeason",
+  "6": "gotTaskId",
+  "7": "paidMoney",
+  "8": "gotPaidGift"
+ },
+ "SCChoiceEventUpdate": {
+  "1": "type",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "taskSeason",
+  "6": "gotTaskId",
+  "7": "paidMoney",
+  "8": "gotPaidGift"
+ },
+ "ChurnInfoRequest": {
+  "1": "taskId",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "taskSeason",
+  "6": "gotTaskId",
+  "7": "paidMoney",
+  "8": "gotPaidGift"
+ },
+ "ChurnInfoResponse": {
+  "1": "taskId",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "taskSeason",
+  "6": "gotTaskId",
+  "7": "paidMoney",
+  "8": "gotPaidGift"
+ },
+ "ChurnGotTaskRequest": {
+  "1": "monthCardEndTime",
+  "2": "id"
+ },
+ "SCChurnTask": {
+  "2": "id",
+  "1": "monthCardEndTime"
+ },
+ "ChurnGotFreeRequest": {
+  "2": "id",
+  "1": "roomLevel"
+ },
+ "ChurnGotPaidGiftRequest": {
+  "1": "roomLevel",
+  "2": "settleTime",
+  "3": "gotDailyRewardIdx",
+  "5": "subjectId",
+  "6": "grouping"
+ },
+ "ChurnGotPaidGiftResponse": {
+  "1": "roomLevel",
+  "2": "settleTime",
+  "3": "gotDailyRewardIdx",
+  "5": "subjectId",
+  "6": "grouping"
+ },
+ "SCChurnNew": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "5": "level",
+  "6": "grouping",
+  "4": "score",
+  "7": "worldId",
+  "8": "title"
+ },
+ "CrossRankInfoRequest": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "5": "level",
+  "6": "grouping",
+  "4": "score",
+  "7": "worldId",
+  "8": "title"
+ },
+ "CrossRankInfoResponse": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "5": "level",
+  "6": "grouping",
+  "4": "score",
+  "7": "worldId",
+  "8": "title"
+ },
+ "CrossRankItem": {
+  "1": "rank",
+  "2": "dailyActivity",
+  "3": "nickname",
+  "4": "score",
+  "5": "level",
+  "7": "worldId",
+  "8": "title"
+ },
+ "GetDailyRewardRequest": {
+  "2": "dailyActivity",
+  "3": "weeklyActivity",
+  "4": "dailyRewardClaimed",
+  "5": "weeklyRewardClaimed",
+  "6": "dailyResetTime"
+ },
+ "DailyTaskInfoRequest": {
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "dailyRewardClaimed",
+  "5": "weeklyRewardClaimed",
+  "6": "dailyResetTime",
+  "1": "id"
+ },
+ "DailyTaskInfoResponse": {
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "rewardClaimed",
+  "5": "weeklyRewardClaimed",
+  "6": "dailyResetTime",
+  "1": "id"
+ },
+ "DispDailyTask": {
+  "1": "index",
+  "2": "progress",
+  "3": "targetProgress",
+  "4": "rewardClaimed"
+ },
+ "DrawDailyTaskRewardRequest": {
+  "1": "index"
+ },
+ "DrawDailyTaskRewardResponse": {
+  "1": "index",
+  "2": "dailyResetTime"
+ },
+ "DrawDailyRewardRequest": {
+  "1": "index",
+  "2": "dailyResetTime"
+ },
+ "DrawWeeklyRewardRequest": {
+  "1": "index",
+  "2": "dailyResetTime"
+ },
+ "SCDailyTaskUpdate": {
+  "2": "dailyResetTime"
+ },
+ "SCDailyTaskReset": {
+  "2": "dailyResetTime"
+ },
+ "DivingRequest": {
+  "2": "heroes",
+  "3": "equips"
+ },
+ "DivingResponse": {
+  "2": "heroes",
+  "3": "equips",
+  "4": "antiques"
+ },
+ "DivingLevelUpRequest": {
+  "2": "heroes",
+  "3": "equips",
+  "4": "antiques"
+ },
+ "SCDivingLevelUpdate": {
+  "2": "subject",
+  "3": "equips",
+  "4": "emailType",
+  "1": "emailId",
+  "5": "status",
+  "6": "sender"
+ },
+ "DispAttachment": {
+  "2": "subject",
+  "3": "equips",
+  "4": "emailType",
+  "1": "emailId",
+  "5": "status",
+  "6": "sender",
+  "7": "sendTime",
+  "8": "content",
+  "10": "got",
+  "11": "tmpId",
+  "12": "tmpParams",
+  "13": "scenarioId"
+ },
+ "EmailDetail": {
+  "1": "pageNo",
+  "2": "total",
+  "4": "emailType",
+  "5": "status",
+  "6": "sender",
+  "7": "sendTime",
+  "8": "content",
+  "10": "got",
+  "11": "tmpId",
+  "12": "tmpParams",
+  "13": "scenarioId"
+ },
+ "EmailBoxRequest": {
+  "1": "emailId",
+  "2": "all"
+ },
+ "EmailBoxResponse": {
+  "2": "content",
+  "1": "subject"
+ },
+ "DeleteEmailRequest": {
+  "1": "type",
+  "2": "content",
+  "3": "receiverName"
+ },
+ "DeleteAllReadEmailRequest": {
+  "1": "type",
+  "2": "content",
+  "3": "receiverName"
+ },
+ "QuickGotReadEmailRequest": {
+  "1": "type",
+  "2": "content",
+  "3": "receiverName"
+ },
+ "SendEmailInfo": {
+  "1": "type",
+  "2": "content",
+  "3": "receiverName"
+ },
+ "SendEmailRequest": {
+  "1": "totalHeight",
+  "3": "receiverName",
+  "2": "gotHeightId",
+  "4": "paidMoney"
+ },
+ "SCNewEmail": {
+  "1": "totalHeight",
+  "2": "gotHeightId",
+  "4": "paidMoney",
+  "7": "sevenPaid",
+  "9": "taskSeason"
+ },
+ "EquinoxInfoRequest": {
+  "1": "totalHeight",
+  "2": "gotHeightId",
+  "4": "paidMoney",
+  "7": "sevenPaid",
+  "9": "taskSeason",
+  "14": "score",
+  "15": "scoreNum"
+ },
+ "EquinoxInfoResponse": {
+  "1": "totalHeight",
+  "2": "gotHeightId",
+  "4": "paidMoney",
+  "7": "sevenPaid",
+  "9": "taskSeason",
+  "14": "score",
+  "15": "scoreNum"
+ },
+ "DispEquinoxTask": {
+  "1": "day",
+  "2": "gotFinish",
+  "3": "gotPaid",
+  "4": "gotBingo"
+ },
+ "EquinoxTaskStat": {
+  "1": "packId",
+  "2": "times",
+  "3": "got",
+  "4": "gotBingo"
+ },
+ "EquinoxTaskGot": {
+  "1": "packId",
+  "2": "bought",
+  "3": "got",
+  "4": "gotBingo"
+ },
+ "EquinoxSevenGot": {
+  "1": "page",
+  "2": "bought",
+  "3": "got"
+ },
+ "EquinoxLimitPack": {
+  "1": "page",
+  "2": "bought"
+ },
+ "EquinoxCombPack": {
+  "1": "id",
+  "2": "num"
+ },
+ "EquinoxRankRequest": {
+  "1": "num",
+  "2": "num"
+ },
+ "EquinoxShopRequest": {
+  "1": "height",
+  "2": "totalHeight"
+ },
+ "EquinoxShopResponse": {
+  "1": "height",
+  "2": "totalHeight"
+ },
+ "EquinoxShopBuyRequest": {
+  "1": "gotHeightId",
+  "2": "totalHeight"
+ },
+ "EquinoxFlyRequest": {
+  "1": "day",
+  "2": "totalHeight"
+ },
+ "EquinoxFlyResponse": {
+  "1": "day",
+  "2": "totalHeight"
+ },
+ "EquinoxGotHeightRequest": {
+  "1": "day",
+  "2": "bingoId"
+ },
+ "EquinoxGotHeightResponse": {
+  "1": "day",
+  "2": "bingoId"
+ },
+ "EquinoxGotTaskFinishRequest": {
+  "1": "day",
+  "2": "free"
+ },
+ "EquinoxGotTaskPaidRequest": {
+  "1": "day",
+  "2": "free"
+ },
+ "EquinoxGotTaskBingoRequest": {
+  "1": "day",
+  "2": "free"
+ },
+ "EquinoxGotTaskResponse": {
+  "1": "packId",
+  "2": "free"
+ },
+ "EquinoxGotSevenPackRequest": {
+  "1": "packId",
+  "2": "free"
+ },
+ "EquinoxGotSevenPackResponse": {
+  "1": "paidMoney"
+ },
+ "EquinoxGotFreeCombRequest": {
+  "1": "paidMoney"
+ },
+ "EquinoxGotFreeCombResponse": {
+  "1": "bg",
+  "2": "color",
+  "3": "pattern"
+ },
+ "SCEquinoxPaidMoney": {
+  "1": "bg",
+  "2": "color",
+  "3": "pattern"
+ },
+ "SCEquinoxTask": {
+  "1": "bg",
+  "2": "color",
+  "3": "pattern"
+ },
+ "EquinoxChangeKiteRequest": {
+  "1": "scoreNum",
+  "2": "color",
+  "3": "pattern"
+ },
+ "DispEquinoxKite": {
+  "1": "scoreNum",
+  "2": "color",
+  "3": "pattern"
+ },
+ "EquinoxTop3": {
+  "1": "scoreNum"
+ },
+ "EquinoxGotScoreRewardRequest": {
+  "1": "buildingId",
+  "2": "makeId",
+  "3": "universal"
+ },
+ "EquinoxGotScoreRewardResponse": {
+  "1": "makeId",
+  "2": "makeId",
+  "3": "universal"
+ },
+ "EquipsRequest": {
+  "1": "makeId",
+  "2": "finishTime",
+  "3": "equipId",
+  "4": "star"
+ },
+ "EquipsResponse": {
+  "1": "buildingId",
+  "2": "finishTime",
+  "3": "equipId",
+  "4": "star"
+ },
+ "MakeEquipRequest": {
+  "1": "equipId",
+  "2": "star",
+  "3": "equipId",
+  "4": "star"
+ },
+ "DispEquipMaking": {
+  "1": "uid",
+  "2": "star",
+  "3": "equipId",
+  "4": "star"
+ },
+ "SpeedMakeEquipRequest": {
+  "1": "uid",
+  "2": "star"
+ },
+ "SpeedMakeEquipResponse": {
+  "1": "buildingId",
+  "2": "star"
+ },
+ "DecomposeEquipRequest": {
+  "1": "equipId"
+ },
+ "DecomposeEquipResponse": {
+  "1": "uid",
+  "2": "heroId"
+ },
+ "EnhanceEquipRequest": {
+  "1": "uid",
+  "2": "heroId"
+ },
+ "PickMadeEquipRequest": {
+  "1": "uid",
+  "2": "heroId"
+ },
+ "PickMadeEquipResponse": {
+  "1": "fragItemId",
+  "2": "num"
+ },
+ "PutOnEquipRequest": {
+  "1": "uid",
+  "2": "num"
+ },
+ "TakeOffEquipRequest": {
+  "1": "uid",
+  "2": "num"
+ },
+ "SCUpdateEquip": {
+  "1": "uid",
+  "2": "num"
+ },
+ "EquipFragExchangeRequest": {
+  "1": "uid",
+  "2": "num"
+ },
+ "EquipStarUpRequest": {
+  "1": "uid"
+ },
+ "EquipPreviewStarUpRequest": {
+  "1": "downUid",
+  "2": "upUid"
+ },
+ "EquipPreviewStarUpResponse": {
+  "1": "downUid",
+  "2": "upUid"
+ },
+ "EquipResetRequest": {
+  "1": "uid",
+  "2": "specAttrs"
+ },
+ "EquipResetResponse": {
+  "1": "uid",
+  "2": "specAttrs",
+  "3": "lockedSlots"
+ },
+ "EquipReplaceRequest": {
+  "1": "uid",
+  "2": "saveOrNot",
+  "3": "lockedSlots"
+ },
+ "EquipReplaceResponse": {
+  "1": "uids",
+  "2": "saveOrNot",
+  "3": "lockedSlots"
+ },
+ "EquipRerollAttrRequest": {
+  "1": "uid",
+  "2": "saveOrNot",
+  "3": "lockedSlots"
+ },
+ "SaveEquipRerollRequest": {
+  "1": "raidId",
+  "2": "stageFormId"
+ },
+ "SCEquipDelete": {
+  "1": "raidId",
+  "2": "stageFormId",
+  "3": "endTime",
+  "4": "passedStage",
+  "7": "gotFinal",
+  "8": "isFirst"
+ },
+ "EquipRefineRequest": {
+  "1": "raidId",
+  "2": "stageFormId",
+  "3": "endTime",
+  "4": "passedStage",
+  "7": "gotFinal",
+  "8": "isFirst",
+  "10": "stageBuff",
+  "11": "stagePower",
+  "12": "passedRaid"
+ },
+ "ExpeditionInfoRequest": {
+  "1": "raidId",
+  "2": "stageFormId",
+  "3": "endTime",
+  "4": "passedStage",
+  "7": "gotFinal",
+  "8": "isFirst",
+  "10": "stageBuff",
+  "11": "stagePower",
+  "12": "passedRaid"
+ },
+ "ExpeditionInfoResponse": {
+  "1": "hp",
+  "2": "heroId",
+  "3": "endTime",
+  "4": "passedStage",
+  "7": "gotFinal",
+  "8": "isFirst",
+  "10": "stageBuff",
+  "11": "stagePower",
+  "12": "passedRaid"
+ },
+ "ExpeditionHero": {
+  "1": "raidId",
+  "2": "stageId",
+  "6": "stageBuff"
+ },
+ "ExpeditionBuff": {
+  "1": "raidId",
+  "2": "stageId",
+  "6": "stageBuff",
+  "7": "stageFormId"
+ },
+ "ExpeditionChallengeRequest": {
+  "1": "raidId",
+  "2": "buffId",
+  "6": "stageBuff",
+  "7": "stageFormId"
+ },
+ "ExpeditionChallengeResponse": {
+  "1": "raidId",
+  "2": "buffId",
+  "6": "stageBuff",
+  "7": "stageFormId"
+ },
+ "ExpeditionChooseBuffRequest": {
+  "1": "raidId",
+  "2": "buffId"
+ },
+ "ExpeditionChooseBuffResponse": {
+  "1": "raidId"
+ },
+ "ExpeditionGotFinalRewardRequest": {
+  "1": "raidId",
+  "2": "heroId"
+ },
+ "ExpeditionSaveFormationRequest": {
+  "1": "raidId",
+  "2": "heroId"
+ },
+ "ExpeditionSaveFormationResponse": {
+  "1": "endTime",
+  "2": "passedStage"
+ },
+ "ExpeditionChooseRaidRequest": {
+  "1": "productId",
+  "2": "ripeTime",
+  "3": "plantTime"
+ },
+ "ExpeditionSweepRequest": {
+  "1": "productId",
+  "2": "ripeTime",
+  "3": "plantTime"
+ },
+ "ExpeditionSweepResponse": {
+  "1": "buildingId",
+  "2": "productId",
+  "3": "plantTime"
+ },
+ "FarmBuildingInfo": {
+  "1": "buildingId",
+  "2": "productId",
+  "3": "plantTime"
+ },
+ "FarmPlantRequest": {
+  "1": "buildingId",
+  "2": "productId"
+ },
+ "PlantArg": {
+  "1": "buildingId",
+  "2": "critical"
+ },
+ "FarmHarvestRequest": {
+  "1": "buildingId",
+  "2": "critical",
+  "3": "fishId"
+ },
+ "FarmSpeedUpRequest": {
+  "1": "isNew",
+  "2": "critical",
+  "3": "fishId"
+ },
+ "StartFishingRequest": {
+  "2": "critical",
+  "3": "fishId",
+  "1": "isNew"
+ },
+ "StartFishingResponse": {
+  "2": "rewardId",
+  "3": "fishId",
+  "1": "fishList"
+ },
+ "GainBigFishRequest": {
+  "1": "rewardId",
+  "2": "rewardId"
+ },
+ "GainBigResponse": {
+  "1": "rewardId",
+  "2": "rewardId"
+ },
+ "FishEncyclopediaRequest": {
+  "1": "rewardId",
+  "2": "rewardId"
+ },
+ "FishEncyclopediaResponse": {
+  "1": "rewardId",
+  "2": "rewardId"
+ },
+ "DrawFishRewardRequest": {
+  "1": "rewardId",
+  "2": "presetId",
+  "3": "petUid"
+ },
+ "DrawFishRewardResponse": {
+  "1": "buildingId",
+  "2": "presetId",
+  "3": "petUid"
+ },
+ "FishingLevelUpRequest": {
+  "2": "presetId",
+  "3": "petUid",
+  "1": "buildingId"
+ },
+ "SCFishingLevelUpdate": {
+  "2": "presetId",
+  "3": "petUid",
+  "1": "buildingId"
+ },
+ "FleetFormation": {
+  "2": "presetId",
+  "3": "petUid",
+  "1": "playerId"
+ },
+ "FleetSaveFormationRequest": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "guildId",
+  "4": "title"
+ },
+ "FleetBuildingInfo": {
+  "1": "buildingId",
+  "2": "state",
+  "3": "durability",
+  "4": "title",
+  "5": "cityId",
+  "6": "moveStartTs"
+ },
+ "FleetOwnerInfo": {
+  "1": "buildingId",
+  "2": "state",
+  "3": "durability",
+  "4": "title",
+  "5": "cityId",
+  "6": "moveStartTs",
+  "7": "moveEndTs",
+  "8": "startGridIdx",
+  "9": "targetGridIdx",
+  "10": "startCityId",
+  "11": "targetCityId",
+  "12": "curGridIdx",
+  "13": "skinId",
+  "14": "power",
+  "15": "maxDura"
+ },
+ "WorldFleet": {
+  "1": "buildingId",
+  "2": "state",
+  "3": "durability",
+  "5": "cityId",
+  "6": "moveStartTs",
+  "7": "moveEndTs",
+  "8": "startGridIdx",
+  "9": "targetGridIdx",
+  "10": "startCityId",
+  "11": "targetCityId",
+  "12": "curGridIdx",
+  "13": "skinId",
+  "14": "power",
+  "15": "maxDura",
+  "17": "petId",
+  "19": "treasureLootUid",
+  "21": "moveFxId",
+  "22": "streakFxId"
+ },
+ "ChipWarData": {
+  "1": "buildingId",
+  "2": "endTs",
+  "3": "endDura"
+ },
+ "AutoFightData": {
+  "1": "buildingId",
+  "2": "endTs",
+  "3": "endDura"
+ },
+ "RepairingData": {
+  "1": "buildingId",
+  "2": "endTs",
+  "3": "endDura"
+ },
+ "RepairFleetRequest": {
+  "1": "buildingId"
+ },
+ "StopRepairingRequest": {
+  "1": "buildingId",
+  "2": "cityId"
+ },
+ "MyFleetsRequest": {
+  "1": "buildingId",
+  "2": "cityId"
+ },
+ "MyFleetsResponse": {
+  "1": "buildingId",
+  "2": "cityId"
+ },
+ "SCMyFleetUpdate": {
+  "1": "buildingId",
+  "2": "power"
+ },
+ "MoveFleetsToCityRequest": {
+  "1": "buildingId",
+  "2": "power"
+ },
+ "SpeedUpFleetRequest": {
+  "1": "buildingId",
+  "2": "power"
+ },
+ "FleetPower": {
+  "1": "buildingId",
+  "2": "power"
+ },
+ "SCMyFleetPower": {
+  "1": "unitRepairTime",
+  "2": "unitRepairCost"
+ },
+ "SpeedUpRepairRequest": {
+  "1": "buildingIds",
+  "2": "isOn"
+ },
+ "FleetRepairParamRequest": {
+  "1": "buildingIds",
+  "2": "triggerGuideId"
+ },
+ "FleetRepairParamResponse": {
+  "1": "buildingIds",
+  "2": "triggerGuideId"
+ },
+ "SetFleetAutoFightRequest": {
+  "1": "guideId",
+  "2": "triggerGuideId"
+ },
+ "GuideInfoRequest": {
+  "2": "step",
+  "1": "stage"
+ },
+ "GuideInfoResponse": {
+  "2": "step",
+  "1": "stage"
+ },
+ "UpdateGuideRequest": {
+  "1": "period",
+  "2": "step"
+ },
+ "TriggerGuideRequest": {
+  "1": "period",
+  "2": "step"
+ },
+ "GuideInfo": {
+  "1": "shipId",
+  "2": "type",
+  "3": "state"
+ },
+ "GuildShipRequest": {
+  "1": "shipId",
+  "2": "type",
+  "3": "state",
+  "8": "preparedEndTime"
+ },
+ "GuildShipResponse": {
+  "1": "shipId",
+  "2": "type",
+  "3": "state",
+  "8": "preparedEndTime",
+  "9": "cityId",
+  "10": "mvToCityId",
+  "11": "mvStartTime",
+  "12": "mvEndTime",
+  "13": "pos"
+ },
+ "DispGuildShip": {
+  "1": "shipId",
+  "2": "type",
+  "3": "state",
+  "8": "preparedEndTime",
+  "9": "cityId",
+  "10": "mvToCityId",
+  "11": "mvStartTime",
+  "12": "mvEndTime",
+  "13": "pos"
+ },
+ "GuildShipLeaderCond": {
+  "1": "crewId",
+  "2": "mvToCityId",
+  "3": "mvStartTime",
+  "4": "mvEndTime"
+ },
+ "DispGuildShipMv": {
+  "1": "type",
+  "2": "mvToCityId",
+  "3": "mvStartTime",
+  "4": "mvEndTime"
+ },
+ "GuildShipCabin": {
+  "1": "shipId",
+  "3": "preparedEndTime"
+ },
+ "DispWorldGuildShip": {
+  "1": "shipId",
+  "3": "preparedEndTime",
+  "2": "crewId"
+ },
+ "GuildShipSeekRequest": {
+  "1": "shipId",
+  "3": "preparedEndTime",
+  "2": "crewId"
+ },
+ "SCGuildShipLeader": {
+  "1": "shipId",
+  "3": "endTime",
+  "2": "startTime"
+ },
+ "GuildShipOrderRequest": {
+  "1": "shipId",
+  "2": "startTime",
+  "3": "endTime"
+ },
+ "SCGuildShipOrder": {
+  "1": "shipId",
+  "2": "startTime",
+  "3": "endTime"
+ },
+ "SCGuildShipMove": {
+  "1": "shipId",
+  "2": "startTime",
+  "3": "endTime"
+ },
+ "SCGuildShipReset": {
+  "1": "shipId",
+  "2": "addScore",
+  "3": "score"
+ },
+ "SCGuildShipActivity": {
+  "2": "score",
+  "3": "score",
+  "1": "stage"
+ },
+ "ChipChestOpenRequest": {
+  "2": "pos",
+  "3": "score",
+  "1": "heroId"
+ },
+ "ChipChestOpenResponse": {
+  "2": "pos",
+  "3": "chipId",
+  "1": "heroId",
+  "4": "downHeroId"
+ },
+ "ChipChestGotScoreRequest": {
+  "1": "heroId",
+  "2": "pos",
+  "3": "chipId",
+  "4": "downHeroId"
+ },
+ "ChipChestGotScoreResponse": {
+  "1": "heroId",
+  "2": "pos",
+  "3": "chipId",
+  "4": "downHeroId"
+ },
+ "PutOnChipRequest": {
+  "1": "heroId",
+  "2": "pos",
+  "3": "chipId",
+  "4": "downHeroId"
+ },
+ "TakeOffChipRequest": {
+  "1": "chipId",
+  "2": "universal",
+  "3": "heroId",
+  "4": "num"
+ },
+ "ChipDecomposeRequest": {
+  "1": "targetLevel",
+  "2": "universal",
+  "3": "heroId",
+  "4": "num"
+ },
+ "ChipDecomposeResponse": {
+  "1": "itemId",
+  "2": "num",
+  "3": "heroId",
+  "4": "num"
+ },
+ "ChipUpgradeRequest": {
+  "1": "itemId",
+  "2": "num",
+  "3": "heroId",
+  "4": "num"
+ },
+ "ChipBatchUpgradeRequest": {
+  "1": "itemId",
+  "2": "num"
+ },
+ "DisplayItem": {
+  "1": "itemId",
+  "2": "num"
+ },
+ "AllItemRequest": {
+  "1": "itemId",
+  "2": "resource",
+  "3": "num"
+ },
+ "AllItemResponse": {
+  "1": "itemId",
+  "2": "resource",
+  "3": "num"
+ },
+ "SCUpdateItem": {
+  "1": "id",
+  "2": "num",
+  "3": "num"
+ },
+ "CommonBuyGoodsRequest": {
+  "1": "itemId",
+  "2": "selectItemId",
+  "3": "nu"
+ },
+ "CommonGoods": {
+  "1": "itemId",
+  "2": "selectItemId",
+  "3": "num"
+ },
+ "CommonBuyGoodsResponse": {
+  "1": "res",
+  "2": "amount",
+  "3": "num"
+ },
+ "OpenRandomBoxRequest": {
+  "1": "res",
+  "2": "amount",
+  "3": "num"
+ },
+ "SelectPackRequest": {
+  "1": "res",
+  "2": "amount",
+  "3": "num"
+ },
+ "BatchFillMetaRequest": {
+  "1": "res",
+  "2": "amount"
+ },
+ "DisplayResource": {
+  "1": "res",
+  "2": "amount"
+ },
+ "AllResourceRequest": {
+  "1": "res"
+ },
+ "AllResourceResponse": {
+  "1": "res",
+  "2": "nextTime"
+ },
+ "SCUpdateResource": {
+  "1": "res",
+  "2": "nextTime"
+ },
+ "SCResourceRecovery": {
+  "1": "res",
+  "2": "nextTime"
+ },
+ "ResourceRecoveryRequest": {
+  "1": "resAmount",
+  "2": "nextPointTime"
+ },
+ "ResourceRecoveryResponse": {
+  "2": "nextPointTime",
+  "1": "resAmount"
+ },
+ "DispResourceRecovery": {
+  "1": "dan",
+  "2": "settleTime"
+ },
+ "ResourceRefreshTimeRequest": {
+  "1": "dan",
+  "2": "settleTime",
+  "6": "bonusItemNum",
+  "7": "nextPointTime",
+  "8": "predictDan",
+  "9": "maxPage",
+  "10": "gotBonusDan",
+  "11": "roomDan",
+  "12": "dailyPointTimes"
+ },
+ "ResourceRefreshTimeResponse": {
+  "1": "dan",
+  "2": "settleTime",
+  "6": "bonusItemNum",
+  "7": "nextPointTime",
+  "8": "predictDan",
+  "9": "maxPage",
+  "10": "gotBonusDan",
+  "11": "roomDan",
+  "12": "dailyPointTimes",
+  "13": "tournamentRanked"
+ },
+ "LeagueInfoRequest": {
+  "1": "dan",
+  "2": "settleTime",
+  "6": "bonusItemNum",
+  "7": "nextPointTime",
+  "8": "predictDan",
+  "9": "maxPage",
+  "10": "gotBonusDan",
+  "11": "roomDan",
+  "12": "dailyPointTimes",
+  "13": "tournamentRanked"
+ },
+ "LeagueInfoResponse": {
+  "1": "dan",
+  "2": "settleTime",
+  "6": "bonusItemNum",
+  "7": "nextPointTime",
+  "8": "predictDan",
+  "9": "maxPage",
+  "10": "gotBonusDan",
+  "11": "roomDan",
+  "12": "dailyPointTimes",
+  "13": "tournamentRanked"
+ },
+ "LeagueRankItem": {
+  "1": "index",
+  "2": "playerId",
+  "3": "presetId",
+  "4": "petUid",
+  "5": "power",
+  "7": "worldId",
+  "8": "title"
+ },
+ "LeagueFormation": {
+  "1": "index",
+  "3": "presetId",
+  "4": "petUid"
+ },
+ "LeagueSaveFormationRequest": {
+  "1": "playerId"
+ },
+ "LeagueFormationSequenceRequest": {
+  "1": "playerId"
+ },
+ "LeagueFormationResponse": {
+  "1": "playerId"
+ },
+ "LeagueOtherFormationRequest": {
+  "1": "playerId",
+  "4": "win"
+ },
+ "LeagueOtherFormationResponse": {
+  "1": "playerId",
+  "4": "win"
+ },
+ "LeagueFightRequest": {
+  "1": "playerId",
+  "4": "win",
+  "2": "worldId",
+  "3": "nickname",
+  "5": "score",
+  "6": "finalScore"
+ },
+ "LeagueFightResponse": {
+  "4": "win",
+  "1": "playerId",
+  "2": "worldId",
+  "3": "nickname",
+  "5": "score",
+  "6": "finalScore"
+ },
+ "LeagueFightPlayer": {
+  "1": "isLWin",
+  "2": "worldId",
+  "3": "lPower",
+  "5": "lHp",
+  "6": "reportId",
+  "4": "lInitHp",
+  "8": "rPower",
+  "9": "rInitHp",
+  "10": "rHp"
+ },
+ "LeagueFightRecord": {
+  "1": "heroId",
+  "3": "level",
+  "4": "skinId",
+  "5": "exStar",
+  "6": "reportId",
+  "8": "rPower",
+  "9": "rInitHp",
+  "10": "rHp",
+  "2": "star"
+ },
+ "LeagueHero": {
+  "1": "score",
+  "2": "finalScore",
+  "3": "rvScore",
+  "4": "rvFinalScore",
+  "5": "exStar"
+ },
+ "LeagueReportListRequest": {
+  "1": "score",
+  "2": "finalScore",
+  "3": "rvScore",
+  "4": "rvFinalScore",
+  "6": "rvName",
+  "7": "rvPower",
+  "8": "rvWorldId",
+  "9": "fightTime",
+  "10": "win",
+  "11": "isRead",
+  "12": "isAttack",
+  "14": "dan"
+ },
+ "LeagueReportListResponse": {
+  "1": "score",
+  "2": "finalScore",
+  "3": "rvScore",
+  "4": "rvFinalScore",
+  "6": "rvName",
+  "7": "rvPower",
+  "8": "rvWorldId",
+  "9": "fightTime",
+  "10": "win",
+  "11": "isRead",
+  "12": "isAttack",
+  "14": "dan"
+ },
+ "LeagueReport": {
+  "1": "isRefresh",
+  "2": "finalScore",
+  "3": "rvScore",
+  "4": "rvFinalScore",
+  "6": "rvName",
+  "7": "rvPower",
+  "8": "rvWorldId",
+  "9": "fightTime",
+  "10": "win",
+  "11": "isRead",
+  "12": "isAttack",
+  "14": "dan"
+ },
+ "LeagueRefreshRivalRequest": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "score",
+  "4": "power",
+  "6": "worldId"
+ },
+ "LeagueRefreshRivalResponse": {
+  "2": "nickname",
+  "1": "page",
+  "3": "score",
+  "4": "power",
+  "6": "worldId"
+ },
+ "LeagueRivalItem": {
+  "1": "page",
+  "2": "maxPage",
+  "3": "score",
+  "4": "power",
+  "6": "worldId"
+ },
+ "GotLeagueBonusItemRequest": {
+  "1": "gotBonusDan",
+  "2": "maxPage"
+ },
+ "LeagueRankRequest": {
+  "1": "gotBonusDan",
+  "2": "maxPage"
+ },
+ "LeagueRankResponse": {
+  "2": "activePay",
+  "1": "gotBonusDan",
+  "3": "score"
+ },
+ "LeagueGotBonusDanRequest": {
+  "1": "gotBonusDan",
+  "2": "activePay",
+  "3": "score"
+ },
+ "LeagueGotBonusDanResponse": {
+  "1": "gotBonusDan",
+  "2": "activePay",
+  "3": "score"
+ },
+ "LeagueBattlePassInfoRequest": {
+  "2": "activePay",
+  "3": "score",
+  "1": "count"
+ },
+ "LeagueBattlePassInfoResponse": {
+  "2": "activePay",
+  "3": "score",
+  "1": "dailyPointTimes"
+ },
+ "LeagueGotPassRewardRequest": {
+  "1": "uid",
+  "2": "ticketId",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "LeagueGotPassRewardResponse": {
+  "1": "uid",
+  "2": "ticketId",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "LeagueBuyPointRequest": {
+  "1": "uid",
+  "2": "ticketId",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "LeagueBuyPointResponse": {
+  "1": "uid",
+  "2": "ticketId",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "DispLimitTicket": {
+  "1": "uid",
+  "2": "ticketId",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "LimitTicketRequest": {
+  "1": "uid"
+ },
+ "LimitTicketResponse": {
+  "1": "activityStartTs",
+  "2": "activityEndTs"
+ },
+ "SCNewLimitTicket": {
+  "1": "activityStartTs",
+  "2": "activityEndTs",
+  "5": "scheduleId"
+ },
+ "SCDelLimitTicket": {
+  "1": "myTroopsNum",
+  "2": "myGotRewardLevel",
+  "5": "scheduleId"
+ },
+ "LimitedBossOpenRequest": {
+  "1": "myTroopsNum",
+  "2": "myGotRewardLevel",
+  "5": "scheduleId"
+ },
+ "LimitedBossOpenResponse": {
+  "1": "myTroopsNum",
+  "2": "myGotRewardLevel",
+  "5": "scheduleId"
+ },
+ "LimitedBossRewardInfo": {
+  "1": "myTroopsNum",
+  "2": "myGotRewardLevel"
+ },
+ "SCLimitedBossRewardInfo": {
+  "1": "bossId",
+  "2": "gridIdx",
+  "3": "todayStartTs",
+  "4": "todayEndTs",
+  "6": "leftHp",
+  "7": "maxHp"
+ },
+ "LimitedBossInfoRequest": {
+  "1": "bossId",
+  "2": "gridIdx",
+  "3": "todayStartTs",
+  "4": "todayEndTs",
+  "6": "leftHp",
+  "7": "maxHp"
+ },
+ "LimitedBossInfoResponse": {
+  "1": "leftHp",
+  "2": "gridIdx",
+  "3": "todayStartTs",
+  "4": "todayEndTs",
+  "6": "leftHp",
+  "7": "maxHp"
+ },
+ "LimitedBossInfo": {
+  "1": "playerId",
+  "2": "name",
+  "3": "todayStartTs",
+  "4": "todayEndTs",
+  "6": "leftHp",
+  "7": "maxHp"
+ },
+ "SCLimitedBossHp": {
+  "1": "playerId",
+  "2": "name",
+  "4": "title",
+  "5": "totalDamage",
+  "6": "rank",
+  "7": "guildIdx"
+ },
+ "SCLimitedBossRefresh": {
+  "1": "playerId",
+  "2": "name",
+  "4": "title",
+  "5": "totalDamage",
+  "6": "rank",
+  "7": "guildIdx"
+ },
+ "LimitedBossPlayerRecord": {
+  "1": "playerId",
+  "2": "name",
+  "4": "title",
+  "5": "totalDamage",
+  "6": "rank",
+  "7": "guildIdx"
+ },
+ "LimitedBossRankRequest": {
+  "1": "testAccount",
+  "4": "language"
+ },
+ "LimitedBossRankResponse": {
+  "1": "testAccount",
+  "4": "language",
+  "5": "superToken",
+  "8": "worldId"
+ },
+ "LimitedBossGetRewardRequest": {
+  "1": "testAccount",
+  "4": "language",
+  "5": "superToken",
+  "8": "worldId",
+  "9": "systemLanguage"
+ },
+ "LimitedBossSendFleetsRequest": {
+  "1": "openId",
+  "4": "sign",
+  "5": "superToken",
+  "8": "worldId",
+  "9": "systemLanguage",
+  "2": "token",
+  "3": "timestamp"
+ },
+ "LoginRequest": {
+  "1": "openId",
+  "4": "sign",
+  "5": "superToken",
+  "8": "worldId",
+  "9": "systemLanguage",
+  "2": "token",
+  "3": "timestamp"
+ },
+ "EworldLoginParams": {
+  "1": "appId",
+  "2": "channelId",
+  "3": "deviceModule",
+  "4": "clientVersion",
+  "5": "networkType",
+  "6": "platform",
+  "7": "did",
+  "8": "sc",
+  "9": "extc",
+  "10": "biz",
+  "11": "isAuth",
+  "12": "birthday",
+  "13": "originVersion"
+ },
+ "EworldClientInfo": {
+  "1": "result",
+  "2": "channelId",
+  "3": "errorMessage",
+  "4": "initSeqNo",
+  "5": "networkType",
+  "6": "platform",
+  "7": "did",
+  "8": "sc",
+  "9": "extc",
+  "10": "biz",
+  "11": "isAuth",
+  "12": "birthday",
+  "13": "originVersion"
+ },
+ "LoginResponse": {
+  "1": "playerId",
+  "3": "guildId",
+  "4": "mark",
+  "2": "nickname",
+  "5": "platform",
+  "6": "countryCode",
+  "7": "level",
+  "8": "exp"
+ },
+ "PlayerInfo": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "guildId",
+  "4": "mark",
+  "5": "platform",
+  "6": "countryCode",
+  "7": "level",
+  "8": "exp",
+  "9": "mainlineStage",
+  "10": "power",
+  "11": "newRole",
+  "12": "worldId",
+  "13": "bornWorldId",
+  "15": "worldOpenTime",
+  "17": "roleCreateTime",
+  "19": "forgeLevel",
+  "20": "forgeExp",
+  "21": "breedLevel",
+  "22": "breedExp",
+  "23": "chatFrameId",
+  "24": "title",
+  "25": "appId",
+  "26": "channelId",
+  "27": "chipStage",
+  "28": "chipScore",
+  "30": "scenarioId"
+ },
+ "VipInfo": {
+  "1": "worldId",
+  "2": "tag",
+  "4": "payPack"
+ },
+ "VipDailyReward": {
+  "1": "id",
+  "2": "nickname",
+  "3": "power",
+  "4": "level",
+  "5": "bornWorldId"
+ },
+ "LoginFinishRequest": {
+  "1": "id",
+  "2": "nickname",
+  "3": "power",
+  "4": "level",
+  "5": "bornWorldId",
+  "7": "appId",
+  "8": "channelId",
+  "9": "roleCreateTime",
+  "10": "worldId",
+  "11": "lastLoginTime"
+ },
+ "GameWorldInfo": {
+  "1": "id",
+  "2": "nickname",
+  "3": "power",
+  "4": "level",
+  "5": "bornWorldId",
+  "7": "appId",
+  "8": "channelId",
+  "9": "roleCreateTime",
+  "10": "worldId",
+  "11": "lastLoginTime"
+ },
+ "AccountRoleInfo": {
+  "1": "id",
+  "2": "latestGroupId",
+  "3": "power",
+  "4": "level",
+  "5": "bornWorldId",
+  "7": "appId",
+  "8": "channelId",
+  "9": "roleCreateTime",
+  "10": "worldId",
+  "11": "lastLoginTime"
+ },
+ "GameWorldListRequest": {
+  "2": "latestGroupId",
+  "1": "language"
+ },
+ "GameWorldListResponse": {
+  "2": "latestGroupId",
+  "1": "language"
+ },
+ "GameWorldGroupListRequest": {
+  "1": "language",
+  "4": "gotPirateEvent"
+ },
+ "GameWorldGroupListResponse": {
+  "1": "language",
+  "4": "gotPirateEvent"
+ },
+ "SetLanguageRequest": {
+  "1": "taskId",
+  "4": "gotPirateEvent",
+  "2": "progress",
+  "3": "rewardClaimed"
+ },
+ "MainTaskInfoRequest": {
+  "4": "gotPirateEvent",
+  "1": "taskId",
+  "2": "progress",
+  "3": "rewardClaimed"
+ },
+ "MainTaskInfoResponse": {
+  "4": "gotPirateEvent",
+  "1": "taskId",
+  "2": "progress",
+  "3": "rewardClaimed"
+ },
+ "DispMainTask": {
+  "1": "taskId",
+  "2": "progress",
+  "3": "rewardClaimed"
+ },
+ "DrawMainTaskRewardRequest": {
+  "1": "taskId",
+  "2": "progress"
+ },
+ "SCMainTaskUpdate": {
+  "1": "groupId",
+  "2": "progress",
+  "3": "gotReward",
+  "4": "startTime"
+ },
+ "GotBranchTaskRewardRequest": {
+  "1": "groupId",
+  "2": "progress",
+  "3": "gotReward",
+  "4": "startTime"
+ },
+ "SCBranchTaskUpdate": {
+  "1": "taskId",
+  "2": "progress",
+  "3": "gotReward",
+  "4": "startTime"
+ },
+ "DispBranchTask": {
+  "1": "groupId",
+  "2": "progress",
+  "3": "gotReward",
+  "4": "startTime"
+ },
+ "DisplayStorm": {
+  "1": "groupId",
+  "3": "gotReward",
+  "4": "startTime",
+  "2": "progress"
+ },
+ "StormTaskData": {
+  "1": "groupId",
+  "2": "progress",
+  "4": "startTime"
+ },
+ "GotStormTaskRewardRequest": {
+  "1": "groupId",
+  "4": "startTime",
+  "2": "gotDaily",
+  "3": "isRead"
+ },
+ "SCStormTaskUpdate": {
+  "1": "comicId",
+  "4": "startTime",
+  "2": "state",
+  "3": "isRead"
+ },
+ "SCPlotOpen": {
+  "1": "comicId",
+  "4": "startTime",
+  "2": "state",
+  "3": "isRead"
+ },
+ "GotPirateEventRequest": {
+  "2": "state",
+  "3": "isRead",
+  "1": "comicId"
+ },
+ "DispComicDrama": {
+  "2": "state",
+  "3": "isRead",
+  "1": "comicId"
+ },
+ "ComicDrama": {
+  "1": "stage",
+  "2": "state"
+ },
+ "ComicDramaReadRequest": {
+  "1": "stage"
+ },
+ "ComicDramaGotRewardRequest": {
+  "1": "stage"
+ },
+ "ComicDramaGotDailyRequest": {
+  "1": "stage",
+  "2": "refreshTime",
+  "3": "refreshCount"
+ },
+ "ChallengeStageRequest": {
+  "1": "stage",
+  "2": "refreshTime",
+  "3": "refreshCount"
+ },
+ "ChallengeStageResponse": {
+  "2": "refreshTime",
+  "3": "price",
+  "1": "id",
+  "4": "discount"
+ },
+ "DiscountShopRequest": {
+  "2": "refreshTime",
+  "3": "price",
+  "1": "id",
+  "4": "discount",
+  "5": "isBuy"
+ },
+ "DiscountShopResponse": {
+  "2": "refreshTime",
+  "3": "price",
+  "1": "id",
+  "4": "discount",
+  "5": "isBuy"
+ },
+ "DiscountShopItem": {
+  "1": "id",
+  "3": "price",
+  "4": "discount",
+  "5": "isBuy"
+ },
+ "DiscountShopRefreshRequest": {
+  "1": "stage",
+  "2": "maxOpenStage"
+ },
+ "DiscountShopBuyRequest": {
+  "1": "stage",
+  "2": "maxOpenStage"
+ },
+ "DiscountShopBuyResponse": {
+  "1": "stage",
+  "2": "activePay",
+  "3": "maxOpenStage"
+ },
+ "PassStageStateRequest": {
+  "1": "stage",
+  "2": "activePay",
+  "3": "maxOpenStage",
+  "4": "rwdStage"
+ },
+ "PassStageStateResponse": {
+  "1": "id",
+  "2": "freeGot",
+  "3": "payGot",
+  "4": "rwdStage"
+ },
+ "PassStageRequest": {
+  "1": "stage",
+  "2": "freeGot",
+  "3": "payGot",
+  "4": "rwdStage"
+ },
+ "PassStageResponse": {
+  "2": "freeGot",
+  "3": "payGot",
+  "4": "rwdStage",
+  "1": "stage"
+ },
+ "PassStageItem": {
+  "1": "stage",
+  "2": "freeGot",
+  "3": "nextStage",
+  "4": "nextActivePay"
+ },
+ "PassStageGotRewardRequest": {
+  "1": "stage",
+  "3": "nextStage",
+  "4": "nextActivePay"
+ },
+ "PassStageGotRewardResponse": {
+  "3": "gotDailyReward",
+  "4": "nextActivePay",
+  "1": "type",
+  "2": "endTime"
+ },
+ "MonthCardRequest": {
+  "1": "type",
+  "2": "endTime",
+  "3": "gotDailyReward"
+ },
+ "MonthCardResponse": {
+  "1": "type",
+  "2": "endTime",
+  "3": "gotDailyReward"
+ },
+ "MonthCardItem": {
+  "1": "type",
+  "2": "resetTime",
+  "3": "gotDailyReward"
+ },
+ "MonthCardDailyRewardRequest": {
+  "1": "id",
+  "2": "gotTimes",
+  "3": "charge"
+ },
+ "LimitedShopRequest": {
+  "1": "type",
+  "2": "id",
+  "3": "charge"
+ },
+ "LimitedShopResponse": {
+  "2": "id",
+  "1": "type",
+  "3": "charge"
+ },
+ "LimitedShopItem": {
+  "1": "boughtPack",
+  "2": "drawnPack",
+  "3": "resetTime",
+  "4": "heroId"
+ },
+ "LimitedShopGotFreeRequest": {
+  "1": "heroId",
+  "2": "drawnPack",
+  "3": "resetTime",
+  "4": "heroId"
+ },
+ "DailyGiftPackRequest": {
+  "1": "heroId",
+  "2": "drawnPack",
+  "3": "resetTime",
+  "4": "heroId"
+ },
+ "DailyGiftPackResponse": {
+  "1": "days",
+  "2": "drawnDays",
+  "3": "resetTime",
+  "4": "heroId"
+ },
+ "GotFreeDailyPackRequest": {
+  "1": "days",
+  "2": "drawnDays",
+  "3": "resetTime",
+  "4": "season"
+ },
+ "SwitchDailyPackRequest": {
+  "1": "days",
+  "2": "drawnDays",
+  "3": "resetTime",
+  "4": "season"
+ },
+ "AccumulateChargeRequest": {
+  "1": "days",
+  "2": "myTeamId",
+  "3": "resetTime",
+  "4": "season"
+ },
+ "AccumulateChargeResponse": {
+  "1": "days",
+  "2": "myTeamId",
+  "3": "myApplicationCount",
+  "4": "targetSeason"
+ },
+ "DrawAccumulateChargeGiftRequest": {
+  "1": "teamId",
+  "2": "myTeamId",
+  "3": "myApplicationCount",
+  "4": "memberCount",
+  "5": "maxMemberCount",
+  "7": "power"
+ },
+ "MatchMakingTeamsRequest": {
+  "2": "myTeamId",
+  "3": "myApplicationCount",
+  "4": "memberCount",
+  "1": "teamId",
+  "5": "maxMemberCount",
+  "7": "power"
+ },
+ "MatchMakingTeamsResponse": {
+  "2": "myTeamId",
+  "3": "myApplicationCount",
+  "4": "memberCount",
+  "1": "teamId",
+  "5": "maxMemberCount",
+  "7": "power"
+ },
+ "MatchMakingTeamItem": {
+  "1": "playerId",
+  "4": "title",
+  "5": "topPower",
+  "7": "power",
+  "2": "name",
+  "6": "isVice"
+ },
+ "MatchMakingPlayer": {
+  "1": "teamId",
+  "2": "name",
+  "4": "memberCount",
+  "5": "maxMemberCount",
+  "6": "isVice",
+  "8": "power",
+  "9": "applicationCount"
+ },
+ "MatchMakingMyTeamRequest": {
+  "1": "teamId",
+  "4": "memberCount",
+  "5": "maxMemberCount",
+  "8": "power",
+  "9": "applicationCount"
+ },
+ "MatchMakingMyTeamResponse": {
+  "1": "name",
+  "4": "memberCount",
+  "5": "maxMemberCount",
+  "8": "power",
+  "9": "applicationCount",
+  "2": "announcement",
+  "3": "approvalRequired"
+ },
+ "MatchMakingCreateTeamRequest": {
+  "1": "teamId",
+  "2": "announcement",
+  "3": "approvalRequired"
+ },
+ "MatchMakingTeamSpec": {
+  "1": "playerId",
+  "2": "announcement",
+  "3": "approvalRequired"
+ },
+ "MatchMakingSetTeamRequest": {
+  "1": "playerId",
+  "2": "isVice"
+ },
+ "MatchMakingApplyRequest": {
+  "1": "playerId",
+  "2": "isVice"
+ },
+ "MatchMakingApplyResponse": {
+  "1": "playerId",
+  "2": "isVice"
+ },
+ "MatchMakingKickRequest": {
+  "1": "playerId",
+  "2": "approve"
+ },
+ "MatchMakingSetViceRequest": {
+  "1": "playerId",
+  "2": "approve"
+ },
+ "MatchMakingApplicantsRequest": {
+  "1": "activityId",
+  "2": "approve"
+ },
+ "MatchMakingApplicantsResponse": {
+  "1": "activityId",
+  "2": "approve"
+ },
+ "MatchMakingApproveRequest": {
+  "1": "activityId",
+  "2": "remainPaidQuota"
+ },
+ "MatchMakingDissolveRequest": {
+  "1": "activityId",
+  "2": "remainPaidQuota"
+ },
+ "MatchMakingQuitRequest": {
+  "1": "remainPaidQuota",
+  "2": "remainPaidQuota"
+ },
+ "RelicAppraisalInfoRequest": {
+  "1": "remainPaidQuota",
+  "2": "remainPaidQuota"
+ },
+ "RelicAppraisalInfoResponse": {
+  "2": "appraisalId",
+  "1": "activityId",
+  "3": "ratio"
+ },
+ "ExchangePaidAppraisalTicketRequest": {
+  "1": "activityId",
+  "2": "appraisalId",
+  "3": "point"
+ },
+ "ExchangePaidAppraisalTicketResponse": {
+  "1": "activityId",
+  "2": "changeValue",
+  "3": "point"
+ },
+ "StartRelicAppraisalRequest": {
+  "1": "appraisalId",
+  "2": "ratio",
+  "3": "point"
+ },
+ "RelicAppraisalRequest": {
+  "1": "appraisalId",
+  "2": "ratio",
+  "3": "point",
+  "4": "estimatedValue",
+  "5": "appraisalTimes",
+  "6": "currentValue"
+ },
+ "RelicAppraisalResponse": {
+  "2": "appraisalId",
+  "1": "activityId",
+  "4": "estimatedValue",
+  "5": "appraisalTimes",
+  "6": "currentValue"
+ },
+ "DispRelicAppraisal": {
+  "1": "point",
+  "2": "type",
+  "4": "estimatedValue",
+  "5": "appraisalTimes",
+  "6": "currentValue",
+  "3": "appraised"
+ },
+ "SellRelicAppraisalRequest": {
+  "1": "activityId",
+  "2": "stage",
+  "3": "appraised"
+ },
+ "DispRelicPoint": {
+  "1": "id",
+  "2": "stage",
+  "3": "appraised"
+ },
+ "CatcherStartRequest": {
+  "1": "activityId",
+  "2": "stage",
+  "3": "hookedRewardIds",
+  "4": "hookedObstacleIds"
+ },
+ "CatcherStartResponse": {
+  "1": "activityId",
+  "2": "stage",
+  "3": "hookedRewardIds",
+  "4": "hookedObstacleIds",
+  "5": "hookedStarIds",
+  "6": "hookedObjectIds"
+ },
+ "CatcherRewardItem": {
+  "1": "activityId",
+  "2": "stage",
+  "3": "hookedRewardIds",
+  "4": "hookedObstacleIds",
+  "5": "hookedStarIds",
+  "6": "hookedObjectIds"
+ },
+ "CatcherEndRequest": {
+  "1": "star",
+  "2": "maxStar",
+  "3": "hookedRewardIds",
+  "4": "hookedObstacleIds",
+  "5": "hookedStarIds",
+  "6": "hookedObjectIds"
+ },
+ "CatcherEndResponse": {
+  "1": "activityId",
+  "2": "stage"
+ },
+ "CatcherSweepRequest": {
+  "1": "stage",
+  "2": "maxStar"
+ },
+ "CatcherSweepResponse": {
+  "1": "stage",
+  "2": "maxStar",
+  "3": "unlockDay"
+ },
+ "CatcherInfoRequest": {
+  "1": "stage",
+  "2": "maxStar",
+  "3": "unlockDay"
+ },
+ "CatcherInfoResponse": {
+  "2": "heroId",
+  "1": "uid",
+  "3": "unlockDay"
+ },
+ "CatcherStageInfo": {
+  "1": "uid",
+  "2": "heroId",
+  "3": "currentPower"
+ },
+ "DispSnapCard": {
+  "1": "zoneIndex",
+  "2": "battlefieldId",
+  "3": "cardLimit",
+  "4": "un"
+ },
+ "DispSnapBoardCard": {
+  "1": "zoneIndex",
+  "2": "battlefieldId",
+  "3": "cardLimit",
+  "4": "unlocked",
+  "7": "leadSide",
+  "9": "silencedSideA",
+  "10": "silencedSideB"
+ },
+ "DispSnapSideBoard": {
+  "2": "battlefieldId",
+  "1": "zoneIndex",
+  "3": "cardLimit",
+  "4": "unlocked",
+  "7": "leadSide",
+  "9": "silencedSideA",
+  "10": "silencedSideB"
+ },
+ "DispSnapZone": {
+  "1": "type",
+  "2": "owner",
+  "3": "cardUid",
+  "4": "heroId",
+  "7": "leadSide",
+  "9": "silencedSideA",
+  "10": "silencedSideB"
+ },
+ "DispSnapEvent": {
+  "1": "cardUid",
+  "2": "deltaPower",
+  "3": "cardUid",
+  "4": "heroId",
+  "5": "zoneIndex",
+  "6": "fromZoneIndex",
+  "7": "newPower",
+  "8": "deltaPower",
+  "9": "newEnergy",
+  "10": "battlefieldId",
+  "11": "round"
+ },
+ "PowerChangeEntry": {
+  "1": "zoneIndex",
+  "2": "sideAPower",
+  "3": "sideBPower"
+ },
+ "SilencedChange": {
+  "1": "winner",
+  "2": "sideAPower",
+  "3": "sideBPower",
+  "4": "winner"
+ },
+ "DispSnapEventSource": {
+  "1": "winner",
+  "2": "sideAPower",
+  "3": "sideBPower",
+  "4": "score"
+ },
+ "SnapZoneResult": {
+  "1": "round",
+  "2": "sideAPower",
+  "3": "sideBPower",
+  "4": "score"
+ },
+ "SnapSettlement": {
+  "1": "round",
+  "4": "priority",
+  "2": "energy",
+  "3": "choices",
+  "6": "deadlineTs"
+ },
+ "SnapStartRequest": {
+  "1": "zoneIndex",
+  "2": "side",
+  "3": "limit",
+  "4": "costCap",
+  "6": "deadlineTs"
+ },
+ "DispSnapRound": {
+  "1": "mySide",
+  "2": "side",
+  "3": "limit",
+  "4": "costCap",
+  "6": "deadlineTs"
+ },
+ "DispSnapPlacementLimit": {
+  "1": "cardUid",
+  "2": "zoneIndex",
+  "3": "limit",
+  "4": "costCap",
+  "5": "rate"
+ },
+ "SnapMatchStateResponse": {
+  "1": "cardUid",
+  "5": "rate",
+  "2": "round"
+ },
+ "SnapPlacement": {
+  "1": "round",
+  "2": "round"
+ },
+ "SnapEndRoundRequest": {
+  "2": "round",
+  "1": "round"
+ },
+ "SnapSaveDraftRequest": {
+  "1": "round"
+ },
+ "SnapEndRoundResponse": {
+  "1": "round"
+ },
+ "DispSnapRoundResult": {
+  "1": "round"
+ },
+ "SnapDetailRequest": {
+  "1": "matchId",
+  "2": "remainFree",
+  "3": "diamondPrice",
+  "4": "totalPoints"
+ },
+ "SnapGiveUpRequest": {
+  "1": "matchId",
+  "2": "remainFree",
+  "3": "diamondPrice",
+  "4": "totalPoints"
+ },
+ "SnapInfoRequest": {
+  "1": "mySide",
+  "2": "remainFree",
+  "3": "diamondPrice",
+  "4": "totalPoints"
+ },
+ "SnapInfoResponse": {
+  "1": "mySide",
+  "2": "remainFree",
+  "3": "diamondPrice",
+  "4": "totalPoints",
+  "5": "rate"
+ },
+ "DispSnapPvpInfo": {
+  "1": "playerId",
+  "2": "remainFree",
+  "3": "diamondPrice",
+  "4": "totalPoints",
+  "5": "rate"
+ },
+ "DispSnapMatchState": {
+  "1": "useDiamond",
+  "5": "worldId",
+  "2": "nickname",
+  "4": "level"
+ },
+ "DispSnapPvpBrief": {
+  "1": "reason",
+  "2": "nickname",
+  "4": "level",
+  "5": "worldId"
+ },
+ "SnapStartMatchmakingRequest": {
+  "1": "matchId",
+  "2": "submittedRound"
+ },
+ "SnapCancelMatchmakingRequest": {
+  "1": "matchId",
+  "2": "submittedRound",
+  "5": "myTrustee"
+ },
+ "SCSnapMatchmakingFinished": {
+  "1": "matchId",
+  "2": "submittedRound",
+  "5": "myTrustee"
+ },
+ "DispSnapPvpOpponentState": {
+  "1": "matchId",
+  "2": "submittedRound",
+  "5": "myTrustee"
+ },
+ "DispSnapPvpMatchDetail": {
+  "1": "trustee",
+  "5": "myTrustee"
+ },
+ "SCSnapPvpRoundResult": {
+  "1": "matchId"
+ },
+ "SCSnapPvpOpponentStateUpdate": {
+  "1": "myRank"
+ },
+ "SnapPvpToggleTrusteeRequest": {
+  "1": "myRank",
+  "2": "myScore"
+ },
+ "SCSnapPvpAborted": {
+  "1": "rewardId",
+  "2": "myScore"
+ },
+ "SCSnapPvpOngoingMatch": {
+  "1": "exhibitionId",
+  "2": "level",
+  "3": "keywordLevels"
+ },
+ "SnapPvpRankInfoRequest": {
+  "1": "exhibitionId",
+  "2": "level",
+  "3": "keywordLevels"
+ },
+ "SnapPvpRankInfoResponse": {
+  "1": "exhibitionId",
+  "2": "level",
+  "3": "keywordLevels"
+ },
+ "SnapPvpClaimPointsRewardRequest": {
+  "1": "caseIndex",
+  "2": "level",
+  "3": "unlocked",
+  "4": "antiqueId",
+  "5": "popularity",
+  "6": "upgradeFinishTime"
+ },
+ "DispMuseumExhibition": {
+  "1": "caseIndex",
+  "2": "level",
+  "3": "unlocked",
+  "4": "antiqueId",
+  "5": "popularity",
+  "6": "upgradeFinishTime"
+ },
+ "DispMuseumCase": {
+  "1": "popularity",
+  "2": "topPopularity",
+  "3": "uncollectedRevenue",
+  "4": "revenueLastSettleTime",
+  "5": "popularity",
+  "6": "claimedAchievements"
+ },
+ "MuseumInfoRequest": {
+  "1": "popularity",
+  "2": "topPopularity",
+  "3": "uncollectedRevenue",
+  "4": "revenueLastSettleTime",
+  "6": "claimedAchievements"
+ },
+ "MuseumInfoResponse": {
+  "1": "exhibitionId",
+  "2": "caseIndex",
+  "3": "antiqueId",
+  "4": "revenueLastSettleTime",
+  "6": "claimedAchievements"
+ },
+ "MuseumExhibitRequest": {
+  "1": "exhibitionId",
+  "2": "caseIndex",
+  "3": "antiqueId"
+ },
+ "MuseumUpgradeKeywordRequest": {
+  "1": "exhibitionId",
+  "2": "caseIndex"
+ },
+ "MuseumUpgradeCaseRequest": {
+  "1": "exhibitionId",
+  "2": "caseIndex"
+ },
+ "MuseumSpeedUpCaseRequest": {
+  "1": "exhibitionId",
+  "2": "caseIndex"
+ },
+ "MuseumFinishCaseUpgradeRequest": {
+  "1": "collected",
+  "2": "caseIndex"
+ },
+ "MuseumUpgradeExhibitionRequest": {
+  "1": "popularityThreshold"
+ },
+ "MuseumCaseUpdateResponse": {
+  "1": "newPopularity"
+ },
+ "MuseumCollectRevenueRequest": {
+  "1": "uncollectedRevenue"
+ },
+ "MuseumCollectRevenueResponse": {
+  "1": "stageId",
+  "2": "progress"
+ },
+ "MuseumClaimAchievementRequest": {
+  "1": "stageId",
+  "2": "progress"
+ },
+ "SCMuseumPopularityChanged": {
+  "1": "startTime",
+  "2": "endTime",
+  "3": "heroIds",
+  "5": "conditionId"
+ },
+ "SCMuseumRevenueUpdate": {
+  "1": "startTime",
+  "2": "endTime",
+  "3": "heroIds",
+  "5": "conditionId",
+  "6": "factor"
+ },
+ "DispMuseumExploreStage": {
+  "1": "stageId",
+  "2": "heroIds",
+  "3": "factor",
+  "5": "conditionId",
+  "6": "factor"
+ },
+ "DispMuseumExpedition": {
+  "1": "stageId",
+  "2": "heroIds",
+  "3": "factor",
+  "5": "conditionId",
+  "6": "factor"
+ },
+ "MuseumStartExploreRequest": {
+  "1": "stageId",
+  "2": "useNum",
+  "3": "factor"
+ },
+ "MuseumStartExploreResponse": {
+  "1": "grade",
+  "2": "progressGain"
+ },
+ "MuseumSpeedUpExploreRequest": {
+  "1": "grade",
+  "2": "progressGain",
+  "5": "fixedRewardBonus",
+  "6": "randomRewardCount",
+  "7": "factor"
+ },
+ "MuseumSpeedUpExploreResponse": {
+  "1": "grade",
+  "2": "progressGain",
+  "5": "fixedRewardBonus",
+  "6": "randomRewardCount",
+  "7": "factor"
+ },
+ "MuseumCompleteExploreRequest": {
+  "1": "stageId",
+  "2": "progressGain",
+  "5": "fixedRewardBonus",
+  "6": "randomRewardCount",
+  "7": "factor"
+ },
+ "MuseumCompleteExploreResponse": {
+  "1": "stageId",
+  "2": "progressGain",
+  "5": "fixedRewardBonus",
+  "6": "randomRewardCount",
+  "7": "factor"
+ },
+ "MuseumRewardRequest": {
+  "1": "language",
+  "2": "content"
+ },
+ "MuseumRewardResponse": {
+  "1": "language",
+  "2": "content"
+ },
+ "SCNotice": {
+  "1": "noticeId",
+  "2": "showPlace",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "SCRevokeNotice": {
+  "1": "noticeId",
+  "2": "showPlace",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "NoticeContent": {
+  "1": "noticeId",
+  "2": "showPlace",
+  "3": "startTime",
+  "4": "endTime"
+ },
+ "Notice": {
+  "1": "index",
+  "2": "showPlace",
+  "3": "workerId",
+  "4": "textId",
+  "5": "isSpecial"
+ },
+ "OnlineNoticesRequest": {
+  "1": "index",
+  "3": "workerId",
+  "4": "textId",
+  "5": "isSpecial",
+  "7": "refreshTime"
+ },
+ "OnlineNoticesResponse": {
+  "1": "index",
+  "3": "workerId",
+  "4": "textId",
+  "5": "isSpecial",
+  "7": "refreshTime"
+ },
+ "DispWorkerOrder": {
+  "1": "index",
+  "3": "workerId",
+  "4": "textId",
+  "5": "isSpecial",
+  "7": "refreshTime"
+ },
+ "FinishWorkerOrderRequest": {
+  "1": "index"
+ },
+ "FinishWorkerOrderResponse": {
+  "1": "orderNum",
+  "2": "rewardedNum"
+ },
+ "SCWorkerOrder": {
+  "1": "orderNum",
+  "2": "rewardedNum"
+ },
+ "DenyOrderRequest": {
+  "1": "orderNum",
+  "2": "rewardedNum"
+ },
+ "SpeedUpOrderRequest": {
+  "1": "productId",
+  "2": "ticketUid"
+ },
+ "OrderOfTheDay": {
+  "1": "openId",
+  "2": "orderNo",
+  "3": "amount",
+  "4": "serverId"
+ },
+ "SCOrderOfTheDay": {
+  "1": "openId",
+  "2": "orderNo",
+  "3": "amount",
+  "4": "serverId",
+  "5": "sign",
+  "6": "cpExtend"
+ },
+ "GetNextOrderOTDRewardRequest": {
+  "1": "sdkOrderNo",
+  "2": "productId",
+  "3": "amount",
+  "4": "serverId",
+  "5": "sign",
+  "6": "cpExtend"
+ },
+ "EWorldPayOrderIdRequest": {
+  "1": "sdkOrderNo",
+  "2": "productId",
+  "3": "amount",
+  "4": "serverId",
+  "5": "sign",
+  "6": "orderNo",
+  "7": "endTime"
+ },
+ "EWorldPayOrderIdResponse": {
+  "1": "endTime",
+  "2": "productId",
+  "3": "amount",
+  "4": "serverId",
+  "5": "sign",
+  "6": "orderNo",
+  "7": "endTime"
+ },
+ "SCEWorldOrderDelivery": {
+  "1": "productId",
+  "2": "productId",
+  "6": "orderNo",
+  "7": "endTime"
+ },
+ "MonthCardDelivery": {
+  "1": "chainId",
+  "2": "gotGiftId"
+ },
+ "SCPaidMoney": {
+  "1": "uid",
+  "2": "type",
+  "3": "level",
+  "4": "gridIdx"
+ },
+ "VoucherBuyRequest": {
+  "1": "uid",
+  "2": "type",
+  "3": "level",
+  "4": "gridIdx",
+  "5": "cityId"
+ },
+ "CouponBuyRequest": {
+  "1": "uid",
+  "2": "type",
+  "3": "level",
+  "4": "gridIdx",
+  "5": "cityId"
+ },
+ "ChainPackDelivery": {
+  "1": "uid",
+  "2": "sweepTimes",
+  "3": "level",
+  "4": "gridIdx",
+  "5": "cityId"
+ },
+ "Pirate": {
+  "1": "uid",
+  "2": "sweepTimes",
+  "3": "level",
+  "4": "gridIdx",
+  "5": "cityId"
+ },
+ "AllPirateRequest": {
+  "2": "fleetBuildingIds",
+  "1": "uid",
+  "3": "cityId"
+ },
+ "AllPirateResponse": {
+  "2": "fleetBuildingIds",
+  "1": "uid",
+  "3": "cityId"
+ },
+ "SCPirateUpdate": {
+  "1": "uid",
+  "2": "isWin",
+  "3": "cityId"
+ },
+ "ChallengePirateRequest": {
+  "1": "uid",
+  "2": "isWin",
+  "3": "cityId"
+ },
+ "SCPirateCampaignBegin": {
+  "1": "type",
+  "2": "maxKilledLevel"
+ },
+ "SCPirateCampaignEnd": {
+  "1": "type",
+  "2": "maxKilledLevel"
+ },
+ "PirateKillRecordRequest": {
+  "1": "uid",
+  "2": "cityId"
+ },
+ "PirateKillRecordResponse": {
+  "1": "sweepTimes",
+  "2": "cityId"
+ },
+ "PirateKillRecord": {
+  "1": "uids",
+  "2": "cityId"
+ },
+ "SCPirateKillRecordUpdate": {
+  "1": "playerId",
+  "2": "cityId"
+ },
+ "PirateSweepRequest": {
+  "1": "nickname",
+  "2": "cityId"
+ },
+ "SCPirateSweepTimes": {
+  "1": "nickname",
+  "3": "playerLevel",
+  "4": "power",
+  "6": "guildIdx",
+  "7": "blocked"
+ },
+ "SCRemovePirates": {
+  "1": "nickname",
+  "3": "playerLevel",
+  "4": "power",
+  "6": "guildIdx",
+  "7": "blocked",
+  "9": "worldId",
+  "10": "title"
+ },
+ "OtherPlayerInfoRequest": {
+  "1": "nickname",
+  "3": "playerLevel",
+  "4": "power",
+  "6": "guildIdx",
+  "7": "blocked",
+  "9": "worldId",
+  "10": "title"
+ },
+ "OtherPlayerInfoResponse": {
+  "1": "level",
+  "3": "playerLevel",
+  "4": "power",
+  "6": "guildIdx",
+  "7": "blocked",
+  "9": "worldId",
+  "10": "title",
+  "2": "grade"
+ },
+ "RedPointRequest": {
+  "1": "forgeLevel",
+  "2": "forgeExp"
+ },
+ "SCPlayerLevelGrade": {
+  "1": "forgeLevel",
+  "2": "forgeExp"
+ },
+ "SCPlayerPower": {
+  "1": "breedLevel",
+  "2": "breedExp"
+ },
+ "SCPlayerTitle": {
+  "1": "vipLevel",
+  "2": "breedExp"
+ },
+ "SCPlayerExpUpdate": {
+  "1": "vipLevel",
+  "2": "vipExp"
+ },
+ "SCForgeLevelUpdate": {
+  "1": "vipLevel",
+  "2": "vipExp"
+ },
+ "SCBreedLevelUpdate": {
+  "1": "vipLevel",
+  "2": "vipExp"
+ },
+ "SCVipUpdate": {
+  "1": "type",
+  "2": "num",
+  "3": "updateTime"
+ },
+ "GotVipDailyRewardRequest": {
+  "1": "type",
+  "2": "num",
+  "3": "updateTime"
+ },
+ "CounterInfoRequest": {
+  "1": "type",
+  "2": "num",
+  "3": "updateTime"
+ },
+ "CounterInfoResponse": {
+  "1": "type",
+  "2": "num",
+  "3": "updateTime"
+ },
+ "CounterInfo": {
+  "1": "id",
+  "2": "isRead",
+  "3": "endTime"
+ },
+ "SCCounterUpdate": {
+  "1": "nickname",
+  "2": "isRead",
+  "3": "endTime"
+ },
+ "PlayerFrameRequest": {
+  "1": "nickname",
+  "2": "isRead",
+  "3": "endTime"
+ },
+ "PlayerFrameResponse": {
+  "1": "icon",
+  "2": "isRead",
+  "3": "endTime"
+ },
+ "FrameRecord": {
+  "1": "frameId",
+  "2": "isRead",
+  "3": "endTime"
+ },
+ "UpdateNicknameRequest": {
+  "1": "titleId"
+ },
+ "SCPlayerName": {
+  "1": "frameId"
+ },
+ "UpdatePlayerIconRequest": {
+  "1": "frameId"
+ },
+ "UpdatePlayerFrameRequest": {
+  "1": "frameId"
+ },
+ "UpdatePlayerChatFrameRequest": {
+  "1": "objectId",
+  "2": "skinId"
+ },
+ "UpdatePlayerTitleRequest": {
+  "1": "objectId",
+  "2": "skinId"
+ },
+ "ReadPlayerFrameRequest": {
+  "1": "objectId",
+  "2": "skinId"
+ },
+ "EnvSkinListRequest": {
+  "1": "heroId",
+  "2": "isBlock",
+  "3": "isAll"
+ },
+ "EnvSkinListResponse": {
+  "1": "heroId",
+  "2": "isBlock",
+  "3": "isAll"
+ },
+ "EnvObjectSkin": {
+  "1": "heroId",
+  "2": "isBlock",
+  "3": "isAll"
+ },
+ "UpdateEnvSkinRequest": {
+  "1": "heroId",
+  "2": "isBlock",
+  "3": "isAll"
+ },
+ "UpdateHeroPrivacyRequest": {
+  "1": "fxId",
+  "2": "isBlock",
+  "3": "isAll"
+ },
+ "PlayerMoveFxRequest": {
+  "1": "itemId"
+ },
+ "PlayerMoveFxResponse": {
+  "1": "style",
+  "2": "prompt"
+ },
+ "PlayerStreakFxRequest": {
+  "1": "style",
+  "2": "prompt",
+  "3": "args"
+ },
+ "PlayerStreakFxResponse": {
+  "1": "style",
+  "2": "prompt",
+  "3": "args"
+ },
+ "ReadPlayerFxRequest": {
+  "1": "style",
+  "2": "prompt",
+  "3": "args"
+ },
+ "FixedGuildRequest": {
+  "1": "style",
+  "2": "prompt",
+  "3": "args"
+ },
+ "PromptResponse": {
+  "1": "style",
+  "2": "prompt",
+  "3": "args"
+ },
+ "RadarInfoRequest": {
+  "1": "level",
+  "2": "exp",
+  "3": "storedNum",
+  "5": "nextRefreshTime"
+ },
+ "RadarInfoResponse": {
+  "1": "level",
+  "2": "exp",
+  "3": "storedNum",
+  "5": "nextRefreshTime"
+ },
+ "RadarInfo": {
+  "1": "uid",
+  "2": "eventId",
+  "3": "color",
+  "5": "nextRefreshTime",
+  "4": "gridIdx",
+  "6": "startTime"
+ },
+ "SCRadarUpdate": {
+  "1": "uid",
+  "2": "eventId",
+  "3": "color",
+  "4": "gridIdx",
+  "6": "startTime",
+  "11": "createTime",
+  "12": "state"
+ },
+ "RadarEvent": {
+  "1": "uid",
+  "2": "state",
+  "3": "startTime",
+  "4": "gridIdx",
+  "6": "startTime",
+  "11": "createTime",
+  "12": "state"
+ },
+ "SCRadarEventState": {
+  "1": "type",
+  "2": "level",
+  "3": "startTime",
+  "4": "createTime",
+  "5": "state"
+ },
+ "RadarFixedEvent": {
+  "1": "fieldId",
+  "2": "level",
+  "3": "startTime",
+  "4": "createTime",
+  "5": "state"
+ },
+ "RadarPirate": {
+  "1": "uid",
+  "2": "level"
+ },
+ "RadarRefugee": {
+  "1": "uid",
+  "2": "fleetBuildingIds"
+ },
+ "RadarCollectRes": {
+  "1": "uid",
+  "2": "fleetBuildingIds"
+ },
+ "RadarCitySpy": {
+  "1": "playerId",
+  "2": "nickname"
+ },
+ "RadarGetRewardRequest": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "rank",
+  "5": "rankValue",
+  "6": "guildIdx",
+  "7": "playerLevel",
+  "8": "title"
+ },
+ "RadarSendFleetsRequest": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "rank",
+  "5": "rankValue",
+  "6": "guildIdx",
+  "7": "playerLevel",
+  "8": "title"
+ },
+ "RadarGetAllRewardsRequest": {
+  "1": "rankType",
+  "2": "page",
+  "4": "rank",
+  "5": "rankValue",
+  "6": "guildIdx",
+  "7": "playerLevel",
+  "8": "title"
+ },
+ "RankData": {
+  "1": "rankType",
+  "2": "page",
+  "4": "rank",
+  "5": "rankValue",
+  "6": "guildIdx",
+  "7": "playerLevel",
+  "8": "title",
+  "3": "maxPage"
+ },
+ "RankRequest": {
+  "1": "rankType",
+  "2": "page",
+  "3": "maxPage"
+ },
+ "RankResponse": {
+  "3": "maxPage",
+  "1": "recommendId"
+ },
+ "RecommendFormRequest": {
+  "1": "recommendId"
+ },
+ "RecommendFormResponse": {
+  "1": "recommendId"
+ },
+ "RecommendFormData": {
+  "1": "recommendId"
+ },
+ "RecommendReportRequest": {
+  "1": "recommendId",
+  "2": "way"
+ },
+ "RecommendReportResponse": {
+  "1": "recommendId",
+  "2": "way"
+ },
+ "RecruitInfoRequest": {
+  "2": "way",
+  "1": "heroId"
+ },
+ "RecruitInfoResponse": {
+  "2": "way",
+  "1": "heroId",
+  "3": "trans"
+ },
+ "RecruitStartRequest": {
+  "2": "nextLuck",
+  "1": "freeEndTimeSeconds",
+  "3": "trans"
+ },
+ "RecruitStartResponse": {
+  "1": "freeEndTimeSeconds",
+  "3": "recruitTimes",
+  "2": "nextLuck"
+ },
+ "HeroRecruitReward": {
+  "1": "times",
+  "3": "recruitTimes",
+  "2": "gotId"
+ },
+ "RecruitData": {
+  "1": "gotId",
+  "2": "gotId",
+  "3": "recruitTimes"
+ },
+ "RecruitTask": {
+  "1": "antiqueId",
+  "2": "gotId",
+  "3": "trans"
+ },
+ "GotHeroRecruitTaskRequest": {
+  "1": "type",
+  "3": "trans",
+  "2": "way"
+ },
+ "GotAntiqueRecruitTaskRequest": {
+  "1": "type",
+  "3": "trans",
+  "2": "way"
+ },
+ "GotRecruitTaskResponse": {
+  "1": "type",
+  "3": "trans",
+  "2": "way"
+ },
+ "AntiqueRecruitReward": {
+  "1": "resFieldGridIdx",
+  "3": "trans",
+  "2": "fleetBuildingIds"
+ },
+ "AntiqueRecruitRequest": {
+  "1": "gridIdx",
+  "2": "cityId",
+  "3": "type"
+ },
+ "AntiqueRecruitResponse": {
+  "1": "gridIdx",
+  "2": "cityId",
+  "3": "type"
+ },
+ "ChallengeResFieldRequest": {
+  "1": "gridIdx",
+  "2": "cityId",
+  "3": "maxNum"
+ },
+ "ResField": {
+  "1": "gridIdx",
+  "2": "cityId",
+  "3": "maxNum"
+ },
+ "MyResFieldsRequest": {
+  "3": "maxNum",
+  "1": "resFieldGridIdx"
+ },
+ "MyResFieldsResponse": {
+  "3": "maxNum",
+  "1": "resFieldGridIdx"
+ },
+ "ResFieldInfo": {
+  "3": "maxNum",
+  "1": "resFieldGridIdx",
+  "2": "isWin"
+ },
+ "SCResFieldInfo": {
+  "1": "resFieldGridIdx",
+  "2": "isWin"
+ },
+ "GiveUpResFieldRequest": {
+  "1": "resFieldGridIdx",
+  "2": "isWin"
+ },
+ "SCResFieldCampaignBegin": {
+  "1": "resFieldGridIdx",
+  "2": "overflowedItems"
+ },
+ "SCResFieldCampaignEnd": {
+  "1": "resFieldGridIdx",
+  "2": "overflowedItems"
+ },
+ "BeginSalvageRequest": {
+  "2": "overflowedItems"
+ },
+ "EndSalvageRequest": {
+  "2": "overflowedItems"
+ },
+ "EndSalvageResponse": {
+  "2": "overflowedItems"
+ },
+ "SalvageLevelUpRequest": {
+  "7": "autoProduceEndTime",
+  "8": "autoProduceForever"
+ },
+ "SCSalvageLevelUpdate": {
+  "7": "autoProduceEndTime",
+  "8": "autoProduceForever",
+  "10": "autoFarming"
+ },
+ "OnWaterRequest": {
+  "7": "autoProduceEndTime",
+  "8": "autoProduceForever",
+  "10": "autoFarming"
+ },
+ "OnWaterResponse": {
+  "7": "autoProduceEndTime",
+  "8": "autoProduceForever",
+  "10": "autoFarming"
+ },
+ "DispWaterBuilding": {
+  "1": "buildingId",
+  "2": "level",
+  "10": "buildStartTime",
+  "11": "buildFinishTime",
+  "14": "skinId",
+  "17": "auto",
+  "18": "moveFxId",
+  "19": "streakFxId"
+ },
+ "DispFactory": {
+  "3": "finishTime",
+  "1": "buildingId",
+  "2": "productId"
+ },
+ "DispFactoryJob": {
+  "1": "buildingId",
+  "2": "overflowItem",
+  "3": "finishTime"
+ },
+ "CollectBuildingProductRequest": {
+  "1": "buildingId",
+  "2": "overflowItem"
+ },
+ "CollectBuildingProductResponse": {
+  "2": "num",
+  "1": "floaterId"
+ },
+ "BuildingProduct": {
+  "1": "floaterId",
+  "2": "floaterId"
+ },
+ "SCUpdateWaterBuilding": {
+  "1": "floaterId",
+  "2": "floaterId",
+  "3": "deniedFloaterIds"
+ },
+ "DispWaterFloater": {
+  "1": "buildingId",
+  "2": "floaterId",
+  "3": "deniedFloaterIds"
+ },
+ "PickUpFloaterRequest": {
+  "2": "floaterId",
+  "3": "deniedFloaterIds",
+  "1": "buildingId"
+ },
+ "PickUpFloaterResponse": {
+  "3": "deniedFloaterIds",
+  "1": "buildingId"
+ },
+ "BuildBuildingRequest": {
+  "1": "buildingId"
+ },
+ "UpgradeBuildingRequest": {
+  "1": "buildingId"
+ },
+ "FinishUpgradeBuildingRequest": {
+  "1": "buildingId",
+  "2": "productId"
+ },
+ "SpeedUpUpgradeBuildingRequest": {
+  "1": "buildingId",
+  "2": "productId",
+  "3": "index"
+ },
+ "SCRandomWaterFloaters": {
+  "1": "buildingId",
+  "2": "index",
+  "3": "index"
+ },
+ "StartFactoryProduceRequest": {
+  "1": "buildingId",
+  "2": "index",
+  "3": "index"
+ },
+ "SpeedUpFactoryProduceRequest": {
+  "1": "buildingId",
+  "3": "index",
+  "2": "index"
+ },
+ "CancelFactoryProduceRequest": {
+  "1": "buildingId",
+  "2": "productId"
+ },
+ "GainFactoryProduceRequest": {
+  "1": "autoEndTime",
+  "2": "productId"
+ },
+ "GainFactoryProduceResponse": {
+  "1": "buildingId",
+  "2": "productId"
+ },
+ "SetFactoryAutoProduceRequest": {
+  "1": "buildingId",
+  "2": "skinId"
+ },
+ "BuyFactoryAutoProduceRequest": {
+  "1": "buildingId",
+  "2": "fxId"
+ },
+ "BuyFactoryAutoProduceResponse": {
+  "1": "buildingId",
+  "2": "fxId"
+ },
+ "CancelFactoryAutoProduceRequest": {
+  "1": "buildingId",
+  "2": "fxId"
+ },
+ "ApplyBuildingSkinRequest": {
+  "1": "buildingId",
+  "2": "isOn"
+ },
+ "ApplyBuildingMoveFxRequest": {
+  "1": "isOn",
+  "2": "isOn"
+ },
+ "ApplyBuildingStreakFxRequest": {
+  "1": "isPaid",
+  "2": "gotDaily",
+  "3": "customId"
+ },
+ "SetBuildingAutoWorkRequest": {
+  "1": "id",
+  "2": "gotDaily",
+  "3": "customId"
+ },
+ "SetAutoFarmingRequest": {
+  "1": "id",
+  "2": "gotDaily",
+  "3": "customId"
+ },
+ "SeasonCardRequest": {
+  "1": "id",
+  "2": "gotDaily",
+  "3": "customId"
+ },
+ "SeasonCardResponse": {
+  "1": "id",
+  "2": "gotDaily",
+  "3": "customId"
+ },
+ "SeasonCardChooseRequest": {
+  "1": "chestId",
+  "2": "num"
+ },
+ "SeasonCardGotDailyRequest": {
+  "1": "chestId",
+  "2": "num"
+ },
+ "SeasonChestInfoRequest": {
+  "1": "chestId",
+  "2": "num"
+ },
+ "SeasonChestInfoResponse": {
+  "1": "askPid",
+  "2": "askNick",
+  "3": "askItemId",
+  "4": "exItemId"
+ },
+ "SeasonChestStat": {
+  "1": "askPid",
+  "2": "askNick",
+  "3": "askItemId",
+  "4": "exItemId",
+  "5": "exNick"
+ },
+ "SeasonChestListRequest": {
+  "1": "askItemId",
+  "2": "exItemId",
+  "3": "askItemId",
+  "4": "exItemId",
+  "5": "exNick"
+ },
+ "SeasonChestListResponse": {
+  "1": "askItemId",
+  "2": "exItemId",
+  "3": "askItemId",
+  "4": "exItemId",
+  "5": "exNick"
+ },
+ "DispSeasonChest": {
+  "1": "chestId",
+  "2": "exItemId",
+  "3": "askItemId",
+  "4": "exItemId",
+  "5": "exNick"
+ },
+ "SeasonChestAskRequest": {
+  "1": "chestId",
+  "2": "exItemId"
+ },
+ "SeasonChestCancelRequest": {
+  "1": "chestId"
+ },
+ "SeasonChestExchangeRequest": {
+  "1": "chestId"
+ },
+ "SeasonChestOpenRequest": {
+  "1": "askPid"
+ },
+ "SeasonChestOpenResponse": {
+  "1": "itemId",
+  "2": "num"
+ },
+ "SeasonChestGotExchangeRequest": {
+  "1": "startTime",
+  "2": "num"
+ },
+ "SCSeasonChestUpdate": {
+  "1": "startTime",
+  "2": "midEndTime",
+  "3": "endTime",
+  "4": "seasonTaskStage",
+  "5": "midAutoGrantTime"
+ },
+ "SCSeasonChestRemove": {
+  "1": "startTime",
+  "2": "midEndTime",
+  "3": "endTime",
+  "4": "seasonTaskStage",
+  "5": "midAutoGrantTime",
+  "6": "autoGrantTime"
+ },
+ "SeasonFactoryComposeRequest": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "4": "seasonTaskStage",
+  "5": "midAutoGrantTime",
+  "6": "autoGrantTime"
+ },
+ "SeasonRankInfoRequest": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "4": "seasonTaskStage",
+  "5": "guildId",
+  "6": "score",
+  "7": "title"
+ },
+ "SeasonRankInfoResponse": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "4": "seasonTaskStage",
+  "5": "guildId",
+  "6": "score",
+  "7": "title"
+ },
+ "SeasonRankPlayer": {
+  "1": "rank",
+  "2": "guildId",
+  "3": "score",
+  "5": "guildId",
+  "6": "score",
+  "7": "title"
+ },
+ "SeasonRankGuild": {
+  "1": "page",
+  "2": "type",
+  "3": "score"
+ },
+ "SeasonRankGuildRequest": {
+  "1": "page",
+  "2": "type",
+  "3": "maxPage"
+ },
+ "SeasonRankGuildResponse": {
+  "1": "page",
+  "2": "type",
+  "3": "maxPage"
+ },
+ "SeasonRankPlayerRequest": {
+  "1": "stage",
+  "2": "type",
+  "3": "maxPage"
+ },
+ "SeasonRankPlayerResponse": {
+  "3": "maxPage",
+  "1": "stage",
+  "7": "guildGrantNum"
+ },
+ "SeasonTaskRequest": {
+  "1": "stage",
+  "7": "guildGrantNum",
+  "2": "teamProgress",
+  "3": "personProgress"
+ },
+ "SeasonTaskResponse": {
+  "1": "stage",
+  "7": "guildGrantNum",
+  "2": "gotTeam",
+  "3": "personProgress"
+ },
+ "DisplaySeasonTask": {
+  "1": "stage",
+  "2": "gotTeam",
+  "3": "gotPerson"
+ },
+ "DisplaySeasonGot": {
+  "1": "stage",
+  "2": "progress",
+  "3": "gotPerson"
+ },
+ "GotSeasonTaskRequest": {
+  "1": "stage",
+  "2": "progress"
+ },
+ "GotSeasonTaskResponse": {
+  "1": "stage",
+  "2": "progress"
+ },
+ "SCSeasonTeamProgress": {
+  "1": "clientTimestamp",
+  "2": "progress"
+ },
+ "SCSeasonPlayerProgress": {
+  "1": "clientTimestamp",
+  "2": "serverTimestamp"
+ },
+ "SeasonTaskStageRequest": {
+  "1": "serverTimestamp",
+  "2": "serverTimestamp"
+ },
+ "SeasonTaskStageResponse": {
+  "1": "reason",
+  "2": "serverTimestamp"
+ },
+ "PingRequest": {
+  "1": "reason",
+  "2": "serverTimestamp"
+ },
+ "PingResponse": {
+  "1": "type",
+  "2": "version"
+ },
+ "SCServerTimeChanged": {
+  "1": "seqNo",
+  "2": "version"
+ },
+ "SCChannelExpired": {
+  "1": "seqNo",
+  "2": "version"
+ },
+ "SCClientUpdate": {
+  "1": "worldIds",
+  "2": "executeTs"
+ },
+ "Ack": {
+  "1": "worldIds",
+  "2": "executeTs",
+  "3": "myNewGuildIdx",
+  "4": "matchMaking"
+ },
+ "Nack": {
+  "1": "key",
+  "2": "value",
+  "3": "myNewGuildIdx",
+  "4": "matchMaking"
+ },
+ "ResendFailed": {
+  "1": "key",
+  "2": "value",
+  "3": "myNewGuildIdx",
+  "4": "matchMaking"
+ },
+ "UniteWorldsPlanRequest": {
+  "1": "value",
+  "2": "value",
+  "3": "myNewGuildIdx",
+  "4": "matchMaking"
+ },
+ "UniteWorldsPlanResponse": {
+  "1": "value",
+  "2": "value",
+  "3": "myNewGuildIdx",
+  "4": "matchMaking"
+ },
+ "SaveIntCookieRequest": {
+  "1": "stageId",
+  "2": "startTime"
+ },
+ "GetIntCookieRequest": {
+  "1": "matchTimeId",
+  "2": "startTime"
+ },
+ "GetIntCookieResponse": {
+  "1": "matchTimeId",
+  "2": "matchTime"
+ },
+ "DispTournamentTimeline": {
+  "1": "bought",
+  "2": "total",
+  "3": "claimed"
+ },
+ "DispTournamentStage": {
+  "1": "bought",
+  "2": "total",
+  "3": "claimed"
+ },
+ "DispTournamentMatchScheduleTime": {
+  "1": "contestId",
+  "2": "total",
+  "3": "claimed",
+  "6": "lastClaimDailyGiftTime",
+  "9": "adjustHero"
+ },
+ "DispBetCardPool": {
+  "1": "contestId",
+  "2": "total",
+  "3": "claimed",
+  "6": "lastClaimDailyGiftTime",
+  "9": "adjustHero"
+ },
+ "SCTournamentOpen": {
+  "1": "contestId",
+  "6": "lastClaimDailyGiftTime",
+  "9": "adjustHero"
+ },
+ "DispTournamentContestant": {
+  "1": "currentStageId",
+  "2": "nextMatchTimeId",
+  "3": "nextMatchTime",
+  "4": "rank"
+ },
+ "SCTournamentContestantUpdate": {
+  "1": "contestId",
+  "2": "nextMatchTimeId",
+  "3": "nextMatchTime"
+ },
+ "SCTournamentUpdate": {
+  "1": "groupId",
+  "2": "nextMatchTimeId",
+  "3": "nextMatchTime"
+ },
+ "DispTournamentState": {
+  "1": "half",
+  "2": "nextMatchTimeId",
+  "3": "nextMatchTime"
+ },
+ "SCTournamentChampion": {
+  "1": "half"
+ },
+ "TournamentGroupScheduleRequest": {
+  "1": "half"
+ },
+ "TournamentKnockoutScheduleRequest": {
+  "1": "half"
+ },
+ "TournamentFinalScheduleResponse": {
+  "1": "matchId"
+ },
+ "TournamentScheduleResponse": {
+  "1": "matchId"
+ },
+ "TournamentMatchDetailRequest": {
+  "1": "contestId",
+  "2": "winSide"
+ },
+ "TournamentMatchDetailResponse": {
+  "1": "contestId",
+  "2": "winSide"
+ },
+ "SCTournamentMatchComplete": {
+  "1": "contestId",
+  "2": "seq",
+  "4": "nextContestTime"
+ },
+ "DispTournamentMatchResult": {
+  "1": "contestId",
+  "2": "seq",
+  "4": "nextContestTime"
+ },
+ "TournamentRankingRequest": {
+  "1": "contestId",
+  "2": "claimedPredict",
+  "4": "nextContestTime",
+  "3": "claimedCombos"
+ },
+ "TournamentRankingResponse": {
+  "1": "groupId",
+  "2": "claimedPredict",
+  "4": "nextContestTime",
+  "3": "claimedCombos"
+ },
+ "TournamentGroupGuessRequest": {
+  "2": "claimedPredict",
+  "3": "claimedCombos",
+  "1": "groupId"
+ },
+ "TournamentGroupGuessResponse": {
+  "2": "claimedPredict",
+  "3": "claimedCombos",
+  "1": "playerId"
+ },
+ "TournamentGroupFightersRequest": {
+  "1": "playerId"
+ },
+ "TournamentGroupFightersResponse": {
+  "1": "playerId"
+ },
+ "TournamentFighterDetailRequest": {
+  "1": "playerId"
+ },
+ "TournamentFighterDetailResponse": {
+  "1": "uid",
+  "3": "power"
+ },
+ "TournamentKnockoutBetListRequest": {
+  "1": "uid",
+  "3": "power"
+ },
+ "TournamentKnockoutBetListResponse": {
+  "1": "uid",
+  "3": "power"
+ },
+ "TournamentFormationRequest": {
+  "1": "uid",
+  "3": "power"
+ },
+ "TournamentFormation": {
+  "1": "uid",
+  "3": "power"
+ },
+ "TournamentFormationResponse": {
+  "1": "groupId",
+  "2": "playerId"
+ },
+ "TournamentSaveFormationRequest": {
+  "1": "comboId",
+  "2": "playerId"
+ },
+ "TournamentSaveFormationResponse": {
+  "1": "comboId",
+  "2": "playerId"
+ },
+ "TournamentGroupPredictRequest": {
+  "1": "comboId",
+  "2": "playerId"
+ },
+ "TournamentClaimPredictRequest": {
+  "1": "comboId"
+ },
+ "TournamentClaimComboRequest": {
+  "1": "comboId"
+ },
+ "TournamentClaimBetCardPoolRequest": {
+  "1": "matchId",
+  "2": "side",
+  "3": "amount"
+ },
+ "TournamentClaimBetCardPoolResponse": {
+  "1": "matchId",
+  "2": "side",
+  "3": "amount"
+ },
+ "TournamentBetCardPoolInfoRequest": {
+  "1": "matchId",
+  "2": "side",
+  "3": "amount"
+ },
+ "TournamentBetCardPoolInfoResponse": {
+  "1": "matchId",
+  "2": "side",
+  "3": "amount"
+ },
+ "TournamentKnockoutBetRequest": {
+  "1": "matchId",
+  "2": "side",
+  "3": "amount"
+ },
+ "TournamentShopInfoRequest": {
+  "1": "playerId",
+  "2": "worldId",
+  "3": "nickname",
+  "4": "totalPower"
+ },
+ "TournamentShopInfoResponse": {
+  "1": "playerId",
+  "2": "worldId",
+  "3": "nickname",
+  "4": "totalPower"
+ },
+ "TournamentShopBuyRequest": {
+  "1": "playerId",
+  "2": "rank",
+  "3": "nickname",
+  "4": "totalPower"
+ },
+ "TournamentClaimDailyGiftRequest": {
+  "1": "matchId",
+  "2": "lFighter",
+  "3": "nickname",
+  "4": "totalPower"
+ },
+ "DispTournamentFighter": {
+  "1": "matchId",
+  "2": "lFighter",
+  "3": "rFighter",
+  "4": "winSide"
+ },
+ "DispTournamentRankItem": {
+  "2": "lFighter",
+  "1": "hero",
+  "3": "rFighter",
+  "4": "winSide"
+ },
+ "DispTournamentMatch": {
+  "1": "winSide",
+  "2": "lPower",
+  "3": "rPower",
+  "4": "lInitHp"
+ },
+ "DispTournamentTeam": {
+  "1": "groupId",
+  "2": "lPower",
+  "3": "rPower",
+  "4": "lInitHp",
+  "5": "rInitHp",
+  "6": "lHp",
+  "7": "rHp",
+  "10": "replayId"
+ },
+ "DispTournamentFight": {
+  "1": "groupId",
+  "2": "lPower",
+  "3": "champion",
+  "4": "lInitHp",
+  "5": "rInitHp",
+  "6": "lHp",
+  "7": "rHp",
+  "10": "replayId"
+ },
+ "DispTournamentGroupGuess": {
+  "1": "matchId",
+  "3": "myAmount",
+  "2": "mySide",
+  "6": "lPool",
+  "7": "rPool",
+  "8": "winSide",
+  "9": "myGain",
+  "11": "lCnt",
+  "12": "rCnt",
+  "13": "complete"
+ },
+ "DispTournamentKnockoutBet": {
+  "1": "matchId",
+  "2": "nextRefreshTime",
+  "3": "todayRewardTimes",
+  "6": "lPool",
+  "7": "rPool",
+  "8": "winSide",
+  "9": "myGain",
+  "11": "lCnt",
+  "12": "rCnt",
+  "13": "complete",
+  "4": "totalRewardTimes"
+ },
+ "TreasureLootStatsRequest": {
+  "2": "count",
+  "3": "todayRewardTimes",
+  "4": "totalRewardTimes",
+  "1": "color"
+ },
+ "TreasureLootStatsResponse": {
+  "2": "count",
+  "3": "todayRewardTimes",
+  "4": "totalRewardTimes",
+  "1": "color"
+ },
+ "SCTreasureLootRefresh": {
+  "2": "color",
+  "1": "uid"
+ },
+ "TreasureLootStats": {
+  "1": "uid",
+  "2": "color",
+  "3": "ownerGuildIdx",
+  "4": "ownerFleetNum",
+  "5": "progress",
+  "7": "gridIdx"
+ },
+ "TreasureLootListRequest": {
+  "1": "uid",
+  "2": "color",
+  "3": "ownerGuildIdx",
+  "4": "ownerFleetNum",
+  "5": "progress",
+  "7": "gridIdx"
+ },
+ "TreasureLootListResponse": {
+  "1": "uid",
+  "2": "color",
+  "3": "ownerGuildIdx",
+  "4": "ownerFleetNum",
+  "5": "progress",
+  "7": "gridIdx"
+ },
+ "TreasureLootInstance": {
+  "1": "playerId",
+  "2": "nickname",
+  "3": "power",
+  "4": "ownerFleetNum",
+  "5": "progress",
+  "7": "gridIdx"
+ },
+ "SCTreasureLootUpdate": {
+  "1": "uid",
+  "2": "nickname",
+  "3": "power",
+  "4": "progress",
+  "5": "estProgress",
+  "6": "rank",
+  "7": "guildIdx",
+  "9": "rewardTimes"
+ },
+ "TreasureLootRankItem": {
+  "1": "uid",
+  "2": "nickname",
+  "3": "power",
+  "4": "progress",
+  "5": "estProgress",
+  "6": "rank",
+  "7": "guildIdx",
+  "9": "rewardTimes"
+ },
+ "TreasureLootRankRequest": {
+  "1": "uid",
+  "2": "fleetBuildingIds"
+ },
+ "TreasureLootRankResponse": {
+  "1": "uidList",
+  "2": "fleetBuildingIds"
+ },
+ "TreasureLootBattlePoint": {
+  "1": "uid",
+  "2": "fleetBuildingIds"
+ },
+ "TreasureLootSendFleetsRequest": {
+  "1": "uid",
+  "2": "fleetBuildingIds"
+ },
+ "SCDeleteTreasureLoot": {
+  "1": "uid"
+ },
+ "TreasureLootDefenceRequest": {
+  "1": "id",
+  "2": "name",
+  "3": "flagBackground",
+  "4": "flagPattern",
+  "5": "level"
+ },
+ "TreasureLootDefenceResponse": {
+  "1": "id",
+  "2": "name",
+  "3": "flagBackground",
+  "4": "flagPattern",
+  "5": "level"
+ },
+ "AllGuildAbstractionRequest": {
+  "1": "id",
+  "2": "name",
+  "3": "flagBackground",
+  "4": "flagPattern",
+  "5": "level"
+ },
+ "AllGuildAbstractionResponse": {
+  "1": "id",
+  "2": "name",
+  "3": "flagBackground",
+  "4": "flagPattern",
+  "5": "level"
+ },
+ "GuildAbstraction": {
+  "1": "id",
+  "2": "name",
+  "3": "myGuildTitle",
+  "4": "flagPattern",
+  "5": "level"
+ },
+ "SCGuildAbstraction": {
+  "3": "myGuildTitle",
+  "5": "fortFund",
+  "6": "blackWaterId"
+ },
+ "WorldInfoRequest": {
+  "3": "myGuildTitle",
+  "5": "fortFund",
+  "6": "blackWaterId",
+  "1": "blackWaterId"
+ },
+ "WorldInfoResponse": {
+  "3": "myGuildTitle",
+  "5": "fortFund",
+  "6": "blackWaterId",
+  "1": "cityId"
+ },
+ "SCBlackWaterId": {
+  "1": "itemId",
+  "2": "speed"
+ },
+ "BountyCity": {
+  "1": "itemId",
+  "2": "speed"
+ },
+ "WorldResRequest": {
+  "1": "itemId",
+  "2": "speed"
+ },
+ "WorldResResponse": {
+  "1": "itemId",
+  "2": "speed"
+ },
+ "WorldResOutput": {
+  "1": "id",
+  "2": "state",
+  "3": "guildIdx",
+  "4": "defenceFleetNum",
+  "5": "attackFleetNum"
+ },
+ "SCWorldRes": {
+  "1": "id",
+  "2": "state",
+  "3": "guildIdx",
+  "4": "defenceFleetNum",
+  "5": "attackFleetNum",
+  "7": "priorityDefFleetNum",
+  "8": "priorityAtkFleetNum"
+ },
+ "SCFleet": {
+  "1": "name",
+  "2": "state",
+  "3": "guildIdx",
+  "4": "defenceFleetNum",
+  "5": "attackFleetNum",
+  "7": "priorityDefFleetNum",
+  "8": "priorityAtkFleetNum"
+ },
+ "WorldCity": {
+  "1": "name",
+  "2": "state",
+  "3": "isNpc",
+  "4": "guildIdx",
+  "5": "skinId",
+  "7": "priorityDefFleetNum",
+  "8": "priorityAtkFleetNum",
+  "6": "petId"
+ },
+ "BattlePointFighter": {
+  "1": "cit",
+  "3": "isNpc",
+  "4": "guildIdx",
+  "5": "skinId",
+  "6": "petId"
+ },
+ "BattlePoint": {
+  "1": "name",
+  "2": "guildIdx",
+  "4": "power",
+  "5": "multiple",
+  "6": "isNpc"
+ },
+ "SCity": {
+  "1": "name",
+  "2": "guildIdx",
+  "4": "power",
+  "5": "multiple",
+  "6": "isNpc"
+ },
+ "CityDefenceRequest": {
+  "1": "cityId",
+  "2": "guildIdx",
+  "4": "power",
+  "5": "multiple",
+  "6": "isNpc"
+ },
+ "DefenceFleetInfo": {
+  "1": "cityId",
+  "2": "guildIdx",
+  "4": "power",
+  "5": "multiple",
+  "6": "isNpc"
+ },
+ "CityDefenceResponse": {
+  "1": "cityId"
+ },
+ "CityRecruitDefenceRequest": {
+  "1": "cityId",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "assembleCityId"
+ },
+ "DeclareWarRequest": {
+  "1": "attackGuildIdx",
+  "2": "startTime",
+  "3": "endTime",
+  "4": "assembleCityId"
+ },
+ "CancelDeclareWarRequest": {
+  "1": "attackGuildIdx",
+  "2": "defenceGuildIdx",
+  "3": "cityId",
+  "4": "assembleCityId"
+ },
+ "WarDeclarationRequest": {
+  "2": "defenceGuildIdx",
+  "3": "cityId",
+  "4": "assembleCityId",
+  "1": "attackGuildIdx"
+ },
+ "WarDeclarationResponse": {
+  "2": "defenceGuildIdx",
+  "3": "cityId",
+  "4": "assembleCityId",
+  "1": "cityId"
+ },
+ "WarDeclaration": {
+  "1": "startTime",
+  "2": "endTime",
+  "3": "cityId"
+ },
+ "SCWarDeclaration": {
+  "1": "startTime",
+  "2": "all"
+ },
+ "SCAssembleCity": {
+  "1": "cityId",
+  "2": "all"
+ },
+ "SetAssembleCityRequest": {
+  "1": "cityId",
+  "2": "num"
+ },
+ "SCCityWarTime": {
+  "1": "raidId",
+  "2": "num"
+ },
+ "SCRemoveDeclaration": {
+  "2": "num",
+  "1": "raidId"
+ },
+ "ExitWorldMapRequest": {
+  "1": "raidId",
+  "2": "passedStage",
+  "3": "sweepTimes"
+ },
+ "SCCityDefNum": {
+  "1": "raidId",
+  "2": "passedStage",
+  "3": "sweepTimes",
+  "4": "buySweepTimes"
+ },
+ "GotWorldOnlineRwdRequest": {
+  "1": "raidId",
+  "2": "passedStage",
+  "3": "sweepTimes",
+  "4": "buySweepTimes"
+ },
+ "TrialRaidInfoRequest": {
+  "1": "raidId",
+  "2": "stageId",
+  "3": "sweepTimes",
+  "4": "buySweepTimes"
+ },
+ "TrialRaidInfoResponse": {
+  "1": "raidId",
+  "2": "stageId",
+  "3": "sweepTimes",
+  "4": "buySweepTimes"
+ },
+ "DispTrialRaid": {
+  "1": "raidId",
+  "2": "stageId",
+  "3": "sweepTimes",
+  "4": "buySweepTimes"
+ },
+ "SCTrialRaidUpdate": {
+  "1": "raidId",
+  "2": "useAdvCard"
+ },
+ "TrialRaidChallengeRequest": {
+  "1": "raidId",
+  "2": "useAdvCard"
+ },
+ "TrialRaidChallengeResponse": {
+  "1": "raidId",
+  "2": "startTime",
+  "3": "endTime"
+ },
+ "TrialRaidBuySweepRequest": {
+  "1": "raidId",
+  "2": "gotScoreId",
+  "3": "endTime"
+ },
+ "UltraOpenRequest": {
+  "1": "raidId",
+  "2": "gotScoreId",
+  "3": "endTime",
+  "5": "settleTime"
+ },
+ "UltraOpenResponse": {
+  "1": "raidId",
+  "2": "gotScoreId",
+  "3": "endTime",
+  "5": "settleTime"
+ },
+ "UltraInfoRequest": {
+  "2": "score",
+  "5": "settleTime",
+  "1": "lv"
+ },
+ "UltraInfoResponse": {
+  "2": "wave",
+  "5": "settleTime",
+  "1": "lv"
+ },
+ "UltraScore": {
+  "1": "index",
+  "2": "wave"
+ },
+ "UltraEnemyRequest": {
+  "1": "index",
+  "2": "wave"
+ },
+ "UltraEnemyResponse": {
+  "1": "lv",
+  "2": "affixId"
+ },
+ "UltraSaveFormationRequest": {
+  "1": "lv",
+  "2": "affixId"
+ },
+ "UltraFormationSequenceRequest": {
+  "1": "lv",
+  "2": "win",
+  "3": "affixId",
+  "4": "score"
+ },
+ "UltraFormationResponse": {
+  "1": "lv",
+  "2": "win",
+  "3": "affixId",
+  "4": "score"
+ },
+ "UltraFightRequest": {
+  "1": "isLWin",
+  "2": "win",
+  "3": "lPower",
+  "4": "lInitHp",
+  "5": "lHp"
+ },
+ "UltraFightResponse": {
+  "2": "win",
+  "3": "lPower",
+  "4": "lInitHp",
+  "1": "isLWin",
+  "5": "lHp",
+  "6": "reportId",
+  "8": "rPower",
+  "9": "rInitHp",
+  "10": "rHp"
+ },
+ "UltraFightRecord": {
+  "1": "page",
+  "3": "lPower",
+  "4": "lInitHp",
+  "5": "lHp",
+  "6": "reportId",
+  "8": "rPower",
+  "9": "rInitHp",
+  "10": "rHp",
+  "2": "maxPage"
+ },
+ "UltraRankRequest": {
+  "1": "gotScoreId",
+  "2": "maxPage"
+ },
+ "UltraRankResponse": {
+  "2": "maxPage",
+  "1": "raidId"
+ },
+ "GotUltraScoreRewardRequest": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "score",
+  "5": "worldId",
+  "6": "ts"
+ },
+ "GotUltraScoreRewardResponse": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "score",
+  "5": "worldId",
+  "6": "ts"
+ },
+ "UltraExtremeRequest": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "score",
+  "5": "worldId",
+  "6": "ts"
+ },
+ "UltraExtremeResponse": {
+  "1": "playerId",
+  "2": "nickname",
+  "4": "score",
+  "5": "worldId",
+  "6": "ts"
+ },
+ "WorldBossInfoRequest": {
+  "1": "bossId",
+  "2": "gridIdx",
+  "3": "bestDamage",
+  "4": "gotRewardLevel"
+ },
+ "WorldBossInfoResponse": {
+  "1": "bossId",
+  "2": "gridIdx",
+  "3": "bestDamage",
+  "4": "gotRewardLevel"
+ },
+ "WorldBossDamageInfoRequest": {
+  "1": "bossId",
+  "2": "gridIdx",
+  "3": "bestDamage",
+  "4": "gotRewardLevel"
+ },
+ "WorldBossDamageInfoResponse": {
+  "1": "bossId",
+  "2": "fleetBuildingIds",
+  "3": "bestDamage",
+  "4": "gotRewardLevel"
+ },
+ "WorldBossInfo": {
+  "1": "bossId",
+  "2": "fleetBuildingIds",
+  "3": "bestDamage",
+  "4": "gotRewardLevel"
+ },
+ "SCWorldBossInfo": {
+  "1": "rank",
+  "2": "playerId"
+ },
+ "ChallengeWorldBossRequest": {
+  "1": "rank",
+  "2": "playerId",
+  "3": "nickname",
+  "5": "power",
+  "6": "damage",
+  "7": "guildIdx"
+ },
+ "SCWorldBossCampaignBegin": {
+  "1": "rank",
+  "2": "guildId",
+  "3": "damage",
+  "5": "power",
+  "6": "damage",
+  "7": "guildIdx"
+ },
+ "SCWorldBossCampaignEnd": {
+  "1": "rank",
+  "2": "guildId",
+  "3": "damage",
+  "5": "power",
+  "6": "damage",
+  "7": "guildIdx"
+ },
+ "WorldBossPlayerDamage": {
+  "1": "rank",
+  "2": "guildId",
+  "3": "damage",
+  "5": "power",
+  "6": "damage",
+  "7": "guildIdx"
+ },
+ "WorldBossGuildDamage": {
+  "1": "rank",
+  "2": "guildId",
+  "3": "damage"
+ },
+ "WorldBossPlayerRankResponse": {
+  "1": "isLeftWin",
+  "3": "index",
+  "4": "fightTime"
+ },
+ "WorldBossGuildRankRequest": {
+  "1": "index",
+  "3": "index",
+  "4": "fightTime"
+ },
+ "WorldBossGuildRankResponse": {
+  "1": "index",
+  "3": "index",
+  "4": "fightTime"
+ },
+ "WorldBossGetDamageRewardRequest": {
+  "1": "index",
+  "3": "index",
+  "4": "fightTime"
+ },
+ "BattleResult": {
+  "1": "index",
+  "3": "index",
+  "4": "fightTime"
+ },
+ "IndexedBattleInitialData": {
+  "1": "index"
+ }
+}

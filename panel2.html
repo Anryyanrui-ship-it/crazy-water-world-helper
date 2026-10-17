@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>疯狂水世界 · 挂机面板</title>
+<style>
+  :root{--bg:#f4f6f9;--card:#fff;--line:#e8ecf2;--tx:#1f2733;--dim:#8a93a3;
+        --ok:#12b76a;--bad:#f04438;--acc:#1677ff;--warn:#f79009}
+  *{box-sizing:border-box;-webkit-text-size-adjust:100%}
+  body{margin:0;padding:10px 10px 30px;background:var(--bg);color:var(--tx);
+       font:14px/1.5 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+  #app{max-width:520px;margin:0 auto}
+  .top{display:flex;align-items:center;justify-content:space-between;margin:2px 0 10px}
+  .top h1{font-size:16px;margin:0}
+  .pill{font-size:11px;padding:2px 8px;border-radius:20px;background:#eef3ff;color:var(--acc)}
+  .pill.warn{background:#fff4e5;color:var(--warn)}
+  .pill.bad{background:#feeceb;color:var(--bad)}
+  .card{background:var(--card);border-radius:12px;padding:12px;margin-bottom:10px;
+        box-shadow:0 1px 3px rgba(16,24,40,.06)}
+  .row{display:flex;align-items:baseline;gap:6px;font-size:13px;padding:1px 0}
+  .row .k{color:var(--dim);flex:0 0 auto}
+  .row .v{margin-left:auto;font-weight:600;text-align:right;word-break:break-all}
+  .acct-head{display:flex;align-items:center;gap:8px}
+  .avatar{width:34px;height:34px;border-radius:9px;background:#eef3ff;display:flex;
+          align-items:center;justify-content:center;font-size:17px;flex:0 0 auto}
+  .name{font-size:15px;font-weight:700;line-height:1.2}
+  .meta{font-size:12px;color:var(--dim);margin-top:1px}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--bad);vertical-align:1px}
+  .dot.on{background:var(--ok)}
+  .btns{display:flex;gap:6px;margin-top:10px}
+  .btn{flex:1;text-align:center;padding:7px 0;border-radius:8px;border:1px solid var(--line);
+       background:#fff;font-size:12.5px;color:var(--tx);font-weight:500}
+  .btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+  .btn.warn{color:var(--warn);border-color:#ffe1b8}
+  .btn.bad{color:var(--bad);border-color:#ffd6d3}
+  .log{font:12px/1.75 ui-monospace,Menlo,Consolas,monospace;word-break:break-all}
+  .log div{display:block}
+  .log .t{color:#9aa4b2;margin-right:6px}
+  .log .m{color:var(--acc);margin-right:4px}
+  .log .lv-ok{color:#12a150}
+  .log .lv-info{color:#5b6472}
+  .log .lv-warn{color:#c47f17}
+  .log .lv-bad{color:#e5484d}
+  .log .lv-err{color:#e5484d;font-weight:600}
+  .log .n{color:#98a2b3;font-size:11px;margin-left:4px}
+  .lstat{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .lstat span{background:#f2f5f9;border-radius:6px;padding:3px 8px;font-size:11px;color:#5b6472}
+  .lstat span b{color:#12a150;font-weight:600}
+  .lstat span i{color:#e5484d;font-style:normal}
+  .tabs{display:flex;flex-wrap:nowrap;gap:8px;margin:10px 0;overflow-x:auto;
+        padding:2px 0 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;font-size:13px;padding:6px 14px;border-radius:20px;
+       background:#fff;color:#5b6472;border:1px solid var(--line);white-space:nowrap}
+  .tab.on{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600}
+  /* ---- 模块卡片：左侧粗色条，对标竞品 ---- */
+  .mod{background:var(--card);border-radius:14px;padding:12px 13px;margin-bottom:10px;
+       box-shadow:0 1px 3px rgba(16,24,40,.06);border-left:4px solid var(--acc)}
+  .mod h3{font-size:14px;margin:0 0 8px;color:var(--acc);font-weight:700}
+  /* ---- 数据时间戳 ---- */
+  .stamp{font-size:11.5px;color:var(--dim);margin:6px 0 2px;
+         font-variant-numeric:tabular-nums}
+  /* ---- 资源进度条（满仓标红）---- */
+  .rbar{display:flex;align-items:center;gap:9px;padding:5px 0;font-size:13px}
+  .rbar .rn{flex:0 0 62px;color:var(--tx)}
+  .rbar .rt{flex:1;height:16px;border-radius:8px;background:#eef1f5;overflow:hidden;
+            position:relative;min-width:60px}
+  .rbar .rt i{display:block;height:100%;border-radius:8px;background:#f0a020;
+              transition:width .3s}
+  .rbar.full .rt i{background:#e5484d}
+  .rbar .rv{flex:0 0 auto;font-variant-numeric:tabular-nums;font-weight:600;
+            font-size:12.5px;color:#4a5568;min-width:96px;text-align:right}
+  .rbar.full .rv{color:#e5484d}
+  .rbar .rf{flex:0 0 auto;font-size:11px;padding:1px 7px;border-radius:5px;
+            background:#e5484d;color:#fff;font-weight:700}
+  /* ---- 顶部"数据较久未更新"黄条 ---- */
+  .stalebar{display:flex;align-items:center;gap:7px;background:#fff8e6;color:#a16207;
+            border:1px solid #fde9b8;border-radius:10px;padding:9px 11px;
+            font-size:12.5px;margin-bottom:10px}
+  .stalebar b{font-weight:700}
+  .sec{font-size:12px;color:var(--dim);margin:12px 0 4px}
+  .back{font-size:13px;color:var(--acc);padding:2px 0 8px}
+  .mono{font-family:ui-monospace,Menlo,monospace}
+  .empty{color:var(--dim);font-size:13px;text-align:center;padding:20px 0}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .mod{background:#fff;border-radius:12px;padding:12px;margin-bottom:10px;box-shadow:0 1px 3px rgba(16,24,40,.06)}
+  .mod h3{font-size:14px;margin:0 0 8px;color:#1677ff}
+  .mod .when{font-size:11.5px;color:#a8b0bd;margin:2px 0 6px}
+  .big{font-size:26px;font-weight:800;color:#1677ff;line-height:1.1}
+  .badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:6px;background:#feeceb;color:#f04438;margin-left:6px;vertical-align:3px}
+  .badge.ok{background:#e7f8ef;color:#12b76a}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+  .cell{border:1px solid #eef1f5;border-radius:8px;padding:6px 8px;font-size:12.5px;display:flex;
+        justify-content:space-between;gap:6px;background:#fcfdff}
+  .cell b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cell i{font-style:normal;color:#8a93a3;font-size:11.5px;flex:0 0 auto}
+  .tick{display:flex;gap:4px;margin:8px 0;flex-wrap:wrap}
+  .tick span{font-size:11.5px;padding:2px 7px;border-radius:6px;background:#f2f5f9;color:#8a93a3}
+  .tick span.on{background:#1677ff;color:#fff;font-weight:700}
+  .sub{background:#f7f9fc;border-radius:8px;padding:8px 9px;margin-top:8px;font-size:12.5px;color:#4a5568}
+  .chip{display:inline-flex;align-items:baseline;gap:4px;font-size:12.5px;padding:4px 9px;
+        border-radius:8px;background:#f5f7fa;border:1px solid #eef1f5}
+  .chip i{font-style:normal;color:var(--dim);font-size:11.5px}
+  /* ---- 居民订单条目：一条订单一个卡片，列出居民要什么 ---- */
+  .ord{background:#fbfcfe;border:1px solid #eef1f5;border-left:3px solid #f0a020;
+       border-radius:8px;padding:8px 10px;margin-top:8px}
+  .ordhd{display:flex;align-items:center;gap:6px;font-size:13px;margin-bottom:6px}
+  .ordhd b{font-weight:700}
+  .ordtag{font-size:10.5px;padding:1px 6px;border-radius:5px;background:#fff1e0;
+          color:#d97706;border:1px solid #fde3bd;font-weight:700}
+  /* ---- 居民需求卡片（对标竞品：整条卡片 + 右上角奖励 + 缺料标红）---- */
+  .ordcard{background:#fff;border:1px solid #eef1f5;border-left:3px solid #f0a020;
+           border-radius:10px;padding:9px 11px;margin-top:8px;position:relative}
+  /* 奖励挤在右上角，不占左侧信息流的宽度 */
+  .ordreward{position:absolute;right:11px;top:9px;font-size:11.5px;color:#8a94a6}
+  .ordcard .ordhd{padding-right:96px;margin-bottom:7px;font-size:12.5px;
+                  color:#5b6472}
+  .ordcard .ordhd b{color:#1f2937}
+  /* 可交付/缺几样 的状态标签 */
+  .ordst{font-size:10.5px;padding:1px 7px;border-radius:5px;font-weight:700;
+         margin-left:auto}
+  .ordst.ok{background:#e8f7ee;color:#15803d;border:1px solid #c6ecd4;
+            margin-left:0}
+  .ordst.no{background:#fdeaea;color:#dc2626;border:1px solid #f9cfcf;
+            margin-left:0}
+  .orditems{display:flex;flex-wrap:wrap;gap:6px}
+  /* 物料胶囊：够的时候是灰底黑字，缺的时候整块变红 —— 一眼扫过去
+     就知道哪个订单现在交得掉、哪个还差东西 */
+  .oi{display:inline-flex;align-items:baseline;gap:5px;font-size:12.5px;
+      padding:4px 9px;border-radius:7px;background:#f5f7fa;
+      border:1px solid #eef1f5;color:#1f2937}
+  .oi em{font-style:normal;font-size:11.5px;color:#9aa3b2}
+  .oi.lack{background:#fdeaea;border-color:#f8caca;color:#dc2626;font-weight:700}
+  .oi.lack em{color:#e06c6c;font-weight:700}
+  /* 订单号跟在居民名后面，弱化显示 —— 主信息是"哪个居民要什么" */
+  .ordidx{font-size:11px;color:#a8b0bd}
+  /* 材料齐了的订单给一句明确的话，否则用户看到红色标签消失会不确定 */
+  .ordok{font-size:11.5px;color:#15803d;margin-top:6px}
+  .ordmiss{font-size:11.5px;color:#c2410c;margin-top:7px;padding-top:6px;
+           border-top:1px dashed #f0e0d0}
+  .ordmiss b{font-weight:700}
+  /* "交给工厂加工"的回执。跟缺料提示同一块，但用更弱的颜色，
+     避免和上面的红色缺料抢视觉重点 */
+  .ordfac{font-size:11px;color:#5b6472;margin-top:5px}
+  .ordfac b{color:#1f2733;font-weight:600}
+  /* 没有工厂时是"解释"，不是"回执"，用灰底弱化 */
+  .ordfac.none{color:#8a93a3;background:#f7f9fc;border-radius:5px;
+               padding:6px 8px;line-height:1.5}
+  /* ===== 英雄开关卡（对标竞品 14 项）=====
+     竖排卡片：每项带一句说明；会花不可逆资源的项标红边 + ⚠。 */
+  .hgrid{display:grid;gap:6px}
+  .hcard{background:#fff;border:1px solid #e6ebf2;border-radius:8px;
+         padding:8px 10px}
+  .hcard.on{border-color:#cfe3d3;background:#fbfefc}
+  .hcard.danger{border-color:#f2d6d2}
+  .hcard.danger.on{background:#fffbfa}
+  .hrow{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .hrow b{font-size:13px;color:#1f2733;font-weight:600}
+  .hsw{font-size:11px;padding:3px 12px;border-radius:11px;cursor:pointer;
+       background:#eef2f7;color:#5b6472;user-select:none;white-space:nowrap;
+       transition:background .15s,color .15s}
+  .hsw.on{background:#3f9e5a;color:#fff}
+  .hcard.danger .hsw:not(.on){background:#fdeceb;color:#c0392b}
+  .hdsc{font-size:11px;color:#7b8494;margin-top:3px;line-height:1.5}
+  .hwarn{font-size:11px;color:#c0392b;margin-top:4px;line-height:1.5}
+  /* 指定英雄多选白名单 */
+  .herosel{margin-top:7px;background:#f8fafc;border-radius:8px;padding:8px 10px}
+  .hshd{font-size:12px;color:#1f2733;font-weight:600;display:flex;
+        align-items:center;justify-content:space-between;gap:8px}
+  .hshint{font-size:11px;color:#8a93a3;font-weight:400}
+  .hstabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+  .hstab{font-size:11px;padding:3px 10px;border-radius:11px;cursor:pointer;
+         background:#fff;border:1px solid #e6ebf2;color:#5b6472;
+         user-select:none;transition:all .15s}
+  .hstab.on{background:#3f6ea8;border-color:#3f6ea8;color:#fff}
+  .hstab.safe{background:#f0f8f2;border-color:#cfe3d3;color:#2f7a46}
+  .hstab.safe.on{background:#3f9e5a;border-color:#3f9e5a;color:#fff}
+  .hstab i{font-style:normal;opacity:.75;margin-left:3px}
+  .hstip{font-size:11px;color:#8a93a3;margin-top:6px;line-height:1.5}
+  .hsact{font-size:11px;color:#3f6ea8;cursor:pointer;margin-top:6px}
+  .hstat{font-size:11px;color:#7b8494;margin-top:7px;line-height:1.6}
+  .hstat b{color:#1f2733;font-weight:600}
+  /* 分组标题上的解锁等级徽标（对标竞品配置页的 Lv.N 提示） */
+  .lvtip{font-size:10px;font-weight:400;color:#8a93a3;background:#eef2f7;
+         border-radius:9px;padding:1px 7px;margin-left:6px;
+         vertical-align:middle}
+  /* 协议探针结果面板 */
+  .probe{margin-top:8px;background:#f7f9fc;border:1px solid #e6ebf2;
+         border-radius:8px;padding:9px 11px;font-size:11px;
+         color:#4a5464;line-height:1.7;max-height:320px;overflow:auto;
+         white-space:pre-wrap;word-break:break-all}
+  .probe b{color:#1f2733}
+  .probe .ok{color:#2f7a46}
+  .probe .no{color:#c0392b}
+  /* ===== 英雄品级（绿/蓝/紫/橙/红）=====
+     色值来自竞品前端在 Ant Design 上校过对比度的那套：浅底 + 中深字，
+     色点用高饱和那档。每张卡左边一条色带是"一眼扫过去就能分辨品级"的关键，
+     比只给文字上色有效得多（文字色在小字号下差异不明显）。 */
+  .hbar{width:3px;border-radius:2px;align-self:stretch;flex:0 0 3px}
+  /* 品级筛选 chip：未选中是灰底描边，选中用该品级自己的配色 */
+  .qfchip{font-size:11px;padding:3px 11px;border-radius:11px;cursor:pointer;
+          user-select:none;border:1px solid #e6ebf2;background:#fff;
+          color:#5b6472;transition:all .15s;display:inline-flex;
+          align-items:center;gap:5px}
+  .qfchip .dot{width:7px;height:7px;border-radius:50%;flex:0 0 7px}
+  .qfchip.on{font-weight:600}
+  .qfchip .cnt{font-size:10px;opacity:.75}
+  /* 英雄表按品级分组 */
+  .hqgroup{margin-top:6px}
+  .hqhead{font-size:11px;font-weight:600;display:flex;align-items:center;
+          gap:6px;padding:3px 0}
+  .hqhead .dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px;
+               box-shadow:0 0 0 2px currentColor;box-shadow:none}
+  .hqhead .n{font-weight:400;color:#8a93a3;font-size:10px}
+  /* 英雄表里的单个英雄。左色带 + 显示名（大字）+ heroId（小灰字） */
+  .hqitem{display:flex;align-items:baseline;gap:6px;padding:2px 0;
+          border-left:2px solid #e6ebf2;padding-left:7px;margin-left:1px}
+  .hqitem .nm{font-weight:600;font-size:12px}
+  .hqitem .id{font-size:10px;color:#9aa3b2}
+  .hqitem .meta{font-size:10px;color:#8a93a3;margin-left:auto}
+  /* 未知品级的英雄：灰 + 可点标注 */
+  .hqitem.unk .nm{color:#595959;font-weight:500}
+  .hqask{font-size:10px;color:#3f6ea8;cursor:pointer;margin-left:4px}
+  .hqedit{font-size:11px;margin-top:4px;display:flex;flex-wrap:wrap;
+          gap:5px;align-items:center}
+  .hqedit .lb{color:#8a93a3}
+  /* 入选人数提示条：筛选把人全挡掉时要醒目，否则用户会以为开关坏了 */
+  .qnbar{font-size:11px;margin-top:7px;padding:6px 9px;border-radius:7px;
+         background:#f8fafc;color:#5b6472;line-height:1.6}
+  .qnbar b{color:#1f2733}
+  .qnbar.warn{background:#fff7e6;color:#ad4e00}
+  .qnbar.warn b{color:#ad4e00}
+  /* 今日满足需求进度条 */
+  .progrow{display:flex;align-items:center;gap:8px;margin:9px 0 2px}
+  .proglb{font-size:12px;color:#5b6472;white-space:nowrap}
+  .progbar{flex:1;height:9px;background:#eef2f7;border-radius:5px;overflow:hidden}
+  .progbar i{display:block;height:9px;background:#f0a020;border-radius:5px;
+             transition:width .3s}
+  .progval{font-size:12.5px;font-weight:700;color:#1f2937;white-space:nowrap}
+  .ordlast{font-size:12.5px;color:#3d4757;margin:3px 0 6px;line-height:1.5}
+  /* ---- 闯关状态标签（对标竞品"重试中"红标 / "挑战中"蓝标）---- */
+  .stagetag{font-size:11px;padding:2px 8px;border-radius:5px;font-weight:700}
+  .stagetag.fail{background:#fdeaea;color:#dc2626;border:1px solid #f9cfcf}
+  .stagetag.run{background:#eef3ff;color:#1677ff;border:1px solid #d6e2ff}
+  .stagetag.wait{background:#fff8e6;color:#a16207;border:1px solid #faecc4}
+  .stagenote{font-size:12px;color:#5b6472;margin-top:7px;line-height:1.55;
+             padding:7px 9px;background:#f7f9fc;border-radius:7px}
+  .stagenote.bad{background:#fff7f7;color:#b91c1c}
+  /* ---- 账号登录浮层（独立于 #app，不受 3s 全量重渲染影响）---- */
+  #als{position:fixed;inset:0;background:rgba(16,24,40,.42);z-index:200;display:none;
+       align-items:flex-end;justify-content:center}
+  #als.show{display:flex}
+  .als-box{background:#fff;width:100%;max-width:520px;border-radius:16px 16px 0 0;
+           padding:16px 14px calc(16px + env(safe-area-inset-bottom));max-height:92vh;overflow:auto}
+  .als-box h3{font-size:16px;margin:0 0 2px}
+  .als-box p.tip{font-size:12px;color:var(--dim);margin:0 0 12px;line-height:1.6}
+  .als-box label{display:block;font-size:12.5px;color:#5b6472;font-weight:600;margin:12px 0 5px}
+  .als-box textarea,.als-box input,.als-box select{width:100%;border:1px solid var(--line);border-radius:9px;
+       padding:9px 10px;font-size:13px;font-family:ui-monospace,Menlo,monospace;background:#fbfcfe;
+       color:var(--tx);outline:none;box-sizing:border-box}
+  .als-box textarea{min-height:96px;resize:vertical;word-break:break-all;line-height:1.5}
+  .als-box input[type=text],.als-box select{font-family:inherit}
+  .als-box textarea:focus,.als-box input:focus,.als-box select:focus{border-color:var(--acc);background:#fff}
+  .als-row{display:flex;gap:8px;margin-top:16px}
+  .als-row .btn{flex:1;padding:10px 0;font-size:14px;border-radius:9px}
+  .als-msg{margin-top:11px;font-size:12.5px;border-radius:8px;padding:9px 10px;display:none;line-height:1.6;word-break:break-all}
+  .als-msg.ok{display:block;background:#e7f8ef;color:#0b7a48}
+  .als-msg.bad{display:block;background:#feeceb;color:#b42318}
+  .als-msg.wait{display:block;background:#eef3ff;color:#0b4fc7}
+  .als-step{background:#f7f9fc;border-radius:9px;padding:10px 11px;font-size:12.5px;color:#4a5568;line-height:1.75;margin-bottom:4px}
+  .als-step b{color:var(--acc)}
+  .als-file{font-size:12px;color:var(--acc);margin-top:6px;display:inline-block;cursor:pointer;text-decoration:underline}
+  .credbad{background:#feeceb;color:#b42318;border-radius:8px;padding:7px 10px;font-size:12.5px;
+           margin-top:9px;font-weight:600;cursor:pointer}
+  .credwarn{background:#fff4e5;color:#b54708;border-radius:8px;padding:7px 10px;font-size:12.5px;margin-top:9px}
+  .fradio{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:9px;
+          padding:9px 10px;margin-bottom:7px;background:#fbfcfe;font-size:12.5px;cursor:pointer}
+  .fradio.sel{border-color:var(--acc);background:#eef3ff}
+  .fradio input{width:auto;margin:0;flex:0 0 auto}
+  .fradio .fi{flex:1;min-width:0}
+  .fradio .fn{font-weight:600;font-family:ui-monospace,monospace;font-size:11.5px;
+              overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .fradio .fs{color:var(--dim);font-size:11px;margin-top:1px}
+  .fradio.new .fn:after{content:'新';background:var(--ok);color:#fff;font-size:10px;
+              padding:0 5px;border-radius:4px;margin-left:5px;font-family:inherit}
+  .tab.pri{background:#1677ff;color:#fff;border-color:#1677ff}
+  .drop{border:2px dashed #b9cbe6;border-radius:14px;background:#f7faff;padding:26px 16px;
+        text-align:center;cursor:pointer;transition:all .15s;user-select:none}
+  .drop:hover,.drop.over{border-color:#1677ff;background:#eef5ff;transform:scale(1.008)}
+  .drop .drop-ico{font-size:38px;line-height:1;margin-bottom:8px}
+  .drop .drop-t{font-size:15px;font-weight:600;color:#1f2733}
+  .drop .drop-s{font-size:12px;color:var(--dim);margin-top:6px;line-height:1.6}
+  .alt-row{margin-top:10px;font-size:13px;color:#1677ff;cursor:pointer;text-align:center}
+  .alt-row span:hover{text-decoration:underline}
+  .qrbox{display:flex;justify-content:center;padding:12px 0 2px}
+  .qrbox svg{width:190px;height:190px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:6px}
+  .qrw{color:var(--dim);font-size:13px;padding:30px 0}
+  .qerr{color:#c0392b;font-size:13px;text-align:center;padding:16px 0}
+  #alsRes{margin-top:12px}
+  #alsRes .it{padding:10px 12px;border-radius:10px;margin-bottom:8px;background:#f7f9fc;
+              border-left:3px solid #cfd8e3;font-size:13.5px}
+  #alsRes .it.yes{background:#f0fbf4;border-left-color:#22a55b}
+  #alsRes .it.no{background:#fff5f4;border-left-color:#e74c3c}
+  #alsRes .it .n{font-weight:600}
+  #alsRes .it .d{color:var(--dim);font-size:12px;margin-top:3px}
+  .spin{display:inline-block;width:12px;height:12px;border:2px solid #c6dcff;
+        border-top-color:#1677ff;border-radius:50%;animation:sp .7s linear infinite;
+        vertical-align:-2px;margin-right:6px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+var STATE=null, VIEW='home', CUR=null, SELTYPE=null;
+
+function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function dot(on){return '<span class="dot'+(on?' on':'')+'"></span>';}
+
+function renderHome(){
+  var s=STATE||{}, accs=s.accounts||[], cap=s.capture||{};
+  var h='<div class="top"><h1>疯狂水世界 · 挂机</h1>'
+       +'<span class="pill'+((cap.lastAgo!==null&&cap.lastAgo<120)?'':' warn')+'">'
+       +(cap.lastAgo===null?'抓包未就绪':(cap.lastAgo<120?'正在抓包':Math.round(cap.lastAgo/60)+'分钟前'))+'</span></div>';
+  h+='<div class="top" style="margin:-6px 0 10px"><span class="meta">👤 '+esc(s.user||'')+'</span>'
+    +'<span style="display:flex;gap:6px">'
+    +'<span class="tab pri" onclick="openAls()">📂 一键加号</span>'
+    +'<span class="tab'+(s.bindActive?' on':'')+'" onclick="doBind()">'+(s.bindActive?'绑定中…':'抓包绑定')+'</span>'
+    +'<span class="tab" onclick="location.href=\'/logout\'">退出</span></span></div>';
+  if(!accs.length) h+='<div class="card empty">还没有账号<br><br>'
+    +'<span class="tab pri" style="display:inline-block" onclick="openAls()">📂 拖抓包文件进来就行</span>'
+    +'<div style="margin-top:12px;font-size:12px;color:var(--dim)">'
+    +'不用填账号、不用勾选 —— 选文件，剩下的面板自己干</div></div>';
+  accs.forEach(function(a){
+    var p=a.player||{};
+    var st=a.paused?'已暂停':(a.online?'在线':'离线');
+    var m=(s.accountMeta||{})[a.uid]||{};
+    var cs=a.credState||'ok';
+    var cred='';
+    if(cs==='invalid'){
+      cred='<div class="credbad" onclick="openAls()">⚠️ 登录凭证已失效 —— 点此重新抓包</div>';
+      st='凭证失效';
+    }else if(cs==='stale'){
+      cred='<div class="credwarn">🕒 '+(a.credNote||('凭证已用 '+(a.frameAgeHours||'?')+' 小时'))+'</div>';
+    }
+    h+='<div class="card">'
+      +'<div class="acct-head"><div class="avatar">🎮</div>'
+      +'<div style="flex:1;min-width:0"><div class="name">'+esc(a.nickname||a.uid)+'</div>'
+      +'<div class="meta">'+dot(a.online)+' '+st
+        +(p['等级']!==undefined?(' · Lv.'+esc(p['等级'])):'')
+        +(p['战力']!==undefined?(' · 战力 '+Number(p['战力']).toLocaleString()):'')
+        +(a.lastRecvAgo!==null?(' · '+a.lastRecvAgo+'s 前'):'')
+        +(a.nextRetryIn?(' · '+a.nextRetryIn+'s 后重连'):'')+'</div></div></div>'
+      +cred
+      +'<div class="btns">'
+      +'<div class="btn '+(a.paused?'pri':'warn')+'" onclick="setRun(\''+a.uid+'\','+(a.paused?1:0)+')">'+(a.paused?'启动':'暂停')+'</div>'
+      +'<div class="btn" onclick="openLog(\''+a.uid+'\')">日志</div>'
+      +'<div class="btn" onclick="openCfg(\''+a.uid+'\')">配置</div>'
+      +'</div>'
+      +'<div class="btns" style="margin-top:6px">'
+      +'<div class="btn" onclick="openFrame(\''+a.uid+'\')">'+(m.source==='import'?'🔑 登录帧':'📦 抓包凭证')+'</div>'
+      +'<div class="btn bad" onclick="delAcc(\''+a.uid+'\')">删除</div>'
+      +'</div></div>';
+  });
+  document.getElementById('app').innerHTML=h;
+}
+
+var CAT='全部';
+function classify(name){
+  if(/厂/.test(name)) return '工厂';
+  if(/田/.test(name)) return '农田';
+  return '建筑';
+}
+function renderEvents(){
+  var s=STATE||{}, a=(s.accounts||[]).find(function(x){return x.uid===CUR;})||{};
+  var bs=a.buildings||[], ev=(a.events||[]).slice().reverse();
+  var h='<div class="back" onclick="go(\'home\')">‹ 返回</div>'
+       +'<div class="top"><h1>'+esc(a.nickname||a.uid)+'</h1>'
+       +'<span class="pill'+(a.online?'':' bad')+'">'+(a.paused?'已暂停':(a.online?'在线':'离线'))+'</span></div>';
+  // 个人信息
+  var sm=a.summary||[];
+  // 数据太久没更新时给个黄条（对标竞品的"数据较久未更新"）
+  var ago=a.lastRecvAgo;
+  if(ago!==null&&ago!==undefined&&ago>180){
+    h+='<div class="stalebar">⚠️ <b>数据较久未更新</b>，当前展示上次同步结果'
+      +'（'+(ago>3600?Math.round(ago/3600)+' 小时前':Math.round(ago/60)+' 分钟前')+'）</div>';
+  }
+  // 分类标签
+  var cats=['全部','资源','建筑','工厂','居民需求','农田','闯关','聊天'];
+  h+='<div class="tabs">';
+  cats.forEach(function(c){ h+='<span class="tab'+(c===CAT?' on':'')+'" onclick="setCat(\''+c+'\')">'+esc(c)+'</span>'; });
+  h+='</div>';
+  function show(c){ return CAT==='全部'||CAT===c; }
+  // 资源：带进度条，满仓标红
+  if(show('资源')){
+    var bars=a.resBars||[];
+    h+='<div class="mod"><h3>[资源]</h3>';
+    if(sm.length){
+      h+='<div class="chips" style="margin-bottom:4px">';
+      sm.forEach(function(x){ h+='<span class="chip"><i>'+esc(x[0])+'</i>'+esc(x[1])+'</span>'; });
+      h+='</div>';
+    }
+    if(a.lastRecvWall) h+='<div class="stamp">'+esc(a.lastRecvWall)+' 同步</div>';
+    if(bars.length){
+      // 占仓材料（有上限、会卡满仓的）排前面，代币类排后面。
+      // 满仓时最该看的就是那几个快要爆的材料。
+      bars.slice().sort(function(x,y){
+        var xc=x.cap?1:0, yc=y.cap?1:0;
+        if(xc!==yc) return yc-xc;
+        return (x.cap?x.count/x.cap:0)-(y.cap?y.count/y.cap:0);
+      }).forEach(function(b){
+        var pct=b.cap?Math.min(100,Math.round(b.count*100/b.cap)):0;
+        var full=b.cap&&b.count>=b.cap;
+        h+='<div class="rbar'+(full?' full':'')+'">'
+          +'<span class="rn">'+esc(b.name)+'</span>';
+        if(b.cap){
+          h+='<span class="rt"><i style="width:'+pct+'%"></i></span>'
+            +'<span class="rv">'+Number(b.count).toLocaleString()+' / '+Number(b.cap).toLocaleString()+'</span>'
+            +(full?'<span class="rf">满</span>':'');
+        }else{
+          h+='<span class="rv" style="margin-left:auto">'+Number(b.count).toLocaleString()+'</span>';
+        }
+        h+='</div>';
+      });
+    }else if(!sm.length){
+      h+='<div class="when">还没收到资源数据</div>';
+    }
+    h+='</div>';
+  }
+  // 闯关
+  if(show('闯关')){
+    var lv=(a.player||{})['已通关关卡'], pw=(a.player||{})['战力'];
+    var tryN=a.stageTry, stt=a.stageState, note=a.stageNote, wait=a.stageWait||0;
+    if(lv!==undefined){
+      h+='<div class="mod"><h3>[闯关]</h3>';
+      // 挂机状态条（对标竞品"挂机: 还有 8:49:29"）
+      h+='<div class="chips">'
+        +'<span class="chip"><i>已通关</i>'+esc(lv)+'</span>'
+        +(pw!==undefined?('<span class="chip"><i>战力</i>'+esc(pw)+'</span>'):'')
+        +'<span class="chip"><i>自动闯关</i>'
+        +((a.tasks&&a.tasks['闯关'])?'已开启':'未开启')+'</span>'
+        +'</div>';
+      // 正在挑战的关卡：大数字 + 状态标（重试中/挑战中/暂停）
+      h+='<div style="display:flex;align-items:baseline;gap:8px;margin:8px 0 6px">'
+        +'<span class="big">'+esc(tryN||(lv+1))+'</span>';
+      if(stt==='failed'){
+        h+='<span class="stagetag fail">重试中</span>';
+      }else if(stt==='trying'){
+        h+='<span class="stagetag run">挑战中</span>';
+      }
+      if(wait>0){
+        h+='<span class="stagetag wait">暂停 '+Math.floor(wait/60)+' 分 '
+          +(wait%60)+' 秒</span>';
+      }
+      h+='</div>';
+      if(pw!==undefined){
+        h+='<div style="font-size:13px;color:#c2410c;font-weight:700;margin-bottom:6px">'
+          +'战力 '+Number(pw).toLocaleString()+'</div>';
+      }
+      var from=Math.max(1,(tryN||lv)-3), tick='';
+      for(var i=from;i<=(tryN||lv)+3;i++){
+        tick+='<span class="'+(i==tryN?'on':'')+'">'+i+'</span>';
+      }
+      h+='<div class="tick">'+tick+'</div>';
+      // 一句话状态说明（对标竞品"第 180 关打输了(战力 385814)，暂停闯关，等战力涨了再来"）
+      if(note){
+        h+='<div class="stagenote'+(stt==='failed'?' bad':'')+'">'+esc(note)+'</div>';
+      }
+      h+='</div>';
+    }else{
+      h+='<div class="mod"><h3>[闯关]</h3>'
+        +'<div class="when">还没收到角色信息（登录后会把已通关关卡推过来）</div></div>';
+    }
+  }
+  // 工厂：每个工厂一个板块（显示在生产什么）
+  if(show('工厂')){
+    var facs=bs.filter(function(b){ return /厂/.test(b.name); });
+    var fp=(a.fac_products)||{};
+    function prodsOf(nm){ var best=null;
+      Object.keys(fp).forEach(function(k){ if(nm.slice(-k.length)===k && (!best||k.length>best[0].length)) best=[k,fp[k]]; });
+      return best?best[1]:[]; }
+    if(facs.length){
+      h+='<div class="mod"><h3>[工厂]</h3><div class="chips"><span class="chip"><i>工厂</i>'+facs.length+'</span></div></div>';
+      facs.forEach(function(f){
+        var slots=f.slots||[], prods=prodsOf(f.name);
+        h+='<div class="mod"><h3 style="color:#1f2733;font-weight:700">'+esc(f.name)
+          +' <span style="color:#8a93a3;font-weight:400;font-size:12px">状态 '+esc(f.state)+'</span></h3>';
+        if(slots.length){
+          h+='<div class="grid" style="grid-template-columns:1fr 1fr 1fr">';
+          slots.forEach(function(sl){
+            var prod=sl['2']||'?', end=sl['3'], tag='排队中';
+            if(end && end>1000000000){ tag='生产至 '+new Date(end*1000).toTimeString().slice(0,5); }
+            else if(end===1){ tag='已完成'; }
+            h+='<div class="cell" style="display:block"><b>'+esc(prod)+'</b><i style="display:block">'+esc(tag)+'</i></div>';
+          });
+          h+='</div>';
+        } else if(prods.length){
+          h+='<div class="chips">'+prods.map(function(x){ return '<span class="chip">'+esc(x)+'</span>'; }).join('')+'</div><div class="when">（可生产 · 暂无排产信息）</div>';
+        } else { h+='<div class="when">暂无生产信息</div>'; }
+        h+='</div>';
+      });
+    }
+  }
+  if(show('居民需求')){
+    var wo=a.worker_orders||[], ot=a.order_today||{};
+    // ★ 周订单（WeekOrderInfoResponse）是"居民要什么"的**主数据源**。
+    //   它登录必推；worker_orders（SCWorkerOrder）要先交付成功一单才推，
+    //   材料不够的号永远是空的 —— 之前面板一直空就是踩了这个坑。
+    var wq=a.weekOrder||[];
+    var pend=wo.filter(function(o){ return !o.done; });
+    var fin=wo.filter(function(o){ return o.done; });
+    h+='<div class="mod"><h3>[居民需求]</h3><div class="chips">'
+      +'<span class="chip"><i>需求项</i>'+wq.length+'</span>'
+      +'<span class="chip"><i>待完成</i>'+pend.length+'</span>'
+      +'<span class="chip"><i>已完成</i>'+fin.length+'</span>'
+      +(ot.total?'<span class="chip"><i>今日订单</i>'+ot.done+'/'+ot.total+'</span>':'')
+      +'<span class="chip"><i>自动完成</i>'+(a.tasks&&a.tasks['完成居民订单']?'已开启':'未开启')+'</span>'
+      +(a.tasks&&a.tasks['满仓自动消耗']
+        ?'<span class="chip"><i>满仓消耗</i>'+(a.burnTimes?a.burnTimes+' 次':'已开启')+'</span>'
+        :'<span class="chip"><i>满仓消耗</i>未开启</span>')
+      +'</div>';
+    if(a.lastRecvWall) h+='<div class="stamp">'+esc(a.lastRecvWall)+' 同步</div>';
+    // 仓库满了、但挑不到能升的建筑时给个明确提示，
+    // 免得用户以为"满仓消耗"坏了（实际是建筑被主城等级卡住）。
+    if(a.burnDeny){
+      h+='<div class="stalebar">⚠️ 有 <b>'+a.burnDeny+'</b> 个建筑暂时升不了'
+        +'（被主城等级或前置条件卡住，已自动跳过，过一会儿会重试）</div>';
+    }
+    // 今日满足需求进度条（对标竞品：橙色条 + 右侧 22/24）
+    if(ot.total){
+      var pct=Math.round(ot.done*100/Math.max(1,ot.total));
+      h+='<div class="progrow"><span class="proglb">今日满足需求</span>'
+        +'<span class="progbar"><i style="width:'+pct+'%"></i></span>'
+        +'<span class="progval">'+ot.done+'/'+ot.total+'</span></div>';
+    }
+    // ---- 居民整体需求清单（主表格）----
+    // 用户的原话："我想要能看见居民每个居民在需求什么，他要的我这没有
+    // 就标红，然后给工厂加工"。这张表就是答案：
+    //   齐 → 灰底；缺 → 红字+浅红底，并在末尾汇总交了几样给工厂。
+    if(wq.length){
+      var lackN=wq.filter(function(x){ return (x.have||0)<(x.need||0); }).length;
+      h+='<div class="ordcard"><div class="ordhd"><b>居民需求清单</b>'
+        +'<span class="ordidx">'+esc(a.weekOrderWall||'')+'</span>'
+        +'<span class="ordst '+(lackN?'no':'ok')+'">'
+        +(lackN?('缺 '+lackN+' 样'):'全部齐了')+'</span></div>'
+        +'<div class="orditems">';
+      wq.forEach(function(x){
+        var have=(x.have==null?0:x.have), need=(x.need==null?0:x.need);
+        var lack=have<need;
+        h+='<span class="oi'+(lack?' lack':'')+'">'+esc(x.name)
+          +'<em>'+have+'/'+need+'</em></span>';
+      });
+      h+='</div>';
+      if(lackN){
+        h+='<div class="ordmiss">缺料：'+wq.filter(function(x){
+              return (x.have||0)<(x.need||0); }).map(function(x){
+              return '<b>'+esc(x.name)+'</b> 差 '+(x.need-(x.have||0)); }).join('、')
+          +'</div>';
+        // "交给工厂加工"的回执。没有工厂建筑的新号要给明确解释 ——
+        // 否则用户看着一片红只会以为功能坏了。
+        if(a.facHot && a.facHot.length){
+          h+='<div class="ordfac">已交给工厂优先加工：'
+            +a.facHot.map(function(j){
+                return esc(j.building)+'→<b>'+esc(j.product)+'</b>'; }).join('、')
+            +(a.facHotWall?' <span class="ordidx">'+esc(a.facHotWall)+'</span>':'')
+            +'</div>';
+        } else if(a.facHotNone!=null && a.facHotNone<=2){
+          h+='<div class="ordfac none">当前只有 '
+            +esc(a.facHotNone)+' 个建筑（还没有工厂），材料得先靠'
+            +'升级/建造工厂才能自己产 —— 缺的这几样暂时只能手动补</div>';
+        } else {
+          h+='<div class="ordfac">已交给工厂优先加工（排产结果下一轮刷新）</div>';
+        }
+      } else {
+        h+='<div class="ordok">材料齐了，等自动交付</div>';
+      }
+      h+='</div>';
+    }
+    // 最近交付的那一单（对标竞品：最近 · 满足需求 #4: 生鱼片x2 烤鱼x2）
+    if(a.orderLast && (a.orderLast.items||[]).length){
+      var ol=a.orderLast;
+      h+='<div class="ordlast">最近 · 满足需求 #'+esc(ol.index)+'：'
+        +ol.items.map(function(it){ return esc(it.name)+'×'+esc(it.need); }).join('、')
+        +'</div>';
+    }
+    // 最近一次交付**实际到手**多少（FinishWorkerOrderResponse 权威值，
+    // 不是订单上那个预计经验）。有它就说明交付真的成功了，比只写
+    // "已完成 #4" 更有说服力。
+    if(a.orderReward){
+      var orw=a.orderReward, parts=[];
+      if(orw.EXP!=null) parts.push('经验 '+Number(orw.EXP).toLocaleString());
+      if(orw.GOLD!=null) parts.push('金币 '+Number(orw.GOLD).toLocaleString());
+      if(parts.length){
+        h+='<div class="ordlast">最近到手：'+parts.map(esc).join(' · ')
+          +(orw.wall?' <span class="ordidx">'+esc(orw.wall)+'</span>':'')+'</div>';
+      }
+    }
+    if(!wq.length && !wo.length){
+      h+='<div class="when">还没收到居民需求数据（登录后等 1~2 分钟。'
+        +'数据源是登录时那批拉取请求，服务端不主动推）</div>';
+    }
+    // 每个待完成订单一张卡片：右上角奖励，下面列需求物品。
+    // 缺的标红（红字+浅红底），够的灰字显示"持有/需要"。
+    // have 由服务端数据现算（_attach_have），所以面板上"标红"和
+    // 资源条显示的数量永远一致，不会出现"这边说有、那边说缺"。
+    pend.forEach(function(o){
+      var miss=(o.missing||[]);
+      h+='<div class="ordcard">';
+      // 右上角奖励。这是 Order#4，语义是"预计经验"——真正到手多少
+      // 看 FinishWorkerOrderResponse（面板上方"最近到手"那行）。
+      // 之前误标成"经验 · 金币"，把预计值当成实际值显示了。
+      if(o.reward && o.reward.exp!=null){
+        h+='<div class="ordreward">预计经验 '+esc(o.reward.exp)+'</div>';
+      }
+      // 标题带上居民号 —— 用户的原话是"想看见每个居民在需求什么"，
+      // 光写"居民订单 #3"看不出是谁。workerId 是服务端给的居民编号。
+      h+='<div class="ordhd"><b>居民 #'+esc(o.workerId!=null?o.workerId:o.index)
+        +'</b><span class="ordidx">订单 '+esc(o.index)+'</span>'
+        +(o.isSpecial?'<span class="ordtag">特殊</span>':'')
+        +'<span class="ordst '+(o.ready?'ok':'no')+'">'
+        +(o.ready?'可交付':'缺 '+miss.length+' 样')+'</span></div>'
+        +'<div class="orditems">';
+      (o.items||[]).forEach(function(it){
+        var have=(it.have==null?0:it.have), need=(it.need==null?0:it.need);
+        var lack = have < need;
+        h+='<span class="oi'+(lack?' lack':'')+'">'+esc(it.name)
+          +'<em>'+have+'/'+need+'</em></span>';
+      });
+      h+='</div>';
+      if(miss.length){
+        h+='<div class="ordmiss">缺料：'+miss.map(function(m){
+            return '<b>'+esc(m)+'</b>'; }).join('、')
+          +' · 已交给工厂优先加工</div>';
+      } else if((o.items||[]).length){
+        h+='<div class="ordok">材料齐了，等自动交付</div>';
+      }
+      h+='</div>';
+    });
+    if(fin.length){
+      h+='<div class="when" style="margin-top:8px">已完成：'
+        +fin.map(function(o){ return '#'+esc(o.index); }).join('、')+'</div>';
+    }
+    var oe=ev.filter(function(x){ return /居民|订单/.test(x.text||''); }).slice(0,5);
+    if(oe.length){
+      h+='<div class="when" style="margin-top:8px">最近动态</div>';
+      oe.forEach(function(x){ h+='<div class="when">'+esc(x.wall)+' '+esc(x.text)+'</div>'; });
+    }
+    h+='</div>';
+  }
+  // 建筑/农田
+  ['建筑','农田'].forEach(function(cat){
+    if(!show(cat)) return;
+    var list=bs.filter(function(b){ return cat==='建筑'? (classify(b.name)!=='建筑'? false:true) : classify(b.name)===cat; });
+    if(cat==='建筑') list=bs.filter(function(b){ return classify(b.name)==='建筑'; });
+    if(!list.length) return;
+    h+='<div class="mod"><h3>['+cat+']</h3><div class="chips"><span class="chip"><i>数量</i>'+list.length+'</span></div>';
+    h+='<div class="grid">';
+    list.slice(0,40).forEach(function(b){ h+='<div class="cell"><b>'+esc(b.name)+'</b><i>状态 '+esc(b.state)+'</i></div>'; });
+    h+='</div></div>';
+  });
+  // 聊天
+  if(show('聊天')){
+    var chats=ev.filter(function(x){ return x.text.indexOf('[聊天]')===0; }).slice(0,12);
+    if(chats.length){
+      h+='<div class="mod"><h3>[聊天]</h3>';
+      chats.forEach(function(x){ h+='<div class="when">'+esc(x.wall)+' '+esc(x.text.replace('[聊天] ',''))+'</div>'; });
+      h+='</div>';
+    }
+  }
+  // 运行日志
+  if(CAT==='全部'){
+    h+='<div class="mod"><h3>[运行日志]</h3><div class="log">';
+    var logs=[];
+    (a.taskLog||[]).forEach(function(x){ if(x.level==='debug') return; logs.push({t:x.wall,m:'['+(x.name||'任务')+']',x:x.result||'',lv:x.level||'info',n:x.n||1}); });
+    ev.slice().reverse().forEach(function(x){ logs.push({t:x.wall,m:'',x:x.text+((x.n>1)?(' ×'+x.n):''),lv:'info',n:1}); });
+    logs.sort(function(p,q){return p.t<q.t?-1:(p.t>q.t?1:0);});
+    logs.slice(-60).reverse().forEach(function(l){
+      h+='<div><span class="t">'+esc(l.t)+'</span>'+(l.m?('<span class="m">'+esc(l.m)+'</span>'):'')
+        +'<span class="lv-'+esc(l.lv)+'">'+esc(l.x)+'</span>'
+        +(l.n>1?('<span class="n">×'+l.n+'</span>'):'')+'</div>';
+    });
+    h+='</div></div>';
+  }
+  document.getElementById('app').innerHTML=h;
+}
+function setCat(c){ CAT=c; renderEvents(); }
+
+var LGFILTER='全部';
+function setLgf(f){ LGFILTER=f; renderLog(); }
+
+function renderLog(){
+  var s=STATE||{}, a=(s.accounts||[]).find(function(x){return x.uid===CUR;})||{};
+  var logs=[];
+  (a.taskLog||[]).forEach(function(x){
+    if(x.level==='debug') return;   // 内部诊断信息不上屏
+    logs.push({t:x.wall, m:'['+(x.name||'任务')+']', x:x.result||'', lv:x.level||'info', n:x.n||1});
+  });
+  (a.events||[]).forEach(function(x){
+    logs.push({t:x.wall, m:'', x:x.text+((x.n>1)?(' ×'+x.n):''), lv:'info', n:1});
+  });
+  logs.sort(function(p,q){return p.t<q.t?-1:(p.t>q.t?1:0);});
+
+  var h='<div class="back" onclick="go(\'home\')">‹ 返回</div>'
+       +'<div class="top"><h1>'+esc(a.nickname||a.uid)+' · 日志</h1>'
+       +'<span class="pill'+(a.online?'':' bad')+'">'+(a.paused?'已暂停':(a.online?'在线':'离线'))+'</span></div>';
+
+  // 个人信息 + 资源
+  var sm=a.summary||[];
+  if(sm.length){
+    h+='<div class="card"><div class="chips">';
+    sm.forEach(function(x){ h+='<span class="chip"><i>'+esc(x[0])+'</i>'+esc(x[1])+'</span>'; });
+    h+='</div></div>';
+  }
+
+  // 任务执行统计
+  var st=a.taskStat||{};
+  var keys=Object.keys(st).filter(function(k){ return st[k] && st[k].debug!==1; });
+  if(keys.length){
+    h+='<div class="card"><div class="sec" style="margin:0 0 4px">任务执行统计（本次连接以来）</div><div class="lstat">';
+    keys.forEach(function(k){
+      var v=st[k]||{};
+      h+='<span>'+esc(k)+' <b>'+(v.ok||0)+'</b>';
+      if(v.fail) h+=' <i>×'+(v.fail)+'</i>';
+      h+='</span>';
+    });
+    h+='</div></div>';
+  }
+
+  // 过滤条
+  var cnt={ok:0,info:0,warn:0,bad:0};
+  logs.forEach(function(l){ if(cnt[l.lv]!==undefined) cnt[l.lv]++; });
+  h+='<div class="tabs" style="margin-bottom:8px">'
+    +'<span class="tab'+(LGFILTER==='全部'?' on':'')+'" onclick="setLgf(\'全部\')">全部 '+logs.length+'</span>'
+    +'<span class="tab'+(LGFILTER==='warn'?' on':'')+'" onclick="setLgf(\'warn\')">需注意 '+(cnt.warn+cnt.bad)+'</span>'
+    +'<span class="tab'+(LGFILTER==='ok'?' on':'')+'" onclick="setLgf(\'ok\')">成功 '+cnt.ok+'</span>'
+    +'</div>';
+
+  var show=logs.filter(function(l){
+    if(LGFILTER==='全部') return true;
+    if(LGFILTER==='warn') return l.lv==='warn'||l.lv==='bad'||l.lv==='err';
+    if(LGFILTER==='ok') return l.lv==='ok';
+    return true;
+  });
+  h+='<div class="card"><div class="log">';
+  if(!show.length) h+='<div class="empty">暂无日志</div>';
+  show.slice(-400).reverse().forEach(function(l){
+    h+='<div><span class="t">'+esc(l.t)+'</span>'
+      +(l.m?('<span class="m">'+esc(l.m)+'</span>'):'')
+      +'<span class="lv-'+esc(l.lv)+'">'+esc(l.x)+'</span>'
+      +(l.n>1?('<span class="n">×'+l.n+'</span>'):'')
+      +'</div>';
+  });
+  h+='</div></div>';
+  document.getElementById('app').innerHTML=h;
+}
+
+function renderCfg(){
+  var s=STATE||{}, a=(s.accounts||[]).find(function(x){return x.uid===CUR;})||{};
+  var p=a.player||{};
+  var h='<div class="back" onclick="go(\'home\')">‹ 返回</div>'
+       +'<div class="top"><h1>'+esc(a.nickname||a.uid)+' · 配置</h1></div>'
+       +'<div class="card">';
+  ['角色ID','昵称','等级','已通关关卡','战力'].forEach(function(k){
+    if(p[k]!==undefined) h+='<div class="row"><span class="k">'+esc(k)+'</span><span class="v">'+esc(p[k])+'</span></div>';
+  });
+  h+='<div class="row"><span class="k">UID</span><span class="v mono" style="font-size:11px">'+esc(a.uid)+'</span></div>';
+  h+='</div>';
+  // 区服
+  var zones=[{id:2001011315,name:'s2区（22级号）'},{id:2001012104,name:'新区'},{id:0,name:'默认区'}];
+  h+='<div class="sec">切换区服（会断开重连）</div><div class="tabs">';
+  zones.forEach(function(z){ h+='<span class="tab" onclick="setZone(\''+a.uid+'\','+z.id+')">'+esc(z.name)+'</span>'; });
+  h+='</div>';
+  // 任务
+  var GROUPS={'基础领奖':['一键领邮件','领主线任务奖励','完成居民订单','领订单奖励'],
+              '采集':['钓鱼','捡漂浮物'],
+              '建筑与生产':['收取建筑产出','建筑升级','完成建筑升级','收工厂成品',
+                          '工厂生产','农田播种','农田收获'],
+              // 主线闯关：对标竞品把"挂机"相关并进这个模块
+              // （竞品里「自动领取挂机收益」「挂机升级」就是三个开关，
+              //  协议层都是 SetAutoFarmingRequest，这里合成一项）
+              '主线闯关':['闯关','自动挂机升级'],
+              '竞技场':['竞技场挑战'],
+              // ---- 下面三个是竞品配置页的新模块，默认全关 ----
+              // 它们会真的打副本/开战，而且多数号还没到解锁等级。
+              // 分组名后面带 Lv.N 是给用户的第一个提示。
+              '试炼副本':['试炼副本'],
+              '积分赛':['积分赛'],
+              '远征副本':['远征副本'],
+              '建筑自动化':['建筑自动工作'],
+              // 英雄单独成组（对标竞品 14 项），不跟公会混在一起 ——
+              // 混在一起时 14 个开关会把公会信息挤到看不见。
+              '英雄':['一键委任','自动升级','自动升星','技能升级','技能进阶',
+                     '专武升级','专武升星','装备强化','徽章强化',
+                     '自动看技能视频','免费招募','自动招募',
+                     '碎片集齐招募','招募积分奖励'],
+              '英雄信息':['英雄预览'],
+              '公会':['公会信息'],
+              '资源管理':['满仓自动消耗'],
+              '事件':['随机事件选择']};
+  // 分组解锁等级提示（对标竞品配置页，纯提示 —— 本地不拦，
+  // 拦不拦由服务端定，这里只是提前告诉用户"这功能得多少级"）
+  var GROUP_LV={'主线闯关':6,'竞技场':13,'试炼副本':14,'积分赛':25,'远征副本':30};
+  // 新模块分组：这些开关默认关 + 点开要确认（会改账号状态）
+  var NEWMOD={'自动挂机升级':1,'试炼副本':1,'积分赛':1,'远征副本':1,'建筑自动工作':1};
+  // 危险开关 —— 会花掉不可逆资源，点开前先问一句
+  var DANGER={'专武升星':'会消耗英雄碎片（不可逆）',
+              '徽章强化':'会分解装备换徽章经验（不可逆）',
+              '自动招募':'会消耗招募券/钻石。默认按「免费」档发；'+
+                        '要抽券请在下方「招募档位」里改',
+              '自动挂机升级':'会开启账号的挂机自动化（服务端可能要求特权/等级）',
+              '试炼副本':'会真的挑战副本，消耗挑战次数',
+              '积分赛':'会真的开战，消耗次数并影响排名',
+              '远征副本':'会真的挑战远征关卡，消耗次数',
+              '建筑自动工作':'会开启建筑的自动工作模式'};
+  // 每项一句话说明
+  var TASKDESC={'一键委任':'把空槽位一次性交给服务端自动补位',
+                '自动升级':'给英雄升级（HeroLevelUpRequest）',
+                '自动升星':'给英雄升星，只用专属碎片（universal=0）',
+                '技能升级':'按技能位逐个升技能等级（skillIdx 从 1 起）',
+                '技能进阶':'技能升阶，跟「技能升级」是两个不同协议',
+                '专武升级':'升级英雄专属武器',
+                '专武升星':'专属武器升星，只用专属碎片',
+                '装备强化':'强化装备（需要先解析到装备实例 uid）',
+                '徽章强化':'强化徽章，不分解装备也是合法的',
+                '自动看技能视频':'领技能展示奖励',
+                '免费招募':'用免费次数招募（way=1，不消耗券）',
+                '自动招募':'按指定档位招募（烧券）',
+                '碎片集齐招募':'碎片攒够后把它兑换成英雄（不消耗券）',
+                '招募积分奖励':'领取招募任务积分奖励',
+                // ---- 新模块 ----
+                '自动挂机升级':'开启挂机自动化。竞品的「挂机升级」+「自动领取'+
+                              '挂机收益」在协议层是同一个 SetAutoFarmingRequest，'+
+                              '这里合成一项',
+                '建筑自动工作':'让建筑自动生产（SetBuildingAutoWorkRequest，'+
+                              '需先解析到建筑列表）',
+                '试炼副本':'打试炼副本（TrialRaidChallengeRequest）。'+
+                          '需要 raidId，没同步到之前只做探测',
+                '积分赛':'跨服积分赛：刷新对手→挑战→领挂机奖励'+
+                        '（LeagueRefreshRival/LeagueFight/GotLeagueBonusItem）',
+                '远征副本':'远征副本：探信息→领终局奖励→挑战'+
+                          '（ExpeditionInfo/GotFinalReward/Challenge）'};
+  var tasks=a.tasks||{}, used={};
+  h+='<div class="sec">自动任务（点一下开关）</div>';
+  Object.keys(GROUPS).forEach(function(g){
+    var names=GROUPS[g].filter(function(n){ return tasks.hasOwnProperty(n); });
+    if(!names.length) return;
+    names.forEach(function(n){ used[n]=1; });
+    var isHero=(g==='英雄');
+    // 新模块组（主线闯关/试炼副本/积分赛/远征副本/建筑自动化）也用竖排卡片，
+    // 理由和英雄组一样：这些开关需要"一句话说明 + 危险提示"，
+    // 一行一个横排开关说不清"它会消耗次数"。
+    var isNew=names.some(function(n){ return NEWMOD[n]; });
+    var card=isHero||isNew;
+    var lv=GROUP_LV[g];
+    h+='<div class="sec" style="margin:8px 0 2px">'+esc(g)
+      +(lv?'<span class="lvtip">Lv.'+lv+'</span>':'')
+      +'</div>';
+    if(card){
+      h+='<div class="hgrid">';
+      names.forEach(function(n){
+        var dg=DANGER[n];
+        h+='<div class="hcard'+(tasks[n]?' on':'')+(dg?' danger':'')+'">'
+          +'<div class="hrow"><b>'+esc(n)+'</b>'
+          +'<span class="hsw'+(tasks[n]?' on':'')+'" onclick="toggleTask(\''+a.uid
+          +'\',\''+esc(n)+'\','+(tasks[n]?0:1)+','+JSON.stringify(dg||'')+')">'
+          +(tasks[n]?'开':'关')+'</span></div>'
+          +(TASKDESC[n]?'<div class="hdsc">'+esc(TASKDESC[n])+'</div>':'')
+          +(dg?'<div class="hwarn">⚠ '+esc(dg)+'</div>':'')
+          +'</div>';
+      });
+      h+='</div>';
+      if(isNew){
+        // 新模块的数据同步状态 + 协议探针入口。
+        // 这些模块的响应结构还没定型，所以把"同步到什么"直接摊开，
+        // 用户能一眼看出是"没解锁"还是"我们没解析出来"。
+        var tr=a.trialRaids||[], lr=a.leagueRivals||[], er=a.expRaids||[];
+        var tl=a.trialLive||[];
+        h+='<div class="hstat">试炼副本 <b>'
+          +(tr.length?('共 '+tr.length+' 个，有进度 '+tl.length+' 个'
+                       +(tl.length?('（'+tl.join('、')+'）'):''))
+             :'未同步')
+          +'</b>　积分赛对手 <b>'+(lr.length?lr.length+' 个':'未同步')
+          +'</b>　远征副本 <b>'+(er.length?er.join('、'):'未同步')+'</b></div>';
+        h+='<div class="hsact" onclick="runProbe(\''+a.uid+'\',\''+esc(g)+'\')">'
+          +'▶ 实测这个模块的协议（看服务端怎么说）</div>';
+        // 探针结果落在这里。用固定 id 让重复点击只更新这一块，
+        // 不重刷整页（重刷会把用户刚滚到的位置弹回去）。
+        h+='<div class="probe" id="probe_'+esc(g)+'" style="display:none"></div>';
+      }
+      if(isHero){
+        // 英雄组独有的：品级筛选 + 指定英雄白名单 + 招募档位 + 委任/装备状态
+        var hw=a.heroWatch||[];
+        var allH=Object.keys(a.heroes||{});
+        var HQ=a.heroQuality||{}, HC=a.qualityColors||{}, QO=a.qualityOrder||[];
+        var QN=a.qualityCn||{}, HD=a.heroDisplay||{};
+        var qf=a.heroQualityFilter||[];
+        // 某英雄的品级（查不到返回空串）
+        function hq(nm){ var q=HQ[nm]; return (q&&HC[q])?q:''; }
+        // 品级配色；未知走灰
+        function hc(q){ return HC[q]||{text:'#595959',swatch:'#bfbfbf',
+                                       background:'#fafafa',border:'#d9d9d9'}; }
+        // ---- 品级筛选 ----
+        // 放在"指定英雄"上面：先按品级圈大范围，再用名字精挑，
+        // 顺序上从粗到细，符合用户的思考方式。
+        var cnt={}, unk=0;
+        allH.forEach(function(nm){
+          var q=hq(nm);
+          if(q){ cnt[q]=(cnt[q]||0)+1; } else { unk++; }
+        });
+        // 实际会被处理的英雄数（两层闸门叠加的结果）。
+        // 这个数必须算准并显示 —— 用户最容易踩的坑就是"筛选把英雄全挡了，
+        // 开关看着是开的却什么都不做"。
+        var picked=allH.filter(function(nm){
+          if(hw.length && hw.indexOf(nm)<0) return false;
+          if(qf.length && qf.indexOf(hq(nm))<0) return false;
+          return true;
+        });
+        h+='<div class="herosel"><div class="hshd">按品级筛选'
+          +'<span class="hshint">'+(qf.length?('已选 '+qf.length+' 档'):'留空 = 不限品级')
+          +'</span></div><div class="hstabs" id="qfw_'+esc(a.uid)+'">';
+        QO.forEach(function(q){
+          var sel=(qf.indexOf(q)>=0), c=hc(q);
+          h+='<span class="qfchip'+(sel?' on':'')+'" data-q="'+esc(q)+'" style="'
+            +(sel?('background:'+c.background+';border-color:'+c.border+';color:'+c.text)
+                 :('border-color:'+c.border))
+            +'" onclick="toggleHeroQuality(\''+a.uid+'\',\''+q+'\','+(sel?0:1)+')">'
+            +'<i class="dot" style="background:'+c.swatch+'"></i>'
+            +esc(QN[q]||q)
+            +'<span class="cnt">'+(cnt[q]||0)+'</span>'
+            +'</span>';
+        });
+        if(unk){
+          h+='<span class="qfchip" title="这些英雄不在内置品级表里，'
+            +'不会匹配任何品级筛选">未知<span class="cnt">'+unk+'</span></span>';
+        }
+        h+='</div>';
+        if(qf.length){
+          h+='<div class="hsact" onclick="clearHeroQuality(\''+a.uid+'\')">清空品级筛选（恢复不限）</div>';
+        }
+        h+='</div>';
+        // 入选人数提示 —— 这是"开关有没有人在干活"的唯一可见信号
+        var warn=(!picked.length && allH.length);
+        h+='<div class="qnbar'+(warn?' warn':'')+'">'
+          +(allH.length
+            ? ('当前英雄表共 <b>'+allH.length+'</b> 个；'
+               +((hw.length||qf.length)
+                  ? ('经「'+(hw.length?('指定英雄 '+hw.length+' 个'):'')
+                     +(hw.length&&qf.length?' + ':'')
+                     +(qf.length?('品级 '+qf.map(function(q){return esc(QN[q]||q);}).join('/')):'')
+                     +'」筛选后 <b>'+picked.length+'</b> 个会被处理')
+                  : ('两层筛选都留空，<b>全部 '+allH.length+' 个</b>都会被处理')))
+            : '还没同步到英雄列表（等登录拉取完成）');
+        if(warn){
+          h+='<br>⚠ 当前筛选把英雄全挡掉了，英雄开关不会做任何事。'
+            +'放宽品级或清空「指定英雄」即可恢复。';
+        }
+        h+='</div>';
+        // ---- 指定英雄白名单（带品级染色）----
+        h+='<div class="herosel"><div class="hshd">指定英雄'
+          +'<span class="hshint">'+(hw.length?('已选 '+hw.length+' 个'):'留空 = 对全部英雄生效')
+          +'</span></div><div class="hstabs">';
+        if(!allH.length){
+          h+='<span class="hstip">还没同步到英雄列表（等登录拉取完成）</span>';
+        } else {
+          // 按品级从高到低排，同档内按等级降序 —— 用户挑的就是高品级，
+          // 把它们排在前面能省掉大部分滚动。
+          var sorted=allH.slice().sort(function(x,y){
+            var qi=function(n){ var i=QO.indexOf(hq(n)); return i<0?99:i; };
+            if(qi(x)!==qi(y)) return qi(x)-qi(y);
+            var lv=function(n){ return (a.heroes[n]||{}).level||0; };
+            return lv(y)-lv(x);
+          });
+          sorted.forEach(function(nm){
+            var sel=(hw.indexOf(nm)>=0), q=hq(nm), c=hc(q);
+            var st=(a.heroes[nm]&&a.heroes[nm].star)||0;
+            h+='<span class="hstab'+(sel?' on':'')+'" style="'
+              +'border-left:3px solid '+c.swatch+';'
+              +(sel?'':'color:'+c.text+';')
+              +'" onclick="toggleHeroWatch(\''+a.uid+'\',\''+esc(nm)+'\','+(sel?0:1)+')"'
+              +' title="'+esc(nm)+'（'+(q?(esc(QN[q]||q)+'色'):'未知品级')+'）'
+              +'">'+esc(HD[nm]||nm)
+              +(st?('<i>★'+esc(st)+'</i>'):'')
+              +'</span>';
+          });
+        }
+        h+='</div>';
+        if(hw.length){
+          h+='<div class="hsact" onclick="clearHeroWatch(\''+a.uid+'\')">清空白名单（恢复全部英雄）</div>';
+        }
+        h+='</div>';
+        // 委任 / 装备 / 徽章 数据同步状态
+        var as_=a.appointSlots||[], eu=a.equipUids||[], bu=a.badgeUids||[];
+        h+='<div class="hstat">委任槽位 <b>'+(as_.length?as_.join('、'):'未同步')
+          +'</b>　装备 uid <b>'+(eu.length?eu.length+' 个':'未同步')
+          +'</b>　徽章 uid <b>'+(bu.length?bu.length+' 个':'未同步')
+          +'</b></div>';
+        // 招募档位选择
+        var rw=a.recruitWays||{}, curWay=(a.recruitWay||1);
+        h+='<div class="herosel"><div class="hshd">招募档位'
+          +'<span class="hshint">「自动招募」用哪一档</span></div><div class="hstabs">';
+        Object.keys(rw).forEach(function(k){
+          var v=rw[k], sel=(v===curWay);
+          h+='<span class="hstab'+(sel?' on':'')+(v===1?' safe':'')+'" onclick="setRecruitWay(\''
+          +a.uid+'\','+v+')">'+esc(k)+(v===1?'':' ⚠')+'</span>';
+      });
+      h+='</div><div class="hstip">'
+        +'只有「免费」不消耗资源；其它档位会烧招募券/钻石。'
+        +'枚举值取自客户端 schema，不是猜的。</div></div>';
+      }   // ← 收 isHero 块（招募档位之后）
+    } else {
+      h+='<div class="tabs">';
+      names.forEach(function(n){
+        h+='<span class="tab'+(tasks[n]?' on':'')+'" onclick="setTask(\''+a.uid+'\',\''+esc(n)+'\','+(tasks[n]?0:1)+')">'+esc(n)+'</span>';
+      });
+      h+='</div>';
+    }
+  });
+  var rest=Object.keys(tasks).filter(function(n){ return !used[n]; });
+  if(rest.length){
+    h+='<div class="sec" style="margin:8px 0 2px">其他</div><div class="tabs">';
+    rest.forEach(function(n){
+      h+='<span class="tab'+(tasks[n]?' on':'')+'" onclick="setTask(\''+a.uid+'\',\''+esc(n)+'\','+(tasks[n]?0:1)+')">'+esc(n)+'</span>';
+    });
+    h+='</div>';
+  }
+  // 英雄表：按品级分组（红->橙->紫->蓝->绿），未知品级单独一组。
+  // 分组而非平铺，是为了让"我该升哪些"这个问题在视觉上直接有答案 ——
+  // 平铺 + 排序也能排，但一屏几十个名字里找"哪些是红的"还是费眼。
+  var hl=Object.keys(a.heroes||{});
+  if(hl.length){
+    var HQ2=a.heroQuality||{}, HC2=a.qualityColors||{}, QO2=a.qualityOrder||[];
+    var QN2=a.qualityCn||{}, HD2=a.heroDisplay||{}, qf2=a.heroQualityFilter||[];
+    var HCX={text:'#595959',swatch:'#bfbfbf',background:'#fafafa',border:'#d9d9d9'};
+    var hq2=function(nm){ var q=HQ2[nm]; return (q&&HC2[q])?q:''; };
+    var hc2=function(q){ return HC2[q]||HCX; };
+    // 分桶
+    var bk={}, unkL=[];
+    hl.forEach(function(nm){
+      var q=hq2(nm);
+      if(q){ (bk[q]=bk[q]||[]).push(nm); } else { unkL.push(nm); }
+    });
+    // 每组内按等级降序
+    function sortIn(arr){
+      return arr.sort(function(x,y){
+        return ((a.heroes[y]||{}).level||0)-((a.heroes[x]||{}).level||0);
+      });
+    }
+    h+='<div class="sec">英雄表（'+hl.length+'）'
+      +(qf2.length?(' <span class="t">已按品级筛选 '+qf2.map(function(q){return esc(QN2[q]||q);}).join('/')+'</span>'):'')
+      +'</div><div class="card" style="padding:10px 12px">';
+    var groups=QO2.filter(function(q){ return bk[q]&&bk[q].length; });
+    if(unkL.length) groups=groups.concat(['']);
+    groups.forEach(function(q){
+      var arr=sortIn(q?bk[q]:unkL), c=hc2(q);
+      h+='<div class="hqgroup"><div class="hqhead" style="color:'+c.text+'">'
+        +'<i class="dot" style="background:'+c.swatch+'"></i>'
+        +(q?esc(QN2[q]||q)+'色品级':'未知品级')
+        +'<span class="n">'+arr.length+' 个</span></div>';
+      arr.forEach(function(nm){
+        var x=a.heroes[nm]||{}, sk=(x.skillLevels||[]).length;
+        h+='<div class="hqitem'+(q?'':' unk')+'" style="border-left-color:'+c.swatch+'">'
+          +'<span class="nm" style="color:'+c.text+'">'+esc(HD2[nm]||nm)+'</span>'
+          +((HD2[nm]&&HD2[nm]!==nm)?('<span class="id">'+esc(nm)+'</span>'):'')
+          +'<span class="meta">Lv.'+esc(x.level==null?'?':x.level)
+          +' ★'+esc(x.star==null?0:x.star)
+          +' 战力 '+esc(x.power==null?'?':x.power)
+          +(sk?(' 技能'+sk):'')
+          +'</span>'
+          +(q?'':'<span class="hqask" onclick="openQEdit(\''+a.uid
+              +'\',\''+esc(nm)+'\')">标注品级</span>')
+          +'</div>';
+        if(!q){
+          // 未标注英雄的编辑区（默认折叠，点"标注品级"展开）
+          h+='<div class="hqedit" id="qe_'+esc(a.uid)+'_'+esc(nm)+'" style="display:none">'
+            +'<span class="lb">标为：</span>';
+          QO2.forEach(function(q2){
+            var c2=hc2(q2);
+            h+='<span class="qfchip" style="border-color:'+c2.border+';color:'+c2.text+'"'
+              +' onclick="setHeroQuality(\''+a.uid+'\',\''+esc(nm)+'\',\''+q2+'\')">'
+              +'<i class="dot" style="background:'+c2.swatch+'"></i>'
+              +esc(QN2[q2]||q2)+'</span>';
+          });
+          h+='</div>';
+        }
+      });
+      h+='</div>';
+    });
+    h+='</div>';
+  }
+  // 建筑表
+  var bs=a.buildings||[];
+  if(bs.length){
+    h+='<div class="sec">建筑表（'+bs.length+'）</div><div class="card"><div class="log">';
+    bs.forEach(function(b){ h+='<div>'+esc(b.name)+' <span class="t">状态 '+esc(b.state)+'</span></div>'; });
+    h+='</div></div>';
+  }
+  document.getElementById('app').innerHTML=h;
+}
+
+function render(){
+  if(VIEW==='events') return renderEvents();
+  if(VIEW==='log') return renderLog();
+  if(VIEW==='cfg') return renderCfg();
+  renderHome();
+}
+function go(v){ VIEW=v; render(); }
+function openLog(uid){ CUR=uid; go('events'); }
+function openCfg(uid){ CUR=uid; SELTYPE=null; go('cfg'); }
+function selType(t){ SELTYPE=t; renderCfg(); }
+async function setRun(uid,on){ await fetch('/api/set?uid='+encodeURIComponent(uid)+'&on='+on); tick(); }
+async function setTask(uid,n,on){ await fetch('/api/task?uid='+encodeURIComponent(uid)+'&name='+encodeURIComponent(n)+'&on='+on); tick(); }
+/* 带确认的开关：只给会消耗不可逆资源的项用。
+   危险项默认关，用户主动点"开"时把后果再说一遍 —— 避免误触。 */
+async function toggleTask(uid,n,on,warn){
+  if(on&&warn){ if(!confirm('开启「'+n+'」？\n\n⚠ '+warn+'\n\n确定要继续吗？')) return; }
+  await setTask(uid,n,on);
+}
+async function toggleHeroWatch(uid,name,on){
+  await fetch('/api/herowatch?uid='+encodeURIComponent(uid)
+    +'&name='+encodeURIComponent(name)+'&on='+on); tick();
+}
+async function clearHeroWatch(uid){
+  if(!confirm('清空白名单？清空后英雄任务会对**全部**英雄生效。')) return;
+  await fetch('/api/herowatch?uid='+encodeURIComponent(uid)+'&clear=1'); tick();
+}
+/* 品级筛选：切换某一档。
+   不清空别的档 —— 多选是"叠加收窄"，不是单选。
+   当前已选的档直接从 DOM 读（chip 上带 data-q 和 on 类），
+   这样不必维护一份可能和界面不同步的缓存。
+   服务端接口收的是完整列表而不是增删指令，避免连点时状态互相覆盖。 */
+function qfCurrent(uid){
+  var out=[], box=document.getElementById('qfw_'+uid);
+  if(!box) return out;
+  var cs=box.getElementsByClassName('qfchip');
+  for(var i=0;i<cs.length;i++){
+    if(cs[i].className.indexOf(' on')>=0 && cs[i].getAttribute('data-q')){
+      out.push(cs[i].getAttribute('data-q'));
+    }
+  }
+  return out;
+}
+async function toggleHeroQuality(uid,q,on){
+  var cur=qfCurrent(uid), i=cur.indexOf(q);
+  if(on&&i<0) cur.push(q);
+  if(!on&&i>=0) cur.splice(i,1);
+  await fetch('/api/heroquality?uid='+encodeURIComponent(uid)
+    +'&setFilter=1&q='+encodeURIComponent(cur.join(','))); tick();
+}
+async function clearHeroQuality(uid){
+  await fetch('/api/heroquality?uid='+encodeURIComponent(uid)
+    +'&setFilter=1&clear=1'); tick();
+}
+/* 手动标注某英雄的品级。给内置表里没有的英雄用（新英雄/表滞后）。
+   quality 传空串 = 撤销标注，退回内置表。 */
+async function setHeroQuality(uid,name,quality){
+  await fetch('/api/heroquality?uid='+encodeURIComponent(uid)
+    +'&name='+encodeURIComponent(name)
+    +'&quality='+encodeURIComponent(quality||''));
+  tick();
+}
+/* 展开/收起"标注品级"的选择条。
+   用 display 切换而不是重渲染 —— 重渲染会把用户滚到英雄表的位置弹回顶部。 */
+function openQEdit(uid,name){
+  var el=document.getElementById('qe_'+uid+'_'+name);
+  if(!el) return;
+  el.style.display=(el.style.display==='none'?'flex':'none');
+}
+async function setRecruitWay(uid,way){
+  if(way!==1&&!confirm('把招募档位改成非免费档？\n\n⚠ 会消耗招募券/钻石。')) return;
+  await fetch('/api/recruitway?uid='+encodeURIComponent(uid)+'&way='+way); tick();
+}
+/* 协议探针：按模块发一次**只读**查询，把服务端的原话显示出来。
+   用途：用户自己能判断"这模块为什么没反应"——
+     feature locked   → 等级/功能没解锁，去升级
+     privilege locked → 特权（VIP）没开
+     Invalid request  → 我们的载荷有问题，该报修
+   只调白名单里的只读协议，不会改账号状态。 */
+var PROBE_OF={'试炼副本':'TrialRaidInfoRequest',
+              '积分赛':'LeagueInfoRequest',
+              '远征副本':'ExpeditionInfoRequest',
+              '主线闯关':'AfkInfoRequest',
+              '建筑自动化':'AfkInfoRequest'};
+async function runProbe(uid,group){
+  var proto=PROBE_OF[group];
+  if(!proto){ alert('这个分组没有对应的只读探针'); return; }
+  var pay='';
+  // TrialRaidInfoRequest 的 raidId 是必填的，空发会被回 Invalid request。
+  // 用户可能就想看这个 —— 但更有用的是带上一个真实 raidId。
+  if(proto==='TrialRaidInfoRequest') pay='0801';
+  var box=document.getElementById('probe_'+group);
+  if(box){ box.style.display='block'; box.innerHTML='<b>正在实测 '+proto+'  ...</b>'; }
+  try{
+    var r=await fetch('/api/probe?uid='+encodeURIComponent(uid)
+          +'&name='+encodeURIComponent(proto)
+          +(pay?('&payload='+pay):''));
+    var j=await r.json();
+    var out='<b>实测 '+esc(j.proto||proto)+'</b>\n';
+    out+='载荷 '+esc(j.payload===undefined?'':(j.payload||'(空)'))+'\n';
+    out+='route '+esc(j.route||'')+'\n';
+    if(!j.ok){ out+='<span class="no">请求失败：'+esc(j.err||'')+'</span>'; }
+    else{
+      var tx=j.texts||[];
+      if(tx.length){
+        out+='\n<span class="no">服务端说：'+esc(tx.join(' / '))+'</span>\n';
+        out+='\n（locked = 没解锁；not found = 参数或模块状态不对；'
+            +'Invalid request = 载荷不合法）';
+      } else {
+        out+='\n<span class="ok">服务端没回错误文案'
+            +(j.direct?'，而且回了对应的响应':'')+'</span>\n';
+      }
+      out+='\n下面 '+(j.responses||[]).length+' 条是这期间收到的帧：\n';
+      (j.responses||[]).forEach(function(x){
+        out+='  '+esc(x.type)+'  '+x.bytes+' 字节\n';
+        (x.lines||[]).slice(0,6).forEach(function(l){ out+='    '+esc(l)+'\n'; });
+      });
+    }
+    if(box) box.innerHTML=out;
+  }catch(e){
+    if(box) box.innerHTML='<span class="no">探针出错：'+esc(e.message)+'</span>';
+  }
+}
+async function doBind(){ await fetch('/api/bind?secs=300'); alert('已进入绑定模式（5分钟）\n现在用手机开抓包进一次游戏，该账号会自动归到你名下'); tick(); }
+async function setZone(uid,w){ await fetch('/api/zone?uid='+encodeURIComponent(uid)+'&world='+w); tick(); }
+
+/* ================= 账号登录（登录帧导入）=================
+   浮层放在 #app 之外，因此 tick() 的 3 秒全量重渲染不会清空输入。 */
+var ALS={busy:false};
+function alsMsg(t,cls){ var e=document.getElementById('alsMsg'); e.className='als-msg'+(cls?' '+cls:''); e.textContent=t; }
+function closeAls(){
+  if(ALS.busy) return;
+  document.getElementById('als').classList.remove('show');
+  // 关闭时清掉上次的解析结果，下次打开是干净的
+  ALSF=null; ALSSEL={};
+  var box=document.getElementById('alsList'); if(box) box.innerHTML='';
+  var br=document.getElementById('alsBulkRow'); if(br) br.style.display='none';
+  var fr=document.getElementById('alsFrame'); if(fr) fr.value='';
+  var ms=document.getElementById('alsMsg'); if(ms){ ms.className='als-msg'; ms.textContent=''; }
+  var rs=document.getElementById('alsRes'); if(rs) rs.innerHTML='';
+}
+function openAls(){
+  document.getElementById('als').classList.add('show');
+  loadGrabKey(false);
+}
+function alsBody(f){ return {frame:f}; }
+
+/* ---------- 一键上传（核心） ---------- */
+function quickMsg(t,cls){
+  var e=document.getElementById('alsMsg');
+  if(!e) return;
+  e.className='als-msg'+(cls?' '+cls:'');
+  e.innerHTML=t;
+}
+function quickRes(results){
+  var box=document.getElementById('alsRes'); if(!box) return;
+  if(!results||!results.length){ box.innerHTML=''; return; }
+  box.innerHTML=results.map(function(r){
+    var cls=r.ok?(r.skipped?'':'yes'):'no';
+    var ico=r.ok?(r.skipped?'⏭ ':(r.isNew?'🎉 ':'🔄 ')):'❌ ';
+    var tag=r.skipped?'':(r.isNew?'<span style="color:#0a7d3c">新增</span>'
+                              :'<span style="color:#1677ff">已更新</span>');
+    return '<div class="it '+cls+'"><div class="n">'+ico
+      +esc(r.nickname||r.uid||'未知账号')+(tag?'　'+tag:'')+'</div>'
+      +'<div class="d">'+esc(r.msg||'')+'</div></div>';
+  }).join('');
+}
+function quickUpload(inp){
+  var f=inp.files&&inp.files[0];
+  inp.value='';
+  if(!f) return;
+  doQuick(f);
+}
+function doQuick(f){
+  if(ALS.busy) return;
+  if(f.size>64*1024*1024){ quickMsg('文件太大了（上限 64MB）','bad'); return; }
+  ALS.busy=true;
+  quickMsg('<span class="spin"></span>正在读取 '+esc(f.name)+'（'+(f.size/1024).toFixed(0)+' KB）…','wait');
+  quickRes(null);
+  var fd=new FormData(); fd.append('file',f);
+  /* 超时保护：服务端要先解析再逐个账号真连网关校验，
+     正常几秒内就回；超过 90 秒基本是卡在网络上，不如直接告诉用户，
+     总好过一直转圈让人以为面板死了。 */
+  var ctl = (typeof AbortController!=='undefined') ? new AbortController() : null;
+  var timedOut = false;
+  var timer = setTimeout(function(){
+    timedOut = true;
+    if(ctl) try{ ctl.abort(); }catch(e){}
+  }, 90000);
+  var opt = {method:'POST', body:fd};
+  if(ctl) opt.signal = ctl.signal;
+  fetch('/api/quick_import', opt)
+  .then(function(r){
+    var ct = r.headers.get('content-type')||'';
+    return r.text().then(function(t){
+      if(ct.indexOf('json')<0){
+        /* 非 JSON 多半是没登录被 302 到了登录页，或者服务端 500 吐了纯文本。
+           直接把原文截一段出来，比只说"上传失败"有用得多。 */
+        throw new Error('服务端返回了非预期内容（HTTP '+r.status+'）：'+t.slice(0,120));
+      }
+      try{ return JSON.parse(t); }
+      catch(e){ throw new Error('返回内容不是合法 JSON：'+t.slice(0,120)); }
+    });
+  })
+  .then(function(d){
+    clearTimeout(timer);
+    ALS.busy=false;
+    if(!d.results||!d.results.length){
+      quickMsg('❌ '+(d.msg||'这个文件里没有找到登录帧'),'bad');
+      return;
+    }
+    var extra = (typeof d.elapsed==='number') ? '（用时 '+d.elapsed+' 秒）' : '';
+    quickMsg((d.ok?'✅ ':'⚠️ ')+esc(d.msg||'处理完成')+extra, d.ok?'ok':'bad');
+    quickRes(d.results);
+    var good=(d.good||0)+(d.dupe||0);
+    if(good){
+      setTimeout(function(){ tick(); },1200);
+      if(navigator.vibrate) try{navigator.vibrate(d.good?[40,60,40]:120);}catch(e){}
+    }
+  })
+  .catch(function(e){
+    clearTimeout(timer);
+    ALS.busy=false;
+    if(timedOut){
+      quickMsg('⚠️ 等了 90 秒还没回应，已中止。多半是抓包文件里账号太多、'
+        +'每个都要连一次游戏服务器校验。<br>建议：先只抓一个号的登录帧再试。','bad');
+    }else{
+      quickMsg('上传失败：'+esc(String((e && e.message) || e)),'bad');
+    }
+  });
+}
+
+/* 拖拽支持 */
+(function(){
+  var z=document.getElementById('dropZone');
+  if(!z) return;
+  ['dragenter','dragover'].forEach(function(ev){
+    z.addEventListener(ev,function(e){ e.preventDefault(); e.stopPropagation(); z.classList.add('over'); });
+  });
+  ['dragleave','drop'].forEach(function(ev){
+    z.addEventListener(ev,function(e){ e.preventDefault(); e.stopPropagation(); z.classList.remove('over'); });
+  });
+  z.addEventListener('drop',function(e){
+    var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];
+    if(f) doQuick(f);
+  });
+  // 整个浮层也接受拖拽
+  var a=document.getElementById('als');
+  if(a){
+    a.addEventListener('dragover',function(e){ e.preventDefault(); });
+    a.addEventListener('drop',function(e){
+      e.preventDefault();
+      var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];
+      if(f&&!ALS.busy) doQuick(f);
+    });
+  }
+})();
+
+/* ---------- 手机上传二维码 ---------- */
+function loadGrabKey(force){
+  fetch('/api/grab_info',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    if(!d.ok) return;
+    if(!d.enabled && !force){
+      newGrabKey(); return;
+    }
+    showQR(d.key,d.enabled);
+  }).catch(function(){});
+}
+function showQR(key,enabled){
+  var box=document.getElementById('qrBox'); if(!box) return;
+  var k=document.getElementById('qrKey'); if(k) k.textContent=key||'（未开启）';
+  if(!enabled||!key){ box.innerHTML='<div class="qwerr" style="color:#7a8699;padding:20px 0;font-size:13px">手机上传未开启</div>'; return; }
+  var base=location.origin||(location.protocol+'//'+location.host);
+  var url=base+'/grab?k='+encodeURIComponent(key);
+  box.innerHTML='<div class="qrw">正在生成…</div>';
+  fetch('/api/qr?text='+encodeURIComponent(url),{cache:'no-store'})
+  .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
+  .then(function(svg){
+    if(svg.indexOf('<svg')<0){ throw new Error('格式异常'); }
+    box.innerHTML=svg;
+  })
+  .catch(function(e){
+    box.innerHTML='<div class="qerr">二维码生成失败<br>'
+      +'<span style="font-size:12px;word-break:break-all">'+esc(url)+'</span><br>'
+      +'<span style="font-size:12px">可手动在手机浏览器打开上面这个地址</span></div>';
+  });
+}
+function newGrabKey(){
+  fetch('/api/grab_key',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({action:'new'})}).then(function(r){return r.json();})
+  .then(function(d){ if(d.ok) showQR(d.key,true); else alert(d.msg||'生成失败'); });
+}
+function offGrabKey(){
+  if(!confirm('关闭手机上传？已生成的二维码会立即失效。')) return;
+  fetch('/api/grab_key',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({action:'off'})}).then(function(r){return r.json();})
+  .then(function(d){ if(d.ok) showQR('',false); });
+}
+
+async function verifyFrame(){
+  var f=(document.getElementById('alsFrame').value||'').trim();
+  if(!f){ alsMsg('请先粘贴登录帧 hex','bad'); return; }
+  alsMsg('正在连接游戏网关校验，约 5~15 秒…','wait');
+  try{
+    var r=await fetch('/api/verify_frame',{method:'POST',headers:{'Content-Type':'application/json'},
+              body:JSON.stringify({frame:f})});
+    var d=await r.json();
+    if(d.ok){ alsMsg('✅ 校验通过！\n昵称：'+(d.info.nickname||'(未返回)')+'\nUID：'+d.info.uid
+              +'\n区服：#8 = '+(d.info.worldId===null?'未指定（用默认区服）':d.info.worldId),'ok'); }
+    else{ alsMsg('❌ '+d.msg,'bad'); }
+  }catch(e){ alsMsg('请求失败：'+e,'bad'); }
+}
+
+async function doAppLogin(){
+  if(ALS.busy) return;
+  var f=(document.getElementById('alsFrame').value||'').trim();
+  var w=(document.getElementById('alsWorld').value||'').trim();
+  if(!f&&!w){ alsMsg('请粘贴登录帧 hex','bad'); return; }
+  ALS.busy=true;
+  var btns=document.querySelectorAll('#als .btn');
+  for(var i=0;i<btns.length;i++) btns[i].style.opacity=.55;
+  try{
+    if(!f&&w){
+      alsMsg('正在切换区服…','wait');
+      var ru=await fetch('/api/applogin',{method:'POST',headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({uid:w})});
+      var du=await ru.json();
+      alsMsg(du.ok?'✅ '+du.msg:'❌ '+du.msg, du.ok?'ok':'bad');
+    }else{
+      alsMsg('正在连接游戏网关校验并导入，约 5~15 秒…','wait');
+      var r=await fetch('/api/applogin',{method:'POST',headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({frame:f,world:w?Number(w):null,verify:true})});
+      var d=await r.json();
+      if(d.ok){
+        alsMsg('✅ '+(d.info.isNew?'账号已添加':'登录帧已更新')
+               +'\n昵称：'+(d.info.nickname||'(未返回)')+'\nUID：'+d.info.uid
+               +'\n区服：#8 = '+(d.info.worldId===null?'未指定（用默认区服）':d.info.worldId)
+               +'\n\n面板正在用这帧登录，几秒后首页就能看到在线状态。','ok');
+        setTimeout(function(){ tick(); },1800);
+      }else{ alsMsg('❌ '+d.msg,'bad'); }
+    }
+  }catch(e){ alsMsg('请求失败：'+e,'bad'); }
+  ALS.busy=false;
+  for(var j=0;j<btns.length;j++) btns[j].style.opacity=1;
+  tick();
+}
+
+function readFrameFile(inp){
+  var f=inp.files&&inp.files[0]; if(!f) return;
+  alsMsg('正在解析 '+f.name+'（'+(f.size/1024).toFixed(0)+' KB）…','wait');
+  var fd=new FormData(); fd.append('file',f);
+  fetch('/api/parse_capture',{method:'POST',body:fd}).then(function(r){return r.json();}).then(function(d){
+    if(!d.ok){ alsMsg('❌ '+(d.msg||'解析失败'),'bad'); return; }
+    if(!d.count){ alsMsg('这个文件里没有找到 LoginRequest 登录帧。\n请确认是开抓包后进游戏产生的 frames-*.jsonl','bad'); return; }
+    ALSF=d.frames;
+    alsMsg('解析到 '+d.count+' 个账号的登录帧，勾选后点「批量导入」','ok');
+    renderALSF();
+  }).catch(function(e){ alsMsg('上传失败：'+e,'bad'); });
+  inp.value='';
+}
+
+/* 解析结果列表 */
+var ALSF=null, ALSSEL={};
+function renderALSF(){
+  var box=document.getElementById('alsList');
+  var br=document.getElementById('alsBulkRow');
+  if(!ALSF||!ALSF.length){ box.innerHTML=''; if(br) br.style.display='none'; return; }
+  if(br) br.style.display='flex';
+  var h='<div class="sec" style="margin-top:14px">'
+       +'<span style="cursor:pointer" onclick="alsAll(1)">全选</span> / '
+       +'<span style="cursor:pointer" onclick="alsAll(0)">全不选</span>'
+       +'　共 '+ALSF.length+' 个</div>';
+  ALSF.forEach(function(f,i){
+    var sel=ALSSEL[f.uid]!==false;
+    var ts=f.tokenTs?new Date(f.tokenTs*1).toLocaleString('zh-CN'):'时间未知';
+    var who=f.nickname||(f.known?'(已在本面板)':'未知昵称');
+    h+='<div class="fradio'+(sel?' sel':'')+(f.known?'':' new')+'" onclick="alsPick(\''+f.uid+'\')">'
+      +'<input type="checkbox" '+(sel?'checked':'')+' onclick="event.stopPropagation();alsPick(\''+f.uid+'\')">'
+      +'<div class="fi"><div class="fn">'+esc(f.uid)+'</div>'
+      +'<div class="fs">'+esc(who)+' · 签发 '+esc(ts)
+        +(f.worldId?(' · #8='+f.worldId):'')+(f.host?(' · '+esc(f.host)):'')+'</div></div></div>';
+  });
+  box.innerHTML=h;
+}
+function alsPick(uid){ ALSSEL[uid]=(ALSSEL[uid]===false); renderALSF(); }
+function alsAll(v){ if(!ALSF) return; ALSF.forEach(function(f){ ALSSEL[f.uid]=!!v; }); renderALSF(); }
+
+async function alsBulk(){
+  if(ALS.busy||!ALSF) return;
+  var pick=ALSF.filter(function(f){return ALSSEL[f.uid]!==false;});
+  if(!pick.length){ alsMsg('请至少勾选一个账号','bad'); return; }
+  ALS.busy=true;
+  alsMsg('正在逐个连接游戏网关校验并导入 '+pick.length+' 个账号…\n（每个约 3~8 秒，请稍候）','wait');
+  try{
+    var r=await fetch('/api/bulk_import',{method:'POST',headers:{'Content-Type':'application/json'},
+              body:JSON.stringify({frames:pick.map(function(f){return {hex:f.hex};})})});
+    var d=await r.json();
+    var lines=(d.results||[]).map(function(x){
+      return (x.ok?'✅ ':'❌ ')+(x.nickname||x.uid)+'　'+x.msg;
+    }).join('\n');
+    alsMsg((d.ok?'✅ ':'⚠️ ')+d.msg+'\n\n'+lines, d.ok?'ok':'bad');
+    setTimeout(function(){ tick(); },1500);
+  }catch(e){ alsMsg('批量导入失败：'+e,'bad'); }
+  ALS.busy=false;
+  tick();
+}
+
+function openFrame(uid){
+  fetch('/api/frame?uid='+encodeURIComponent(uid),{cache:'no-store'}).then(function(r){return r.json();})
+  .then(function(d){
+    var t=d.tokenTs?new Date(d.tokenTs*1).toLocaleString('zh-CN'):'未知';
+    var box=document.createElement('div');
+    box.className='card'; box.id='frameBox';
+    box.innerHTML='<div class="sec">登录帧（'+esc(uid)+'）</div>'
+      +'<div class="row"><span class="k">来源</span><span class="v">'+(d.source==='import'?'手动导入':'抓包捕获')+'</span></div>'
+      +'<div class="row"><span class="k">大小</span><span class="v">'+d.bytes+' 字节</span></div>'
+      +'<div class="row"><span class="k">签发时间</span><span class="v">'+esc(t)+'</span></div>'
+      +'<div class="row"><span class="k">区服 #8</span><span class="v">'+(d.worldId||'默认')+'</span></div>'
+      +'<div class="sec">帧内容（可复制备份）</div>'
+      +'<textarea readonly style="width:100%;height:110px;font:11px/1.5 ui-monospace,monospace;'
+      +'border:1px solid var(--line);border-radius:9px;padding:8px;word-break:break-all">'+esc(d.frame)+'</textarea>'
+      +'<div class="btns"><div class="btn pri" onclick="document.getElementById(\'frameBox\').remove()">关闭</div></div>';
+    var home=document.querySelector('#app .card');
+    if(home) home.parentNode.insertBefore(box,home); else document.getElementById('app').appendChild(box);
+  });
+}
+
+function delAcc(uid){
+  if(!confirm('确定删除账号 '+uid+' ？\n\n登录帧仍保留在服务端缓存里，可随时用同一帧加回来。')) return;
+  fetch('/api/delete?uid='+encodeURIComponent(uid)).then(function(){ tick(); });
+}
+
+async function tick(){
+  try{
+    var r=await fetch('/api/state',{cache:'no-store'});
+    STATE=await r.json();
+    if(VIEW!=='home'&&CUR){
+      var r2=await fetch('/api/account?uid='+encodeURIComponent(CUR),{cache:'no-store'});
+      var d=await r2.json();
+      if(d&&d.uid){
+        var i=(STATE.accounts||[]).findIndex(function(x){return x.uid===CUR;});
+        if(i>=0) STATE.accounts[i]=d; else STATE.accounts.push(d);
+      }
+    }
+    render();
+  }catch(e){ document.getElementById('app').innerHTML='<div class="card empty">面板连接失败</div>'; }
+}
+/* static=1：静态/离屏渲染模式（截图、自动化测试用）。
+   不主动拉接口、不开轮询 —— 由外部脚本喂 STATE 后手动调 render()。
+   ★ 必须在 tick() 之前判断：否则一进页面就发起 fetch，
+     jsdom / 无头浏览器里 pending 的请求会让进程挂着不退出。 */
+if(location.search.indexOf('static=1')<0){
+  tick();
+  setInterval(tick, 3000);
+}
+</script>
+<div id="als" onclick="if(event.target===this)closeAls()">
+ <div class="als-box">
+  <h3>📂 一键加号</h3>
+  <p class="tip">把抓包文件拖进来（或选中它），剩下的面板全自动完成。</p>
+
+  <div class="drop" id="dropZone" onclick="document.getElementById('alsFile').click()">
+    <div class="drop-ico">📁</div>
+    <div class="drop-t">拖文件到这里，或点一下选择</div>
+    <div class="drop-s">支持抓包 App 导出的 jsonl / har / txt / json / pcap —— 什么格式都能认</div>
+  </div>
+  <input type="file" id="alsFile" accept="*/*" style="display:none" onchange="quickUpload(this)">
+
+  <div class="alt-row">
+    <span onclick="document.getElementById('alsPhone').style.display=(document.getElementById('alsPhone').style.display==='none'?'block':'none')">
+      📱 用手机抓包？点这里用手机直接上传
+    </span>
+  </div>
+  <div id="alsPhone" style="display:none">
+    <div id="qrBox" class="qrbox"><div class="qrw">正在生成二维码…</div></div>
+    <div style="font-size:12px;color:var(--dim);text-align:center;margin-top:6px">
+      用手机扫码 → 选文件 → 完成。口令 <span class="mono" id="qrKey">…</span>
+      <span class="tab" style="margin-left:6px" onclick="newGrabKey()">换一个</span>
+      <span class="tab" style="margin-left:6px;color:#c0392b" onclick="offGrabKey()">关闭</span>
+    </div>
+  </div>
+
+  <div class="als-msg" id="alsMsg"></div>
+  <div id="alsRes"></div>
+
+  <div class="als-row">
+   <div class="btn" onclick="closeAls()">关闭</div>
+   <div class="btn" onclick="document.getElementById('alsAdv').style.display=(document.getElementById('alsAdv').style.display==='none'?'block':'none')">高级：手动粘贴帧</div>
+  </div>
+
+  <div id="alsAdv" style="display:none">
+   <label>登录帧 hex</label>
+   <textarea id="alsFrame" spellcheck="false" placeholder="000000d10200000...（一整串十六进制）"></textarea>
+   <label>区服 #8 worldId <span style="color:#8a93a3;font-weight:400">（可不填）</span></label>
+   <input type="text" id="alsWorld" inputmode="numeric" placeholder="如 2001011315，留空=用帧里原值">
+   <div class="als-row" style="margin-top:8px">
+    <div class="btn" onclick="verifyFrame()">仅校验</div>
+    <div class="btn pri" onclick="doAppLogin()">导入并挂机</div>
+   </div>
+   <div id="alsList"></div>
+   <div class="als-row" id="alsBulkRow" style="display:none;margin-top:8px">
+    <div class="btn pri" onclick="alsBulk()">批量导入勾选的账号</div>
+   </div>
+  </div>
+
+  <div class="als-step" style="margin-top:14px">
+   <b>抓包就这么几步</b><br>
+   · 手机上打开抓包 App，开始抓包（首次要装个证书，装完就不用管了）<br>
+   · 切到游戏，<b>退到登录页重新进一次</b>（必须这步，登录瞬间才有凭证）<br>
+   · 回抓包 App 停止抓包 → 导出（格式随便选）<br>
+   · 把导出的文件拖到上面那个框里 —— 收工
+  </div>
+ </div>
+</div>
+<div style="position:fixed;right:12px;bottom:74px;z-index:99;display:flex;flex-direction:column;gap:8px;align-items:flex-end"><a href="/passwd" style="background:#fff;border:1px solid #e8ecf2;border-radius:20px;padding:8px 14px;font-size:13px;color:#1677ff;text-decoration:none;box-shadow:0 2px 8px rgba(16,24,40,.10)">⚙️ 修改密码</a><a href="/admin" style="background:#fff;border:1px solid #e8ecf2;border-radius:20px;padding:8px 14px;font-size:13px;color:#1677ff;text-decoration:none;box-shadow:0 2px 8px rgba(16,24,40,.10)">👥 用户管理</a></div>
+</body>
+</html>

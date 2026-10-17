@@ -1,0 +1,113 @@
+/* 疯狂水世界 · 海洋卡通主题（面板皮肤）
+   通过 <html data-theme="ocean"> 生效，与登录页共用 localStorage: fksj_login_theme */
+[data-theme="ocean"]{
+  --bg:#0a3f6d;
+  --surface:#fffdf6;
+  --ink:#0a3350;
+  --muted:#5b7d95;
+  --line:#08324f;
+  --line-soft:#bfe2f2;
+  --primary:#0e8bb5;
+  --primary-dark:#0a6e91;
+  --green:#25b58a;
+  --amber:#f0a020;
+  --sidebar:#06335a;
+  --sidebar-muted:#a8d6ea;
+  --shadow:0 8px 0 #08324f;
+  --sans:"Baloo 2","Manrope","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+[data-theme="ocean"] body{
+  background:linear-gradient(180deg,#9ce8fb 0%,#5cc3ec 16%,#2b93d0 44%,#116ea8 70%,#08456f 100%);
+  background-attachment:fixed;
+}
+[data-theme="ocean"] body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 12% 22%,rgba(255,255,255,.4) 0 6px,transparent 7px),
+    radial-gradient(circle at 82% 30%,rgba(255,255,255,.32) 0 9px,transparent 10px),
+    radial-gradient(circle at 30% 68%,rgba(255,255,255,.3) 0 5px,transparent 6px),
+    radial-gradient(circle at 68% 82%,rgba(255,255,255,.32) 0 8px,transparent 9px),
+    radial-gradient(circle at 50% 12%,rgba(255,255,255,.22) 0 4px,transparent 5px);
+}
+[data-theme="ocean"] .app-shell{position:relative;z-index:1}
+/* 侧边栏 */
+[data-theme="ocean"] .sidebar{background:linear-gradient(180deg,#0b4a72,#06335a);color:#eaf7ff;border-right:3px solid #08324f}
+[data-theme="ocean"] .brand-lockup{color:#fff}
+[data-theme="ocean"] .brand-lockup small{color:#8fd0ec}
+[data-theme="ocean"] .brand-icon{border:2px solid #08324f;background:#0e8bb5;color:#fff;border-radius:12px;box-shadow:0 4px 0 #08324f}
+[data-theme="ocean"] .workspace-switch{border:2px solid #08324f;background:rgba(255,255,255,.14);border-radius:14px;color:#eaf7ff}
+[data-theme="ocean"] .workspace-switch small{color:#9fd6ee}
+[data-theme="ocean"] .account-avatar{background:#ffd166;color:#08324f}
+[data-theme="ocean"] .chevron{color:#bfe4f5}
+[data-theme="ocean"] .nav-caption{color:#8fd0ec}
+[data-theme="ocean"] .nav-item{color:#bfe4f5;border-radius:12px}
+[data-theme="ocean"] .nav-item:hover{background:rgba(255,255,255,.12);color:#fff}
+[data-theme="ocean"] .nav-item.active{background:#0e8bb5;color:#fff;box-shadow:inset 4px 0 0 #ffd166;font-weight:700}
+[data-theme="ocean"] .nav-glyph{color:#8fd0ec}
+[data-theme="ocean"] .nav-item.active .nav-glyph{color:#fff}
+[data-theme="ocean"] .nav-count{background:rgba(255,255,255,.18);color:#eaf7ff}
+[data-theme="ocean"] .nav-count.blue{background:#ffd166;color:#08324f}
+[data-theme="ocean"] .sidebar-foot{border-top-color:rgba(255,255,255,.22);color:#cfe9f6}
+[data-theme="ocean"] .sidebar-foot small{color:#8fd0ec}
+[data-theme="ocean"] .connection-dot{background:#4be0a6}
+/* 顶栏 */
+[data-theme="ocean"] .topbar{background:rgba(255,255,255,.86);border-bottom:3px solid #08324f}
+[data-theme="ocean"] .breadcrumb{color:#3c6d8c}
+[data-theme="ocean"] .avatar-small{background:#ffd166;color:#08324f}
+[data-theme="ocean"] .logout-link{border:2px solid #08324f;border-radius:12px;color:#08324f;background:#ffd166}
+[data-theme="ocean"] .logout-link:hover{background:#ffc93c;border-color:#08324f;color:#08324f}
+/* 卡片：贴纸风 */
+[data-theme="ocean"] .stat-card,[data-theme="ocean"] .panel-card{
+  border:3px solid #08324f;border-radius:26px;background:#fffdf6;
+  box-shadow:0 8px 0 #08324f,0 22px 40px rgba(3,40,72,.28);
+}
+[data-theme="ocean"] .panel-header{border-bottom:2px solid #bfe2f2}
+[data-theme="ocean"] .stat-card strong{color:#0a4f7a}
+[data-theme="ocean"] .stat-label{color:#4f7f9e}
+[data-theme="ocean"] .stat-icon{border-radius:14px;border:2px solid #08324f}
+[data-theme="ocean"] .stat-icon.green,[data-theme="ocean"] .quick-icon.green{background:#8ee6d6;color:#08324f}
+[data-theme="ocean"] .stat-icon.blue,[data-theme="ocean"] .quick-icon.blue{background:#9fdcff;color:#08324f}
+[data-theme="ocean"] .stat-icon.amber,[data-theme="ocean"] .quick-icon.amber{background:#ffd166;color:#08324f}
+[data-theme="ocean"] .stat-icon.slate,[data-theme="ocean"] .quick-icon.slate{background:#cfe3f0;color:#08324f}
+/* 按钮 */
+[data-theme="ocean"] .button{border:3px solid #08324f;border-radius:14px;height:40px;font-weight:800;box-shadow:0 4px 0 #08324f}
+[data-theme="ocean"] .button.ghost{background:#fffdf6;color:#08324f}
+[data-theme="ocean"] .button.ghost:hover{background:#eaf7ff}
+[data-theme="ocean"] .button.primary{background:linear-gradient(180deg,#ffb457,#ff8f3c);color:#08324f;box-shadow:0 4px 0 #c85a1e}
+[data-theme="ocean"] .button.primary:hover{background:linear-gradient(180deg,#ffab44,#ff8330)}
+[data-theme="ocean"] .button:active{transform:translateY(3px);box-shadow:0 1px 0 #08324f}
+/* 列表 / 快捷操作 */
+[data-theme="ocean"] .account-row:hover,[data-theme="ocean"] .account-row.selected{background:#eaf7ff}
+[data-theme="ocean"] .quick-action{border:3px solid #08324f;border-radius:20px;background:#f4fbff;box-shadow:0 6px 0 #08324f}
+[data-theme="ocean"] .quick-action:hover{background:#eaf7ff;border-color:#08324f;transform:translateY(-2px)}
+[data-theme="ocean"] .quick-icon{border:2px solid #08324f;border-radius:12px}
+[data-theme="ocean"] .filter-tabs{border:2px solid #08324f;border-radius:12px;background:#eaf7ff}
+[data-theme="ocean"] .filter-tabs button{border-radius:9px;font-weight:700}
+[data-theme="ocean"] .filter-tabs button.active{background:#ffd166;color:#08324f;box-shadow:none}
+[data-theme="ocean"] .view-all{border-top:2px solid #bfe2f2;background:#fffdf6;color:#0e8bb5}
+[data-theme="ocean"] .text-button{color:#0e8bb5}
+/* 标题 / 页脚 */
+[data-theme="ocean"] .page-heading h1{color:#063a5c;text-shadow:0 2px 0 #fff;font-weight:800}
+[data-theme="ocean"] .heading-sub{color:#3c6d8c}
+[data-theme="ocean"] .eyebrow,[data-theme="ocean"] .form-kicker{color:#0e8bb5}
+[data-theme="ocean"] .page-footer{color:#4f7f9e}
+[data-theme="ocean"] .page-footer i{background:#4be0a6}
+/* 弹窗 */
+[data-theme="ocean"] .account-modal{background:rgba(4,40,72,.55)}
+[data-theme="ocean"] .account-modal-card{border:3px solid #08324f;border-radius:26px;box-shadow:0 12px 0 #08324f,0 30px 60px rgba(3,40,72,.4)}
+[data-theme="ocean"] .account-modal-header{border-bottom:2px solid #bfe2f2}
+[data-theme="ocean"] .modal-close{border:2px solid #08324f;border-radius:14px}
+[data-theme="ocean"] .all-account-item{border-radius:16px}
+[data-theme="ocean"] .all-account-item:hover,[data-theme="ocean"] .all-account-item.selected{border-color:#0e8bb5;background:#eaf7ff}
+[data-theme="ocean"] .config-toggle,.config-field,[data-theme="ocean"] .hero-strategy-block{border-radius:14px;background:#f4fbff}
+[data-theme="ocean"] .detail-highlight,[data-theme="ocean"] .standalone-detail-grid .detail-highlight{border-color:#0e8bb5;background:#eaf7ff}
+[data-theme="ocean"] .factory-detail-row,[data-theme="ocean"] .standalone-detail-grid .detail-card,[data-theme="ocean"] .factory-card,[data-theme="ocean"] .production-slot{border-radius:16px;background:#f4fbff}
+/* 主题开关：彩盘按钮（注入到顶栏 top-actions） */
+.theme-switch{box-sizing:border-box;width:34px;height:34px;padding:0;border:2px solid var(--line);border-radius:50%;background:rgba(255,255,255,.72);cursor:pointer;display:grid;place-items:center;transition:transform .16s,box-shadow .16s}
+.theme-switch:hover{transform:scale(1.08) rotate(14deg)}
+.theme-switch .wheel{display:block;width:22px;height:22px;border-radius:50%;background:conic-gradient(#ff5d73,#ffb457,#ffe066,#7ee0d6,#3cb1e6,#b18cff,#ff5d73);box-shadow:inset 0 0 0 2px #fff}
+.top-actions .theme-switch{margin-right:8px}
+[data-theme="ocean"] .theme-switch{border:3px solid #08324f;background:#fffdf6;box-shadow:0 4px 0 #08324f}
+[data-theme="ocean"] .theme-switch:hover{box-shadow:0 4px 0 #08324f}
+.theme-switch.floating{position:fixed;top:16px;right:18px;z-index:25}
+@media(max-width:700px){.theme-switch{width:30px;height:30px}.theme-switch .wheel{width:19px;height:19px}.theme-switch.floating{top:10px;right:12px}}

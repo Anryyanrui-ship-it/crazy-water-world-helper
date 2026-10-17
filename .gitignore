@@ -1,0 +1,24 @@
+# 运行时数据（账号/用户/口令/日志/上传），不纳入版本库
+accounts/
+users.json
+channel_upstream.json
+grab_key.json
+*.token
+logs/
+uploads/
+upload_users/
+upload_channel/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 前端构建备份 / 历史产物
+dist/backups/
+*.bak
+*.bak.*
+dist-index-*.html
+*.prev
+
+# 环境 / 密钥
+.env

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef2f6" />
+    <title>疯狂水世界 · 工厂与建筑</title>
+    <link rel="stylesheet" href="/assets/fksj-dashboard.css?v=20261010-1" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-lockup"><span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3.2 7.1 8.4a7 7 0 1 0 9.8 0L12 3.2Z"/><path d="M8.8 15.2a4.2 4.2 0 0 0 3.2 2.1"/></svg></span><span>疯狂水世界<small>挂机控制台</small></span></div>
+          <a class="workspace-switch" href="/"><span class="account-avatar">文</span><span><b>账号控制台</b><small>返回运行概览</small></span><span class="chevron">›</span></a>
+         <nav class="main-nav" aria-label="主导航">
+           <span class="nav-caption">控制台</span>
+           <a class="nav-item" href="/#overview"><span class="nav-glyph">⌂</span>运行概览</a>
+           <a class="nav-item" href="/#accounts"><span class="nav-glyph">◉</span>账号管理</a>
+           <a class="nav-item" href="/#tasks"><span class="nav-glyph">✓</span>任务队列</a>
+           <a class="nav-item" href="/#resources"><span class="nav-glyph">◈</span>资源概览</a>
+           <a class="nav-item active" href="/factory.html"><span class="nav-glyph">▦</span>工厂与建筑</a>
+           <a class="nav-item" href="/#logs"><span class="nav-glyph">≡</span>运行日志</a>
+           <span class="nav-caption second">系统</span>
+           <a class="nav-item" href="/passwd"><span class="nav-glyph">⚙</span>面板设置</a>
+            <a class="nav-item" href="/admin" data-admin-only hidden><span class="nav-glyph">♙</span>用户管理</a>
+         </nav>
+        <div class="sidebar-foot"><div class="connection-dot"></div><span>服务运行正常</span><small>独立数据面板</small></div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar"><button class="mobile-menu" aria-label="打开导航">☰</button><div class="breadcrumb">控制台 <span>/</span> 工厂与建筑</div><div class="top-actions"><a class="button ghost" href="/">返回概览</a></div></header>
+        <div class="content-wrap factory-page-wrap">
+          <section class="page-heading"><div><p class="eyebrow">FACTORY & BUILDINGS / LIVE</p><h1>工厂与建筑</h1><p class="heading-sub">独立查看当前账号的建筑状态、居民需求和工厂生产位置。</p></div><div class="heading-actions"><label class="account-picker"><span>当前账号</span><select id="accountSelect"></select></label><button class="button ghost" id="refreshFactory">刷新数据</button></div></section>
+          <section class="panel-card factory-page-card"><div class="detail-view-tabs" role="tablist"><button class="active" data-page-tab="building" type="button">建筑</button><button data-page-tab="factory" type="button">工厂</button></div><div id="factoryPageContent"><p class="config-loading">正在读取账号数据...</p></div></section>
+        </div>
+      </main>
+    </div>
+    <div class="toast" role="status" aria-live="polite"><span>✓</span><b>操作已提交</b></div>
+    <script src="/assets/fksj-factory.js?v=20261010-1"></script>
+  </body>
+</html>

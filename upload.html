@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>上传小游戏包体</title>
+<style>
+  body{background:#0b1220;color:#e6edf3;font:14px/1.6 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:18px}
+  .card{background:#141d2e;border:1px solid #26324a;border-radius:12px;padding:16px;max-width:700px;margin:0 auto}
+  h2{margin:0 0 8px;font-size:16px;color:#4cc2ff}
+  h3{margin:18px 0 6px;font-size:13px;color:#8fa3bf;font-weight:600}
+  #drop{border:2px dashed #33415c;border-radius:12px;padding:32px 16px;text-align:center;color:#8fa3bf;margin:12px 0;transition:.15s}
+  #drop.hot{border-color:#4cc2ff;background:#101a2c;color:#e6edf3}
+  #drop b{color:#4cc2ff}
+  button{background:#4cc2ff;color:#04212f;border:0;border-radius:9px;padding:10px 18px;font-weight:600;margin-top:8px;font-size:14px}
+  input[type=file]{color:#cfe3ff;font-size:13px;padding:6px 0}
+  pre{background:#0a0f1a;padding:10px;border-radius:8px;overflow:auto;font-size:12px;color:#7ef0c8;max-height:42vh;white-space:pre-wrap}
+  .dim{color:#8fa3bf;font-size:12px}
+  .sep{border-top:1px dashed #26324a;margin:16px 0}
+</style>
+</head>
+<body>
+<div class="card">
+  <h2>上传小游戏包体</h2>
+  <div class="dim">支持 <b>.pkg / .ttpkg / .ttpkg.js / .zip</b>，也可以直接把整个文件夹拖进来。</div>
+
+  <div id="drop">把文件或文件夹<b>拖到这里</b><br><span class="dim">或者</span><br>
+    <button type="button" id="pick">点击选择文件</button></div>
+  <input type="file" id="file" multiple style="display:none">
+
+  <div class="sep"></div>
+  <h3>方式二：原生表单（如果上面的按钮没反应就用这个）</h3>
+  <form method="post" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="file" multiple>
+    <br><button type="submit">上传</button>
+  </form>
+
+  <h3>进度</h3>
+  <pre id="out">等待上传…</pre>
+</div>
+
+<script>
+var out = document.getElementById('out');
+var drop = document.getElementById('drop');
+var NL = String.fromCharCode(10);
+
+function log(t) {
+  out.textContent = out.textContent + NL + t;
+  out.scrollTop = out.scrollHeight;
+}
+
+function send(file, name) {
+  var fd = new FormData();
+  fd.append('file', file, name || file.name);
+  return fetch('/upload', { method: 'POST', body: fd }).then(function (r) {
+    return r.text().then(function (txt) { log((name || file.name) + '  ->  ' + txt); });
+  }).catch(function (e) { log((name || file.name) + '  ->  失败: ' + e); });
+}
+
+function walk(entry, path) {
+  if (entry.isFile) {
+    return new Promise(function (res, rej) { entry.file(res, rej); }).then(function (f) {
+      return send(f, path + entry.name);
+    });
+  }
+  if (entry.isDirectory) {
+    var rd = entry.createReader();
+    var chain = Promise.resolve();
+    function readBatch() {
+      return new Promise(function (res, rej) { rd.readEntries(res, rej); }).then(function (batch) {
+        if (!batch.length) return;
+        chain = chain.then(function () {
+          var p = Promise.resolve();
+          batch.forEach(function (e) { p = p.then(function () { return walk(e, path + entry.name + '/'); }); });
+          return p;
+        });
+        return readBatch();
+      });
+    }
+    return readBatch();
+  }
+  return Promise.resolve();
+}
+
+function handle(files, items) {
+  out.textContent = '开始上传…';
+  var chain = Promise.resolve();
+  if (items && items.length && items[0].webkitGetAsEntry) {
+    for (var i = 0; i < items.length; i++) {
+      (function (idx) {
+        chain = chain.then(function () {
+          var en = items[idx].webkitGetAsEntry();
+          return en ? walk(en, '') : Promise.resolve();
+        });
+      })(i);
+    }
+  } else {
+    for (var j = 0; j < files.length; j++) {
+      (function (idx) { chain = chain.then(function () { return send(files[idx]); }); })(j);
+    }
+  }
+  return chain.then(function () { log('全部完成'); });
+}
+
+['dragenter', 'dragover'].forEach(function (e) {
+  drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.add('hot'); });
+});
+['dragleave', 'dragend'].forEach(function (e) {
+  drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.remove('hot'); });
+});
+drop.addEventListener('drop', function (ev) {
+  ev.preventDefault();
+  drop.classList.remove('hot');
+  handle(ev.dataTransfer.files, ev.dataTransfer.items);
+});
+document.getElementById('pick').addEventListener('click', function () {
+  document.getElementById('file').click();
+});
+document.getElementById('file').addEventListener('change', function (ev) {
+  handle(ev.target.files, null);
+});
+</script>
+</body>
+</html>
